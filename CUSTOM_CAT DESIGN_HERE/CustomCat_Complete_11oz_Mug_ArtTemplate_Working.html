@@ -21,6 +21,8 @@
   font-family: "LoversQuarrel-Regular";
   src: url(../shop_fonts/LoversQuarrel-Regular.ttf) format("truetype");
 }
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 body {
 background: ;
 }
@@ -73,7 +75,6 @@ height: 250px;
 text-align: center;
 vertical-align: middle;
 font-family: "LoversQuarrel-Regular";
-font-size: 200px;
 text-shadow: none;
 color: black;
 white-space: nowrap;
@@ -142,10 +143,11 @@ width: 1060px;
 height: 894px;
 text-align: center;
 vertical-align: middle;
-font-family: "LoversQuarrel-Regular";
-font-size: 200px;
+font-family: 'Great Vibes', cursive;
 text-shadow: none;
 color: black;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .CUSTOMER_REF_table {
 position: fixed;
@@ -205,18 +207,32 @@ min-height 400px;
 line-height: 100px;
 font-size: 100px;
 }
+.DesignCustomerOrdersUI_button {
+min-width: 1000px;
+min-height 400px;
+line-height: 100px;
+font-size: 100px;
+}
 .wrap_downloadable_image {
 position: fixed;
-top: 1700px;
+display: none;
+top: 0;
     left: 0px;
 	width: 2717px;
-	height: 1146;
+	height: 1146px;
 	background: blue;
+}
+#capture {
+position: fixed;
+top: 0;
+left: 0;
+width: 2717px;
+height: 1146px;
 }
 </style>
 
 <body>
-<div id="dom-to-image">
+<div id="capture">
 <div class="CustomCat11ozMugTemplate">
 <img class="" width="2717" height="1146" src="11oz_Mug_ArtTemplate.png" alt="" />
 </div>
@@ -277,6 +293,8 @@ Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como la
 <input class="DesignCustomerOrdersUI_imput_REF" name="" type="text" id="customize_ref" value="" placeholder="Ref" width="" height="">
 <br>
 <input class="DesignCustomerOrdersUI_imput_BG" name="" type="text" id="customize_bg" value="" placeholder="Background" width="" height="">
+<br>
+<button class="DesignCustomerOrdersUI_button" type="button">Done. I got 5 secs to browser 100%</button>
 
 </div>
   <!-- END Design Customer Orders UI -->
@@ -295,6 +313,11 @@ Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como la
 <script type="text/javascript" src="../shop_js/jquery_textfill_062.js"></script>
 <!-- dom-to-image.min.js -->
 <script src="../shop_js/dom-to-image.min.js" type="text/javascript"></script>
+<!-- html2canvas -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" type="text/javascript"></script>
+
+
+
 <script>
 $(document).ready(function (){
 // BEGIN Render the CUSTOMER_NAME_table-cell
@@ -362,6 +385,22 @@ $( "#customize_bg" ).on( "click", function() {
 	renderTheBackground();
 });
 // END Render the CUSTOMER_BACKGROUND
+
+// BEGIN button to render the html2canvas
+$( ".DesignCustomerOrdersUI_button" ).on( "click", function() {
+setTimeout(function(){
+$(".wrap_downloadable_image").show("slow");
+html2canvas(document.querySelector("#capture")).then(canvas => {
+ //   document.body.appendChild(canvas)
+$(".wrap_downloadable_image").append(canvas);
+});
+}, 5000);
+});
+// END button to render the html2canvas
+
+
+
+
 
 // BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
 $.fn.textStroke = function(r, colour) {
