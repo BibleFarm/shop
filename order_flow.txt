@@ -1,0 +1,198 @@
+🙏 pray with us & tell your friends we can plant seeds 🌱 in the hearts 💕 of these children. $10 makes a difference. Let's be doers of The Word together.
+
+$10 makes a difference
+
+be a part of every visit
+
+
+
+https://bit.ly/BibleFarm-C-01-01
+
+BibleFarm.org
+
+
+
+bit.ly
+
+https://www.givesendgo.com/BibleFarm#C-01-01
+
+BibleFarm-C-01-31
+
+
+Vectors:
+https://www.vecteezy.com/free-vector/bible?license-free=true&page=2
+
+SpreadShop with Facebook Ads:
+https://www.spreadshop.com/blog/2018/05/22/product-feed-release-for-your-shop-ads/
+
+
+
+trust pilot
+
+
+zazzle:
+Create my own store
+ADD CUSTOM CATEGORIES
+ADD collections
+ADD customizable
+
+Then affilliate my onw store products
+
+
+When you buy this > This is where the money goes
+
+
+
+
+Hi,
+
+I would like to know, if I open a Zazzle store,
+will I be able to run Facebook Ads in order to promote my own designs?
+
+I didn't find good info online. So, How would it work?
+Do you have any tutorials on how to properly use the links and landing pages?
+
+Thank you,
+
+Alex Smuglovsky
+
+
+for icons... Find these words in The Bible: 
+search
+home
+help
+world
+light
+build
+renew
+night
+time is short
+restore
+redeem
+power
+work
+working
+alarm
+more than conquerors
+clean hands
+follow me
+save
+compost (seed germinating)
+water
+add
+send
+create
+destroy
+song
+cloud
+heal healing
+broken
+transform
+give (volunteer)
+Near me
+run
+hearing hear, listen
+smart (wise)
+wrap
+safety () safe
+speak
+support
+roaming
+door
+
+
+
+
+producthunch.com
+
+RedBubble 7100 x 7100 px
+SpreadShop
+Printify
+Zazzle
+teepublic
+Society6
+teechip
+fineartamerica
+Etsy with Printful
+TeeSpring only marketed after I five them enough sales??
+
+Name:
+
+Psalms 35:10. A Bible verse from the KJV King James Version of the Holy Scriptures. All Bible verses available upon request at no extra charge.
+
+Description:
+
+Psalms 35:10. A Bible verse from the KJV King James Version of the Holy Scriptures. Ask us to design, at no extra charge, any of the Bible verses you like! All Bible verses at BibleFarm.org
+
+For free personalization, you can contact us at BibleFarm.org or via Facebook.com/BibleFarm.org or Twitter.com/BibleFarm or Instagram.com/biblefarm 
+
+All my bones shall say, LORD, who is like unto thee, which deliverest the poor from him that is too strong for him, yea, the poor and the needy from him that spoileth him? (Psalms 35:10).
+
+Tags:
+
+Bible
+Bible Verse
+Bible Verses
+King James
+KJV
+KJB
+BibleFarm
+biblefarm
+scriptures
+
+scalable press	3.50 + 5
+tee launch		3.50 + 4.50
+custom cat		
+printify		
+
+
+Isaías 40:31
+RV1960
+Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán.
+
+I'm going to NN to create:
+
+The 1374 images for women
+The 1374 images for men
+
+The shop.biblefarm.org website
+(later) The biblemugs.com domain
+
+website shows samples / underneath is "customize this one"
+NN to create images of samples (100 is good enough/ NN to choose 100 top popularity verses)
+
+popup (after 10 secs, ask if create your own design or keep browsing)
+
+menu items:
+create your own design (a modal that begins with STEP 1)
+STEP 1 = let's choose a Bible verse / next
+STEP 2 = let's add your name or ministry name /back / next
+STEP 3 = let's add some flowers / scoll down to choose one / no thanks / back / next
+STEP 4 = let's add a background / scoll down to choose one / no thanks / back/ next
+STEP 5 = you're done! the cost is pretty much... 
+
+browse flowers (a modal with the flowers swiper / on click, it updates step 3)
+browse backgrounds (a modal with the flowers swiper / on click, it updates step 4)
+
+contact
+about
+help
+
+
+swiper things I need:
+
+Parent swiper is horizontal:
+Pagination progress
+Grab cursor
+Effect fade
+Effect cube
+Keyboard control
+Mousewheel control
+Lazy load images (if my current lazt loader doesn't work)
+Zoom (see demo on how it works)
+
+
+Flowers & Backgrounds go in:
+Scroll container
+
+
