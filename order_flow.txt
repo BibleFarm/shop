@@ -174,8 +174,8 @@ STEP 5 = you're done! the cost is pretty much...
 browse flowers (a modal with the flowers swiper / on click, it updates step 3)
 browse backgrounds (a modal with the flowers swiper / on click, it updates step 4)
 
-contact
-about
+contact us
+about BibleFarm.org
 help
 
 

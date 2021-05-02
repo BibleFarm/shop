@@ -3,7 +3,7 @@
       var openMenu = function () {
         swiperRootWithMenu.slidePrev();
       };
-      var swiperRootWithMenu = new Swiper('.RootWithMenu', {
+      var swiperRootWithMenu = new Swiper('.swiperRootWithMenu', {
         slidesPerView: 'auto',
         initialSlide: 1,
         resistanceRatio: 0,
@@ -28,5 +28,14 @@
         },
       });
 // END swiperRootWithMenu
-// BEGIN swiperRootWithMenu
 
+
+      var swiperScrollContainer = new Swiper(".swiperScrollContainer", {
+        direction: "vertical",
+        slidesPerView: "auto",
+        freeMode: true,
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+        mousewheel: true,
+      });
