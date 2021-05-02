@@ -10,6 +10,30 @@
   font-family: "LoversQuarrel-Regular";
   src: url(../shop_fonts/LoversQuarrel-Regular.ttf) format("truetype");
 }
+
+.wrap_menu_items {
+list-style: none;
+max-width: 320px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+	background: #111111;
+}
+.menu_item {
+flex: inherit;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: center;
+}
+
+
+
 .top_title {
     font-family: 'PT_Sans-Narrow-Web-Regular';
     font-size: 18px;
@@ -105,6 +129,129 @@ width: 122px;
     text-align: center;
     margin-left: 3px;
 }
+    .modal_customize_verse {
+      position: fixed;
+      display: none;
+      height: calc(100% - 100px);
+      width: 296px;
+      top: calc(4px + 44px);
+      left: 4px;
+      background: #111111;
+      z-index: 1;
+      padding: 8px;
+      text-shadow: 2px 2px 1px #000000;
+	  overflow: auto;
+    }
+	
+.wrap_bible_verse_selection {
+display: block;
+width: 320px;
+}
+
+/* ************ */
+/* BEGIN custom select script */
+/* ************ */
+/*.select_book, .select_chapter, .select_verse {
+display: inline-block;
+}
+select.selectTag_book {
+border-width: 0px;
+    border: 0;
+    outline: 0;
+    color: #d5ad6d;
+    height: 42px;
+    font-size: 20px;
+    font-family: 'PT_Sans-Narrow-Web-Regular';
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    background: #444444;
+    padding: 0px;
+	line-height: 50px;
+}*/
+.select_book, .select_chapter, .select_verse {
+display: inline-block;
+}
+.select_book {
+width: 150px;
+}
+.select_chapter {
+width: 69px;
+}
+.select_verse {
+width: 69px;
+}
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+    font-size: 20px;
+    font-family: 'PT_Sans-Narrow-Web-Regular';
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #444444;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #d5ad6d;
+  padding: 8px 8px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #444444;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: 50vh;
+  overflow: scroll;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* ************ */
+/* END custom select script */
+/* ************ */
+
+	
+	
     .modal_customize_name {
       position: fixed;
       display: none;
@@ -237,21 +384,21 @@ when background image is 792px x 320px we divide it by 24 frames, and the we get
 240		576.55
 
 */
-#mug_render_cylinder_wrap_578x260_Center {
+.mug_render_cylinder_wrap_578x260_Center {
 position: fixed;
     text-align: center;
     margin: 0 auto;
-    top: 192px;
-    left: 160px;
+    top: 148px;
+    left: 150px;
     /* width: 550px; */
     -moz-perspective: 900px;
     -webkit-perspective: 1600;
 }
-#mug_render_cylinder_wrap_578x260_Center:hover * {
+.mug_render_cylinder_wrap_578x260_Center:hover * {
 	-moz-animation-play-state:paused;
 	-webkit-animation-play-state:paused}
 	  
-#frame {
+.frame {
 width: 24px;
     -moz-transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
