@@ -14,24 +14,33 @@
   src: url(../shop_fonts/Jura-Regular.ttf) format("truetype");
 }
 @font-face {
-  font-family: "Gruppo-Regular";
-  src: url(../shop_fonts/Jura-Regular.ttf) format("truetype");
+  font-family: "Audiowide-en4g";
+  src: url(../shop_fonts/Audiowide-en4g.ttf) format("truetype");
 }
 @font-face {
-  font-family: "LoversQuarrel-Regular";
-  src: url(../shop_fonts/LoversQuarrel-Regular.ttf) format("truetype");
+  font-family: "Capsuularegular-Onm3";
+  src: url(../shop_fonts/Capsuularegular-Onm3.ttf) format("truetype");
 }
 @font-face {
   font-family: "Thekingofromance-z8jDX";
   src: url(../shop_fonts/Thekingofromance-z8jDX.otf) format("opentype");
 }
+@font-face {
+  font-family: "NeogreyRegular";
+  src: url(../shop_fonts/NeogreyRegular.otf) format("truetype");
+}
+@font-face {
+  font-family: "NeogreyMedium";
+  src: url(../shop_fonts/NeogreyMedium.otf) format("truetype");
+}
+
 
 body {
 background: ;
 }
 .CustomCat11ozMugTemplate {
 position: fixed;
-display: none;
+display: ;
 top: 0;
 left: 0;
 width: 2717px;
@@ -65,21 +74,21 @@ width: 1225px;
 .CUSTOMER_NAME_table {
 position: fixed;
 display: table;
-top: 84px;
+top: 24px;
 left: 168px;
 width: 1060px;
-height: 250px;
+height: 470px;
 background: ;
 }
 .CUSTOMER_NAME_table-cell {
 display: table-cell;
 width: 1060px;
-height: 250px;
+height: 470px;
 text-align: center;
 vertical-align: middle;
 font-family: "Thekingofromance-z8jDX";
 text-shadow: none;
-color: black;
+color: #d5ad6d;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -87,10 +96,10 @@ white-space: nowrap;
 .CUSTOMER_FLOWER_table {
 position: fixed;
 display: table;
-top: 334px;
+top: 450px;
 left: 168px;
 width: 1060px;
-height: 647px;
+height: 520px;
 background: ;
 }
 .CUSTOMER_FLOWER_table-cell {
@@ -103,7 +112,7 @@ vertical-align: middle;
 .CUSTOMER_FLOWER_img {
 display: inline;
 max-width: 1040px;
-max-height: 625px;
+max-height: 520px;
 text-align: center;
 vertical-align: middle;
 }
@@ -122,10 +131,10 @@ background: ;
 display: table-cell;
 text-align: center;
 vertical-align: middle;
-font-family: "Gruppo-Regular";
-font-size: 70px;
+font-family: "NeogreyMedium";
+font-size: 63px;
 line-height: 84px;
-color: black;
+color: #d5ad6d;
 }
 .heart {
 font-size: 70px;
@@ -134,7 +143,7 @@ color: red;
 .CUSTOMER_VERSE_table {
 position: fixed;
 display: table;
-top: 84px;
+top: 74px;
 left: 1489px;
 width: 1060px;
 height: 894px;
@@ -146,9 +155,10 @@ width: 1060px;
 height: 894px;
 text-align: center;
 vertical-align: middle;
-font-family: "PT_Sans-Narrow-Web-Regular";
+font-family: "Capsuularegular-Onm3";
+font-weight: bold;
 text-shadow: none;
-color: black;
+color: #d5ad6d;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -165,10 +175,10 @@ background: ;
 display: table-cell;
 text-align: center;
 vertical-align: middle;
-font-family: "Gruppo-Regular";
-font-size: 70px;
+font-family: "NeogreyMedium";
+font-size: 63px;
 line-height: 84px;
-color: black;
+color: #d5ad6d;
 }
 .DesignCustomerOrdersUI {
 position: fixed;
@@ -241,7 +251,7 @@ height: 1146px;
 </div>
 
 <div class="CUSTOMER_BACKGROUND">
-<img class="" width="2717" height="1146" src="../bg-light/L-07.png" alt="" />
+<img id="bg" class="" width="2717" height="1146" src="../bg-bleed/L-07.png" alt="" />
 </div>
 
 <div class="MugMockupL">
@@ -253,7 +263,7 @@ height: 1146px;
 </div>
 
 <div class="CUSTOMER_NAME_table">
-<span class="CUSTOMER_NAME_table-cell stroked">
+<span class="CUSTOMER_NAME_table-cell">
 Aligsa
 </span>
 </div>
@@ -265,19 +275,19 @@ Aligsa
 </div>
 
 <div class="MADE_WITH_LOVE_table">
-<span class="MADE_WITH_LOVE_table-cell stroked">
+<span class="MADE_WITH_LOVE_table-cell">
 made with <span class="heart">♥</span> at BibleFarm.org
 </span>
 </div>
 
 <div class="CUSTOMER_VERSE_table">
-<span class="CUSTOMER_VERSE_table-cell stroked">
+<span class="CUSTOMER_VERSE_table-cell">
 Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán.
 </span>
 </div>
 
 <div class="CUSTOMER_REF_table">
-<span class="CUSTOMER_REF_table-cell stroked">
+<span class="CUSTOMER_REF_table-cell">
 1 Thessaloniansg 4:31
 </span>
 </div>
@@ -324,7 +334,7 @@ Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como la
 <script>
 $(document).ready(function (){
 // BEGIN Render the CUSTOMER_NAME_table-cell
-$( "#customize_name" ).on( "click", function() {
+$( "#customize_name" ).on( "focus click", function() {
 	function renderIn_modalName() {
 		$('.CUSTOMER_NAME_table-cell').html(
 			'<span>' + $('#customize_name').val() + '</span>'
@@ -339,7 +349,7 @@ $( "#customize_name" ).on( "click", function() {
 // END Render the CUSTOMER_NAME_table-cell
 
 // BEGIN Render the CUSTOMER_FLOWER_table-cell
-$( "#customize_flower" ).on( "click", function() {
+$( "#customize_flower" ).on( "focus click", function() {
 	function renderIn_modalFlower() {
 		$('.CUSTOMER_FLOWER_table-cell').html(
 			'<img class="CUSTOMER_FLOWER_img" width="" height="" src="../bg-flowers/' + $('#customize_flower').val() + '.png" alt="" />'
@@ -351,7 +361,7 @@ $( "#customize_flower" ).on( "click", function() {
 // END Render the CUSTOMER_FLOWER_table-cell
 
 // BEGIN Render the CUSTOMER_VERSE_table-cell
-$( "#customize_verse" ).on( "click", function() {
+$( "#customize_verse" ).on( "focus click", function() {
 	function renderIn_modalVerse() {
 		$('.CUSTOMER_VERSE_table-cell').html(
 			'<span>' + $('#customize_verse').val() + '</span>'
@@ -366,7 +376,7 @@ $( "#customize_verse" ).on( "click", function() {
 // END Render the CUSTOMER_VERSE_table-cell
 
 // BEGIN Render the CUSTOMER_REF_table-cell
-$( "#customize_ref" ).on( "click", function() {
+$( "#customize_ref" ).on( "focus click", function() {
 	function renderIn_modalRef() {
 		$('.CUSTOMER_REF_table-cell').html(
 			'<span>' + $('#customize_ref').val() + '</span>'
@@ -378,16 +388,138 @@ $( "#customize_ref" ).on( "click", function() {
 // END Render the CUSTOMER_REF_table-cell
 
 // BEGIN Render the CUSTOMER_BACKGROUND
-$( "#customize_bg" ).on( "click", function() {
+$( "#customize_bg" ).on( "focus click", function() {
 	function renderTheBackground() {
 		$('.CUSTOMER_BACKGROUND').html(
-			'<img class="" width="2717" height="1146" src="../bg-light/' + $('#customize_bg').val() + '.png" alt="" />'
+			'<img id="bg" class="" width="2717" height="1146" src="../bg-bleed/' + $('#customize_bg').val() + '.png" alt="" />'
 		);
 	}
 	$('#customize_bg').keyup(renderTheBackground);
 	renderTheBackground();
 });
 // END Render the CUSTOMER_BACKGROUND
+
+	// BEGIN and change font colors & shadows accordingly
+	$( "#customize_bg" ).on( "keyup", function() {
+// if url has a "D"
+if ($(".CUSTOMER_BACKGROUND > img").attr('src').indexOf('bg-bleed/D') > -1) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+$('body').css("background", "black");
+    $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#d5ad6d");
+    $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#d5ad6d");
+    $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#d5ad6d");
+    $('.CUSTOMER_REF_table-cell').attr("style", "").css("color", "#d5ad6d");
+
+    $('.CUSTOMER_NAME_table-cell').textStroke(2,'#000000');
+    $('.MADE_WITH_LOVE_table-cell').textStroke(2,'#000000');
+    $('.CUSTOMER_VERSE_table-cell').textStroke(2,'#000000');
+    $('.CUSTOMER_REF_table-cell').textStroke(2,'#000000');
+});
+// END textStroke
+}
+// if url has a "d"
+if ($(".CUSTOMER_BACKGROUND > img").attr('src').indexOf('bg-bleed/d') > -1) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+$('body').css("background", "black");
+    $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#d5ad6d");
+    $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#d5ad6d");
+    $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#d5ad6d");
+    $('.CUSTOMER_REF_table-cell').attr("style", "").css("color", "#d5ad6d");
+
+    $('.CUSTOMER_NAME_table-cell').textStroke(2,'#000000');
+    $('.MADE_WITH_LOVE_table-cell').textStroke(2,'#000000');
+    $('.CUSTOMER_VERSE_table-cell').textStroke(2,'#000000');
+    $('.CUSTOMER_REF_table-cell').textStroke(2,'#000000');
+});
+// END textStroke
+}
+// if url has a "L"
+if ($(".CUSTOMER_BACKGROUND > img").attr('src').indexOf('bg-bleed/L') > -1) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+$('body').css("background", "tan");
+    $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#000000");
+    $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#000000");
+    $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#000000");
+    $('.CUSTOMER_REF_table-cell').attr("style", "").css("color", "#000000");
+
+    $('.CUSTOMER_NAME_table-cell').textStroke(2,'#d5ad6d');
+    $('.MADE_WITH_LOVE_table-cell').textStroke(2,'#d5ad6d');
+    $('.CUSTOMER_VERSE_table-cell').textStroke(2,'#d5ad6d');
+    $('.CUSTOMER_REF_table-cell').textStroke(2,'#d5ad6d');
+});
+// END textStroke
+}
+// if url has a "l"
+if ($(".CUSTOMER_BACKGROUND > img").attr('src').indexOf('bg-bleed/l') > -1) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+$('body').css("background", "tan");
+    $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#000000");
+    $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#000000");
+    $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#000000");
+    $('.CUSTOMER_REF_table-cell').attr("style", "").css("color", "#000000");
+
+    $('.CUSTOMER_NAME_table-cell').textStroke(2,'#d5ad6d');
+    $('.MADE_WITH_LOVE_table-cell').textStroke(2,'#d5ad6d');
+    $('.CUSTOMER_VERSE_table-cell').textStroke(2,'#d5ad6d');
+    $('.CUSTOMER_REF_table-cell').textStroke(2,'#d5ad6d');
+});
+// END textStroke
+}
+});
+	// END and change font colors & shadows accordingly
+
 
 // BEGIN button to render the html2canvas
 $( ".DesignCustomerOrdersUI_button" ).on( "click", function() {
@@ -405,23 +537,6 @@ $(".wrap_downloadable_image").append(canvas);
 
 
 
-// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
-$.fn.textStroke = function(r, colour) {
-var rules = [];
-var steps = 24;
-for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
-var x = r*Math.cos(t);
-var y = r*Math.sin(t);
-x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
-y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
-rules.push( x + "px " + y + "px 0px " + colour );
-}
-this.css('textShadow',rules.join());
-};
-$(function(){
-    $('.stroked').textStroke(2,'#d5ad6d');
-})
-// END textStroke
 
 });
 </script>
