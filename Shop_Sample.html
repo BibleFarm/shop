@@ -2593,6 +2593,8 @@ document.addEventListener("click", closeAllSelect);
   <!-- END custom select script -->
   <!-- ////////////////////////// -->
 
+// and finally, do mutation observer to make sure complete verse is selected
+let MutationObservingVerseSelectionCompleted = new MutationObserver(   function(){
   <!-- ////////////////////////// -->
   <!-- BEGIN when verse desired is completely selected -->
   <!-- ////////////////////////// -->
@@ -2629,8 +2631,7 @@ var selected_verse = $('.select_verse').find('.select-selected').eq(0).html().sp
 console.log('VerseChanged to: ' + selected_verse);
 $('#hidden_verse_desired').text(selected_verse);
 });
-// and finally, do mutation observer to make sure complete verse is selected
-let MutationObservingVerseSelectionCompleted = new MutationObserver(   function(){
+
 // say "got it!" when all 3 are selected
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
