@@ -1569,7 +1569,7 @@
 <!-- ////////////////////////// -->
 <!-- BEGIN STEP 1 - VERSE -->
 <!-- ////////////////////////// -->
-<div class="modal_customize_verse">
+<div id="modal_customize_verse" class="modal_customize_verse">
 <div class="orderFlowNoFinger current_verse_hidden">Your current verse: <span class="selected_verse"></span></div>
 <div class="orderFlowNoFinger">let's choose a Bible verse</div>
 
@@ -1587,10 +1587,10 @@
 <option value="05">Deuteronomy</option>
 <option value="06">Joshua</option>
 <option value="07">Judges</option>
-<option value="08">1 Samuel</option>
-<option value="09">2 Samuel</option>
-<option value="10">1 Kings</option>
-<option value="11">2 Kings</option>
+<option value="08">1-Samuel</option>
+<option value="09">2-Samuel</option>
+<option value="10">1-Kings</option>
+<option value="11">2-Kings</option>
 <option value="12">Isaiah</option>
 <option value="13">Jeremiah</option>
 <option value="14">Ezekiel</option>
@@ -1610,40 +1610,40 @@
 <option value="28">Psalms</option>
 <option value="29">Proverbs</option>
 <option value="30">Job</option>
-<option value="31">Song of Songs</option>
+<option value="31">Song-of-Songs</option>
 <option value="32">Ruth</option>
 <option value="33">Lamentations</option>
 <option value="34">Ecclesiastes</option>
 <option value="35">Esther</option>
 <option value="36">Ezra</option>
 <option value="37">Nehemiah</option>
-<option value="38">1 Chronicles</option>
-<option value="39">2 Chronicles</option>
+<option value="38">1-Chronicles</option>
+<option value="39">2-Chronicles</option>
 <option value="40">John</option>
 <option value="41">Matthew</option>
 <option value="42">Mark</option>
 <option value="43">Luke</option>
 <option value="44">Acts</option>
 <option value="45">Romans</option>
-<option value="46">1 Corinthians</option>
-<option value="47">2 Corinthians</option>
+<option value="46">1-Corinthians</option>
+<option value="47">2-Corinthians</option>
 <option value="48">Galatians</option>
 <option value="49">Ephesians</option>
 <option value="50">Philippians</option>
 <option value="51">Colossians</option>
-<option value="52">1 Thessalonians</option>
-<option value="53">2 Thessalonians</option>
-<option value="54">1 Timothy</option>
-<option value="55">2 Timothy</option>
+<option value="52">1-Thessalonians</option>
+<option value="53">2-Thessalonians</option>
+<option value="54">1-Timothy</option>
+<option value="55">2-Timothy</option>
 <option value="56">Titus</option>
 <option value="57">Philemon</option>
 <option value="58">Hebrews</option>
 <option value="59">James</option>
-<option value="60">1 Peter</option>
-<option value="61">2 Peter</option>
-<option value="62">1 John</option>
-<option value="63">2 John</option>
-<option value="64">3 John</option>
+<option value="60">1-Peter</option>
+<option value="61">2-Peter</option>
+<option value="62">1-John</option>
+<option value="63">2-John</option>
+<option value="64">3-John</option>
 <option value="65">Jude</option>
 <option value="66">Revelation</option>  </select>
 </div>
@@ -2027,13 +2027,23 @@
 <!-- ////////////////////////// -->
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item">good!</span>
-<span class="orderFlowFinger flex_item">change flowers</span>
-<span class="orderFlowFinger flex_item">add to cart</span>
+<span class="orderFlowFinger flex_item no_book_nor_chapter_nor_verse_selection_yet">please select book & chapter & verse above</span>
+<span class="orderFlowFinger flex_item still_need_to_select_chapter_and_verse">select also chapter & verse right next to that</span>
+<span class="orderFlowFinger flex_item verse_selection_complete">got it!</span>
+<span class="orderFlowFinger flex_item bf_links next_step">continue</span>
 </div>
 <div class="narrow_separator"></div>
-<div class="selected_bible_verse_fixed_on_mug">selected_bible_verse_fixed_on_mug</div>
-<div class="selected_bible_ref_fixed_on_mug">selected_bible_ref_fixed_on_mug</div>
+<div class="selected_bible_verse_fixed_on_mug"><span id="populated_verse_with_ajax">We will print you Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then chan ge the other 0 to your verse number.</span></div>
+<div class="selected_bible_ref_fixed_on_mug"><span id="populated_ref_with_ajax">Bible Verse Reference</span></div>
+
+<div id="hidden_book_desired"></div>
+<div id="hidden_chapter_desired"></div>
+<div id="hidden_verse_desired"></div>
+
+
+
+
+
 
 </div>
   <!-- ////////////////////////// -->
@@ -2479,6 +2489,11 @@ $('#amount').val('');
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 1 - VERSE -->
   <!-- ////////////////////////// -->
+  // render the sample
+$('.selected_bible_verse_fixed_on_mug').textfill({
+			maxFontPixels: 200, minFontPixels: 200
+		});
+
 $( "#CreateYourOwnDesign" ).on( "click", function() {
 // close the menu_modal
         $(".menu_modal").hide("slow");
@@ -2578,6 +2593,67 @@ document.addEventListener("click", closeAllSelect);
   <!-- END custom select script -->
   <!-- ////////////////////////// -->
 
+  <!-- ////////////////////////// -->
+  <!-- BEGIN when verse desired is completely selected -->
+  <!-- ////////////////////////// -->
+  // initial book situation
+var selected_book = $('.select_book').find('.select-selected').eq(0).html().split(' ')[0];
+console.log('Book: ' + selected_book);
+// initial chapter situation
+var selected_chapter = $('.select_chapter').find('.select-selected').eq(0).html().split(' ')[0];
+console.log('Chapter: ' + selected_chapter);
+// initial verse situation
+var selected_verse = $('.select_verse').find('.select-selected').eq(0).html().split(' ')[0];
+console.log('Verse: ' + selected_verse);
+
+// hidden containers holding selections get updated when page visited
+$('#hidden_book_desired').text(selected_book);
+$('#hidden_chapter_desired').text(selected_chapter);
+$('#hidden_verse_desired').text(selected_verse);
+
+// monitor book situation
+$('.select_book').find('.select-selected').eq(0).on('click focus', function() {
+var selected_book = $('.select_book').find('.select-selected').eq(0).html().split(' ')[0];
+console.log('BookChanged to: ' + selected_book);
+$('#hidden_book_desired').text(selected_book);
+});
+// monitor chapter situation
+$('.select_chapter').find('.select-selected').eq(0).on('click focus', function() {
+var selected_chapter = $('.select_chapter').find('.select-selected').eq(0).html().split(' ')[0];
+console.log('ChapterChanged to: ' + selected_chapter);
+$('#hidden_chapter_desired').text(selected_chapter);
+});
+// monitor verse situation
+$('.select_verse').find('.select-selected').eq(0).on('click focus', function() {
+var selected_verse = $('.select_verse').find('.select-selected').eq(0).html().split(' ')[0];
+console.log('VerseChanged to: ' + selected_verse);
+$('#hidden_verse_desired').text(selected_verse);
+});
+// and finally, do mutation observer to make sure complete verse is selected
+let MutationObservingVerseSelectionCompleted = new MutationObserver(   function(){
+// say "got it!" when all 3 are selected
+if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
+$(".no_book_nor_chapter_nor_verse_selection_yet").hide();
+$(".verse_selection_complete").css("background", "#042400").show();
+  setTimeout(function() {
+$(".next_step").css("background", "#292a00").show();
+  }, 2000);
+  setTimeout(function() {
+$(".verse_selection_complete").hide('slow');
+  }, 4000);
+MutationObservingVerseSelectionCompleted.disconnect(); // - to stop observing
+}
+});
+MutationObservingVerseSelectionCompleted.observe( modal_customize_verse , {
+attributes: true,
+childList: true,
+characterData: true,
+subtree: true
+});
+
+  <!-- ////////////////////////// -->
+  <!-- END monitor when verse desired is completely selected -->
+  <!-- ////////////////////////// -->
 
   <!-- ////////////////////////// -->
   <!-- END STEP 1 - VERSE -->
@@ -2758,7 +2834,35 @@ $( ".rendered_customerName_in_modalFlowers > span" ).attr("style",newFontSize);
 });
 // END realtime render and TextFill as we type in the customize_name
 
+// BEGIN blink.js
+(function($) {
+    $.fn.blink = function(options) {
+        var defaults = { delay: 500 };
+        var options = $.extend(defaults, options);
+        return $(this).each(function(idx, itm) {
+            var handle = setInterval(function() {
+                if ($(itm).css("visibility") === "visible") {
+                    $(itm).css('visibility', 'hidden');
+                } else {
+                    $(itm).css('visibility', 'visible');
+                }
+            }, options.delay);
 
+            $(itm).data('handle', handle);
+        });
+    }
+    $.fn.unblink = function() {
+        return $(this).each(function(idx, itm) {
+            var handle = $(itm).data('handle');
+            if (handle) {
+                clearInterval(handle);
+                $(itm).data('handle', null);
+                $(itm).css('visibility', 'inherit');
+            }
+        });
+    }
+}(jQuery))
+// END blink.js
 
 
 

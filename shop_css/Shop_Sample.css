@@ -187,7 +187,7 @@ border-width: 0px;
 display: inline-block;
 }
 .select_book {
-width: 150px;
+width: 151px;
 }
 .select_chapter {
 width: 67px;
@@ -266,16 +266,21 @@ width: 67px;
 /* ************ */
 .selected_bible_verse_fixed_on_mug{
 position: fixed;
-display: block;
-top: 188px;
+display: table;
+top: 160px;
 left: 45px;
 width: 222px;
-height: 100px;
+height: 230px;
 line-height: ;
-  font-family: "Thekingofromance-z8jDX";
-font-size: px;
+  font-family: "Capsuularegular-Onm3";
 text-align: center;
 z-index: 1;
+}
+.selected_bible_verse_fixed_on_mug > span {
+	display: table-cell;
+	width: 222px;
+height: 230px;
+	vertical-align: middle;
 }
 .selected_bible_ref_fixed_on_mug {
 position: fixed;
@@ -661,3 +666,16 @@ z-index: 2;
 /* ************* */
 /* END swiper flowers
 /* ************* */
+.no_book_nor_chapter_nor_verse_selection_yet {
+display: ;
+}
+.verse_selection_complete {
+display: none;
+	background: #111111;
+}
+.next_step {
+display: none;
+	background: #111111;
+}
+#hidden_book_desired,#hidden_chapter_desired,#hidden_verse_desired {display:none;}
+.still_need_to_select_chapter_and_verse {display:none;}
