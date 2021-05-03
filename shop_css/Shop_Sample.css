@@ -10,6 +10,19 @@
   font-family: "LoversQuarrel-Regular";
   src: url(../shop_fonts/LoversQuarrel-Regular.ttf) format("truetype");
 }
+@font-face {
+  font-family: "NeogreyMedium";
+  src: url(../shop_fonts/NeogreyMedium.otf) format("truetype");
+}
+@font-face {
+  font-family: "Capsuularegular-Onm3";
+  src: url(../shop_fonts/Capsuularegular-Onm3.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Thekingofromance-z8jDX";
+  src: url(../shop_fonts/Thekingofromance-z8jDX.otf) format("opentype");
+}
+
 
 .wrap_menu_items {
 list-style: none;
@@ -136,7 +149,7 @@ width: 122px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
-      background: #999999;
+      background: #111111;
       z-index: 1;
       padding: 8px;
       text-shadow: 2px 2px 1px #000000;
@@ -187,6 +200,7 @@ width: 67px;
   position: relative;
     font-size: 20px;
     font-family: 'PT_Sans-Narrow-Web-Regular';
+	max-height: 42px;
 }
 
 .custom-select select {
@@ -250,7 +264,32 @@ width: 67px;
 /* ************ */
 /* END custom select script */
 /* ************ */
-
+.selected_bible_verse_fixed_on_mug{
+position: fixed;
+display: block;
+top: 188px;
+left: 45px;
+width: 222px;
+height: 100px;
+line-height: ;
+  font-family: "Thekingofromance-z8jDX";
+font-size: px;
+text-align: center;
+z-index: 1;
+}
+.selected_bible_ref_fixed_on_mug {
+position: fixed;
+display: block;
+top: 388px;
+left: 45px;
+width: 222px;
+height: 20px;
+line-height: 20px;
+font-family: "NeogreyMedium";
+font-size: 12px;
+text-align: center;
+z-index: 1;
+}
 	
 	
     .modal_customize_name {
@@ -324,53 +363,73 @@ text-align:center;
 }
 .rendered_customerName_in_modalName {
 position: fixed;
-    top: 180px;
-    left: 58px;
-    width: 200px;
+    top: 164px;
+    left: 52px;
+    width: 196px;
     line-height: 70px;
-    font-family: LoversQuarrel-Regular;
+  font-family: "Thekingofromance-z8jDX";
     background: ;
     text-align: center;
     text-shadow: none;
-    color: #888888;
+    color: #111111;
 	white-space: nowrap;
 }
 .rendered_customerName_in_modalFlowers {
 position: fixed;
-    top: 142px;
-    left: 58px;
-    width: 200px;
+    top: 164px;
+    left: 52px;
+    width: 196px;
     line-height: 70px;
-    font-family: LoversQuarrel-Regular;
+  font-family: "Thekingofromance-z8jDX";
     background: ;
     text-align: center;
     text-shadow: none;
-    color: #888888;
+    color: #111111;
+	white-space: nowrap;
 }
 .wrap_continue_bar {
 display: flex;
 }
 .wrap_flower_images_inside_modal_customize_flowers {
-position: fixed;
+position: relative;
 display: block;
-    top: 142px;
-    left: 58px;
-    width: 200px;
+width: 220px;
+height: 220px;
+    top: ;
+    left: ;
+    width: ;
 }
 img.images_inside_modal_customize_flowers {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 200px;
-    max-height: 210px;
+    max-width: 150px;
+    max-height: 280px;
     display: block;
     margin: 0 auto;
-    margin-top: 69px;
     cursor: auto !important;
     min-width: auto !important;
     height: auto !important;
     min-height: auto !important;
+	padding-top: 70px;
+}
+.made_with_love_fixed_on_mug {
+position: fixed;
+display: block;
+top: 388px;
+left: 45px;
+width: 222px;
+height: 20px;
+line-height: 20px;
+font-family: "NeogreyMedium";
+font-size: 12px;
+text-align: center;
+z-index: 1;
+}
+.heart_fixed_on_mug {
+color: red;
+font-size: 12px;
 }
 
 /* ************************ */
@@ -537,3 +596,68 @@ left: 20px;
 /* ************************ */
 /* END brought in from wrap_image_to_mug_css_only.css */
 /* ************************ */
+
+.current_verse_hidden {display: none;}
+.tell_us_to_swipe_sideways {
+dispaly: block;
+width: 100%;
+height: 42px;
+line-height: 42px;
+text-align:center;
+background: red;
+    color: #d5ad6d;
+    font-size: 20px;
+    font-family: 'PT_Sans-Narrow-Web-Regular';
+    font-weight: bold;
+    background: #444444;
+    padding: 0px;
+}
+.wrap_swiper_container_flowers {
+position: fixed;
+display: none;
+top: 152px;
+left: 8px;
+width: 296px;
+height: 250px;
+background: none;
+margin: 0 auto;
+padding: 0;
+z-index: 2;
+}
+/* ************* */
+/* BEGIN swiper flowers
+/* ************* */
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: none;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+/* ************* */
+/* END swiper flowers
+/* ************* */
