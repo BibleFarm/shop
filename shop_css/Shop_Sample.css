@@ -294,19 +294,19 @@ text-align:center;
 .selected_bible_verse_fixed_on_mug-table {
 position: fixed;
 display: table;
-top: 160px;
-left: 45px;
-width: 222px;
-height: 230px;
+top: 165px;
+left: 50px;
+width: 215px;
+height: 220px;
 z-index: 1;
 }
 .selected_bible_verse_fixed_on_mug {
 position: fixed;
 display: table-cell;
-top: 160px;
-left: 45px;
-width: 222px;
-height: 230px;
+top: 165px;
+left: 50px;
+width: 215px;
+height: 220px;
 z-index: 1;
 text-align: center;
 vertical-align: middle;
@@ -386,7 +386,7 @@ display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 150px;
+    max-width: 134px;
     max-height: 280px;
     display: block;
     margin: 0 auto;
@@ -599,7 +599,7 @@ background: red;
 .wrap_swiper_container_flowers {
 position: fixed;
 display: none;
-top: 152px;
+top: 170px;
 left: 8px;
 width: 296px;
 height: 250px;
