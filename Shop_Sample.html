@@ -2592,12 +2592,6 @@ document.addEventListener("click", closeAllSelect);
   <!-- ////////////////////////// -->
   <!-- END custom select script -->
   <!-- ////////////////////////// -->
-
-// and finally, do mutation observer to make sure complete verse is selected
-let MutationObservingVerseSelectionCompleted = new MutationObserver(   function(){
-  <!-- ////////////////////////// -->
-  <!-- BEGIN when verse desired is completely selected -->
-  <!-- ////////////////////////// -->
   // initial book situation
 var selected_book = $('.select_book').find('.select-selected').eq(0).html().split(' ')[0];
  console.log('Upon landing - Book: ' + selected_book);
@@ -2607,26 +2601,31 @@ var selected_chapter = $('.select_chapter').find('.select-selected').eq(0).html(
 // initial verse situation
 var selected_verse = $('.select_verse').find('.select-selected').eq(0).html().split(' ')[0];
  console.log('Upon landing - Verse: ' + selected_verse);
-
 // hidden containers holding selections get updated when page visited
 $('#hidden_book_desired').text(selected_book);
 $('#hidden_chapter_desired').text(selected_chapter);
 $('#hidden_verse_desired').text(selected_verse);
 
+// and finally, do mutation observer to make sure complete verse is selected
+let MutationObservingVerseSelectionCompleted = new MutationObserver(   function(){
+  <!-- ////////////////////////// -->
+  <!-- BEGIN when verse desired is completely selected -->
+  <!-- ////////////////////////// -->
+
 // monitor book situation
-$('.select_book').find('.select-selected').eq(0).on('click focus', function() {
+$('.select_book').find('.select-selected').eq(0).on('click focus change', function() {
 var selected_book = $('.select_book').find('.select-selected').eq(0).html().split(' ')[0];
 console.log('BookChanged to: ' + selected_book);
 $('#hidden_book_desired').text(selected_book);
 });
 // monitor chapter situation
-$('.select_chapter').find('.select-selected').eq(0).on('click focus', function() {
+$('.select_chapter').find('.select-selected').eq(0).on('click focus change', function() {
 var selected_chapter = $('.select_chapter').find('.select-selected').eq(0).html().split(' ')[0];
 console.log('ChapterChanged to: ' + selected_chapter);
 $('#hidden_chapter_desired').text(selected_chapter);
 });
 // monitor verse situation
-$('.select_verse').find('.select-selected').eq(0).on('click focus', function() {
+$('.select_verse').find('.select-selected').eq(0).on('click focus change', function() {
 var selected_verse = $('.select_verse').find('.select-selected').eq(0).html().split(' ')[0];
 console.log('VerseChanged to: ' + selected_verse);
 $('#hidden_verse_desired').text(selected_verse);
@@ -2676,7 +2675,7 @@ $('#populated_verse_with_ajax').unblink();
 // MutationObservingVerseSelectionCompleted.disconnect(); // - to stop observing
 }
 });
-MutationObservingVerseSelectionCompleted.observe( .modal_customize_verse , {
+MutationObservingVerseSelectionCompleted.observe( ".select_book, .select_chapter, .select_verse" , {
 attributes: true,
 childList: true,
 characterData: true,
