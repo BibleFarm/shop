@@ -1573,13 +1573,9 @@
 <div class="orderFlowNoFinger current_verse_hidden">Your current verse: <span class="selected_verse"></span></div>
 <div class="orderFlowNoFinger">let's choose a Bible verse</div>
 
-  <!-- ////////////////////////// -->
-  <!-- BEGIN custom select script -->
-  <!-- ////////////////////////// -->
-  <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-<div class="custom-select select_book">
-  <select>
-<option value="00">select a book</option>
+<div class="select_book">
+  <select id="select_book">
+<option value="00" class="selected">select a book</option>
 <option value="01">Genesis</option>
 <option value="02">Exodus</option>
 <option value="03">Leviticus</option>
@@ -1647,9 +1643,9 @@
 <option value="65">Jude</option>
 <option value="66">Revelation</option>  </select>
 </div>
-<div class="custom-select select_chapter">
-  <select>
-<option value="000">0</option>
+<div class="select_chapter">
+  <select id="select_chapter">
+<option value="000" class="selected">0</option>
 <option value="001">1</option>
 <option value="002">2</option>
 <option value="003">3</option>
@@ -1802,9 +1798,9 @@
 <option value="150">150</option>
   </select>
 </div>
-<div class="custom-select select_verse">
-  <select>
-<option value="000">0</option>
+<div class="select_verse">
+  <select id="select_verse">
+<option value="000" class="selected">0</option>
 <option value="001">1</option>
 <option value="002">2</option>
 <option value="003">3</option>
@@ -1980,9 +1976,6 @@
   </select>
 </div>
 
-  <!-- ////////////////////////// -->
-  <!-- END custom select script -->
-  <!-- ////////////////////////// -->
 <div class="narrow_separator_as_bg"></div>
 <div class="placeholder_mug_side"><img class="" width="296" height="296" src="mug-front-blank.png" alt="" /></div>
 <!-- ////////////////////////// -->
@@ -2506,132 +2499,46 @@ $( "#CreateYourOwnDesign" ).on( "click", function() {
       $(".opacity_cover").click(function() {
         $(".modal_customize_verse").hide("slow");
       });
-
   <!-- ////////////////////////// -->
-  <!-- BEGIN custom select script -->
-  <!-- ////////////////////////// -->
-  var x, i, j, l, ll, selElmnt, a, b, c;
-/*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("custom-select");
-l = x.length;
-for (i = 0; i < l; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  ll = selElmnt.length;
-  /*for each element, create a new DIV that will act as the selected item:*/
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /*for each element, create a new DIV that will contain the option list:*/
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < ll; j++) {
-    /*for each option in the original select element,
-    create a new DIV that will act as an option item:*/
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h, sl, yl;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        sl = s.length;
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < sl; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            yl = y.length;
-            for (k = 0; k < yl; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
-}
-function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
-  var x, y, i, xl, yl, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  xl = x.length;
-  yl = y.length;
-  for (i = 0; i < yl; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < xl; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
-
-  <!-- ////////////////////////// -->
-  <!-- END custom select script -->
-  <!-- ////////////////////////// -->
-  // initial book situation
-var selected_book = $('.select_book').find('.select-selected').eq(0).html().split(' ')[0];
+// initial book situation
+var selected_book = $('#select_book').find('.selected').html().split(' ')[0];
  console.log('Upon landing - Book: ' + selected_book);
 // initial chapter situation
-var selected_chapter = $('.select_chapter').find('.select-selected').eq(0).html().split(' ')[0];
+var selected_chapter = $('#select_chapter').find('.selected').html().split(' ')[0];
  console.log('Upon landing - Chapter: ' + selected_chapter);
 // initial verse situation
-var selected_verse = $('.select_verse').find('.select-selected').eq(0).html().split(' ')[0];
+var selected_verse = $('#select_verse').find('.selected').html().split(' ')[0];
  console.log('Upon landing - Verse: ' + selected_verse);
 // hidden containers holding selections get updated when page visited
 $('#hidden_book_desired').text(selected_book);
 $('#hidden_chapter_desired').text(selected_chapter);
 $('#hidden_verse_desired').text(selected_verse);
-
-// and finally, do mutation observer to make sure complete verse is selected
-let MutationObservingVerseSelectionCompleted = new MutationObserver(   function(){
   <!-- ////////////////////////// -->
-  <!-- BEGIN when verse desired is completely selected -->
-  <!-- ////////////////////////// -->
-
-// monitor book situation
-$('.select_book').find('.select-selected').eq(0).on('click focus change', function() {
-var selected_book = $('.select_book').find('.select-selected').eq(0).html().split(' ')[0];
-console.log('BookChanged to: ' + selected_book);
+// update class on the select elements and update the hidden divs
+$('select#select_book').change(function(){
+    $(this).find(':selected').addClass('selected')
+           .siblings('option').removeClass('selected');
+var selected_book = $('#select_book').find('.selected').html().split(' ')[0];
 $('#hidden_book_desired').text(selected_book);
 });
-// monitor chapter situation
-$('.select_chapter').find('.select-selected').eq(0).on('click focus change', function() {
-var selected_chapter = $('.select_chapter').find('.select-selected').eq(0).html().split(' ')[0];
-console.log('ChapterChanged to: ' + selected_chapter);
+$('select#select_chapter').change(function(){
+    $(this).find(':selected').addClass('selected')
+           .siblings('option').removeClass('selected');
+var selected_chapter = $('#select_chapter').find('.selected').html().split(' ')[0];
 $('#hidden_chapter_desired').text(selected_chapter);
 });
-// monitor verse situation
-$('.select_verse').find('.select-selected').eq(0).on('click focus change', function() {
-var selected_verse = $('.select_verse').find('.select-selected').eq(0).html().split(' ')[0];
-console.log('VerseChanged to: ' + selected_verse);
-$('#hidden_verse_desired').text(selected_verse);
+$('select#select_verse').change(function(){
+    $(this).find(':selected').addClass('selected')
+           .siblings('option').removeClass('selected');
+var selected_verse = $('#select_verse').find('.selected').html().split(' ')[0];
+		   $('#hidden_verse_desired').text(selected_verse);
 });
+  <!-- ////////////////////////// -->
+<!-- ////////////////////////// -->
+// BEGIN say "got it!" when all 3 are selected and brign in the scripture
+<!-- ////////////////////////// -->
+$('select#select_book, select#select_chapter, select#select_verse').change(function(){
 
-// say "got it!" when all 3 are selected
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
@@ -2641,6 +2548,7 @@ $(".next_step").css("background", "#292a00").show();
   setTimeout(function() {
 $(".verse_selection_complete").hide('slow');
   }, 4000);
+
 // BEGIN Grab selected verse, show it on the mug, update the order, and texfill
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
@@ -2648,14 +2556,17 @@ var willGrabVerse = $('#hidden_verse_desired').text();
 var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
 console.log(completeVerseURLtoGrab);
 
-jQuery.ajax({
-url: completeVerseURLtoGrab,
-success: function(result) {
+// Assign handlers immediately after making the request,
+// and remember the jqxhr object for this request
+var jqxhr = $.get( completeVerseURLtoGrab, function() {
+  console.log( "success" );
+})
+  .done(function() {
 var html = jQuery('<div>').html(result);
 var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');   console.log(removedItalicsAndRef);
 $('#populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
 $('#populated_verse_with_ajax').html(removedItalicsAndRef);
-/*
+
   setTimeout(function() {
 $('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200, minFontPixels: 200
@@ -2667,24 +2578,29 @@ $('.populated_verse_with_ajax').textfill({
   setTimeout(function() {
 $('#populated_verse_with_ajax').unblink();
   }, 4000);
-*/
-},
+    console.log( "second success" );
+  })
+  .fail(function() {
+    console.log( "unable to retrieve htat verse" );
+  })
+  .always(function() {
+    console.log( "finished" );
+  });
+ 
+// Perform other work here ...
+ 
+// Set another completion function for the request above
+jqxhr.always(function() {
+  console.log( "second finished" );
 });
-// END Grab selected verse, show it on the mug, update the order, and texfill
 
-// MutationObservingVerseSelectionCompleted.disconnect(); // - to stop observing
+
+// END Grab selected verse, show it on the mug, update the order, and texfill
 }
 });
-MutationObservingVerseSelectionCompleted.observe( ".select_book, .select_chapter, .select_verse" , {
-attributes: true,
-childList: true,
-characterData: true,
-subtree: true
-});
-
-  <!-- ////////////////////////// -->
-  <!-- END monitor when verse desired is completely selected -->
-  <!-- ////////////////////////// -->
+<!-- ////////////////////////// -->
+// END say "got it!" when all 3 are selected and brign in the scripture
+<!-- ////////////////////////// -->
 
   <!-- ////////////////////////// -->
   <!-- END STEP 1 - VERSE -->

@@ -1,0 +1,71 @@
+// BEGIN mutation observer to make sure complete verse is selected
+$(function() {
+     var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+ // BEGIN stuff to do if there are any changes
+
+<!-- ////////////////////////// -->
+// BEGIN say "got it!" when all 3 are selected and brign in the scripture
+<!-- ////////////////////////// -->
+if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
+$(".no_book_nor_chapter_nor_verse_selection_yet").hide();
+$(".verse_selection_complete").css("background", "#042400").show();
+  setTimeout(function() {
+$(".next_step").css("background", "#292a00").show();
+  }, 2000);
+  setTimeout(function() {
+$(".verse_selection_complete").hide('slow');
+  }, 4000);
+
+// BEGIN Grab selected verse, show it on the mug, update the order, and texfill
+var willGrabBook = $('#hidden_book_desired').text();
+var willGrabChapter = $('#hidden_chapter_desired').text();
+var willGrabVerse = $('#hidden_verse_desired').text();
+var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
+console.log(completeVerseURLtoGrab);
+/*
+jQuery.ajax({
+url: completeVerseURLtoGrab,
+success: function(result) {
+var html = jQuery('<div>').html(result);
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');   console.log(removedItalicsAndRef);
+$('#populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
+$('#populated_verse_with_ajax').html(removedItalicsAndRef);
+
+  setTimeout(function() {
+$('.populated_verse_with_ajax').textfill({
+			maxFontPixels: 200, minFontPixels: 200
+		});
+  }, 2000);
+  setTimeout(function() {
+  $('#populated_verse_with_ajax').blink();
+  }, 2000);
+  setTimeout(function() {
+$('#populated_verse_with_ajax').unblink();
+  }, 4000);
+
+},
+});
+*/
+// END Grab selected verse, show it on the mug, update the order, and texfill
+}
+<!-- ////////////////////////// -->
+// END say "got it!" when all 3 are selected and brign in the scripture
+<!-- ////////////////////////// -->
+
+// END stuff to do if there are any changes
+      });
+    });
+
+    var config = { childList: true, characterData: true };
+// BEGIN elements to observe
+  setTimeout(function() {
+     observer.observe($(selected_book)[0], config);
+     observer.observe($(selected_chapter)[0], config);
+     observer.observe($(selected_verse)[0], config);
+	   }, 10000);
+
+// END elements to observe
+});
+// END mutation observer to make sure complete verse is selected
+
