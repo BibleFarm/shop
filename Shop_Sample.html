@@ -2027,7 +2027,7 @@
 </div>
 <div class="narrow_separator"></div>
 <div class="selected_bible_verse_fixed_on_mug-table">
-<span id="populated_verse_with_ajax" class=" selected_bible_verse_fixed_on_mug">We will print you Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then chan ge the other 0 to your verse number.</span>
+<span id="populated_verse_with_ajax" class="selected_bible_verse_fixed_on_mug">We will print you Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then chan ge the other 0 to your verse number.</span>
 </div>
 <div class="selected_bible_ref_fixed_on_mug"><span id="populated_ref_with_ajax">Bible Verse Reference</span></div>
 
@@ -2488,10 +2488,38 @@ $('#amount').val('');
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 1 - VERSE -->
   <!-- ////////////////////////// -->
-  // render the sample
-$('.selected_bible_verse_fixed_on_mug').textfill({
+  
+  
+  
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+    // BEGIN render the sample verse
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+	function renderIn_modalVerse() {
+		$('.selected_bible_verse_fixed_on_mug').html(
+			'<span>' + $('.selected_bible_verse_fixed_on_mug').text() + '</span>'
+		);
+		$('.selected_bible_verse_fixed_on_mug').textfill({
 			maxFontPixels: 200
 		});
+	}
+$( "#CreateYourOwnDesign, #select_book, #select_chapter, #select_verse" ).on( "click change", function() {
+var checkIfDivIsVisible = setInterval(function() {
+   if (($('.selected_bible_verse_fixed_on_mug').length) && ($('.selected_bible_verse_fixed_on_mug').is(':visible'))) {
+      console.log("Initial click on Create Your Own: DIV has stuff & is visible, so we're rendering the textfill");
+	  	renderIn_modalVerse();
+      clearInterval(checkIfDivIsVisible);
+   }
+}, 1000); // check every 100ms
+});
+	renderIn_modalVerse();
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+    // END render the sample verse
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+
 
 $( "#CreateYourOwnDesign" ).on( "click", function() {
 // close the menu_modal
@@ -2573,11 +2601,51 @@ var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').re
 $('#populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
 $('#populated_verse_with_ajax').html(removedItalicsAndRef);
 
-  setTimeout(function() {
-$('.populated_verse_with_ajax').textfill({
+/*  setTimeout(function() {
+$('#populated_verse_with_ajax').textfill({maxFontPixels: 200});
+  }, 2000);*/
+  
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+    // BEGIN render the sample verse
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+	function renderIn_modalVerse() {
+		$('#populated_verse_with_ajax').html(
+			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		);
+		$('#populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
-  }, 2000);
+	}
+$( "#CreateYourOwnDesign, #select_book, #select_chapter, #select_verse" ).on( "click change", function() {
+var checkIfDivIsVisible = setInterval(function() {
+   if (($('#populated_verse_with_ajax').length) && ($('#populated_verse_with_ajax').is(':visible'))) {
+      console.log("Upon Ajax .done populated_verse_with_ajax DIV has stuff & is visible, so we're rendering the textfill");
+	  	renderIn_modalVerse();
+      clearInterval(checkIfDivIsVisible);
+   }
+}, 100); // check every 100ms
+});
+	renderIn_modalVerse();
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+    // END render the sample verse
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   setTimeout(function() {
   $('#populated_verse_with_ajax').blink();
   }, 2000);
@@ -2595,11 +2663,45 @@ $('#populated_verse_with_ajax').unblink();
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
 
 
-  setTimeout(function() {
-$('.populated_verse_with_ajax').textfill({
+/*  setTimeout(function() {
+$('#populated_verse_with_ajax').textfill({maxFontPixels: 200});
+  }, 2000);*/
+  
+  
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+    // BEGIN render the sample verse
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+	function renderIn_modalVerse() {
+		$('#populated_verse_with_ajax').html(
+			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		);
+		$('#populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
-  }, 2000);
+	}
+$( "#CreateYourOwnDesign, #select_book, #select_chapter, #select_verse" ).on( "click change", function() {
+var checkIfDivIsVisible = setInterval(function() {
+   if (($('#populated_verse_with_ajax').length) && ($('#populated_verse_with_ajax').is(':visible'))) {
+      console.log("Upon Ajax .fail populated_verse_with_ajax DIV has stuff & is visible, so we're rendering the textfill");
+	  	renderIn_modalVerse();
+      clearInterval(checkIfDivIsVisible);
+   }
+}, 100); // check every 100ms
+});
+	renderIn_modalVerse();
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+    // END render the sample verse
+  <!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+
+  
+  
+  
+  
+  
   setTimeout(function() {
   $('#populated_verse_with_ajax').blink();
   }, 2000);

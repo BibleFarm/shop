@@ -209,33 +209,6 @@ display: block;
 width: 320px;
 text-align: center;
 }
-
-.selected_bible_verse_fixed_on_mug-table {
-position: fixed;
-display: table;
-top: 160px;
-left: 45px;
-width: 222px;
-height: 230px;
-line-height: ;
-  font-family: "Capsuularegular-Onm3";
-text-align: center;
-z-index: 1;
-}
-.selected_bible_verse_fixed_on_mug {
-display: table-cell;
-width: 222px;
-height: 230px;
-z-index: 1;
-text-align: center;
-vertical-align: middle;
-font-family: "Capsuularegular-Onm3";
-font-weight: bold;
-text-shadow: none;
-color: #d5ad6d;
--webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .selected_bible_ref_fixed_on_mug {
 position: fixed;
 display: block;
@@ -319,6 +292,32 @@ display: inline-block;
 width: 296px;
 height: 296px;
 text-align:center;
+}
+.selected_bible_verse_fixed_on_mug-table {
+position: fixed;
+display: table;
+top: 160px;
+left: 45px;
+width: 222px;
+height: 230px;
+z-index: 1;
+}
+.selected_bible_verse_fixed_on_mug {
+position: fixed;
+display: table-cell;
+top: 160px;
+left: 45px;
+width: 222px;
+height: 230px;
+z-index: 1;
+text-align: center;
+vertical-align: middle;
+font-family: "Capsuularegular-Onm3";
+font-weight: bold;
+text-shadow: none;
+color: #d5ad6d;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .rendered_customerName_in_modalName-table {
 position: fixed;
