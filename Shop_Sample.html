@@ -2561,8 +2561,9 @@ console.log(completeVerseURLtoGrab);
 var jqxhr = $.get( completeVerseURLtoGrab, function() {
   console.log( "success" );
 })
-  .done(function() {
-var removedItalicsAndRef = $('html').find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');   console.log(removedItalicsAndRef);
+  .done(function(result) {
+var html = jQuery('<div>').html(result);
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');   console.log(removedItalicsAndRef);
 $('#populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
 $('#populated_verse_with_ajax').html(removedItalicsAndRef);
 
