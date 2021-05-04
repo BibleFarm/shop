@@ -98,6 +98,54 @@ border-width: 0px;
     background: #444444;
     padding: 0px;
 }
+.select_book {
+	display: inline-block;
+border-width: 0px;
+    border: 0;
+    outline: 0;
+    color: #d5ad6d;
+    height: 42px;
+    font-size: 20px;
+    font-family: 'PT_Sans-Narrow-Web-Regular';
+    font-weight: bold;
+    text-align: center;
+    width: 155px;
+    background: #444444;
+    padding: 0px;
+	padding-left: 2px;
+}
+.select_chapter {
+	display: inline-block;
+border-width: 0px;
+    border: 0;
+    outline: 0;
+    color: #d5ad6d;
+    height: 42px;
+    font-size: 20px;
+    font-family: 'PT_Sans-Narrow-Web-Regular';
+    font-weight: bold;
+    text-align: center;
+    width: 63px;
+    background: #444444;
+    padding: 0px;
+	padding-left: 2px;
+}
+.select_verse {
+	display: inline-block;
+border-width: 0px;
+    border: 0;
+    outline: 0;
+    color: #d5ad6d;
+    height: 42px;
+    font-size: 20px;
+    font-family: 'PT_Sans-Narrow-Web-Regular';
+    font-weight: bold;
+    text-align: center;
+    width: 63px;
+    background: #444444;
+    padding: 0px;
+	padding-left: 2px;
+}
 input.order-description:focus {
 outline:none!important;
 box-shadow: 0;

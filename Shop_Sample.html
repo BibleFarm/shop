@@ -1574,7 +1574,7 @@
 <div class="orderFlowNoFinger">let's choose a Bible verse</div>
 
 <div class="select_book">
-  <select id="select_book">
+  <select id="select_book" class="select_book">
 <option value="00" class="selected">select a book</option>
 <option value="01">Genesis</option>
 <option value="02">Exodus</option>
@@ -1644,7 +1644,7 @@
 <option value="66">Revelation</option>  </select>
 </div>
 <div class="select_chapter">
-  <select id="select_chapter">
+  <select id="select_chapter" class="select_chapter">
 <option value="000" class="selected">0</option>
 <option value="001">1</option>
 <option value="002">2</option>
@@ -1799,7 +1799,7 @@
   </select>
 </div>
 <div class="select_verse">
-  <select id="select_verse">
+  <select id="select_verse" class="select_verse">
 <option value="000" class="selected">0</option>
 <option value="001">1</option>
 <option value="002">2</option>
@@ -2022,7 +2022,7 @@
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item no_book_nor_chapter_nor_verse_selection_yet">please select book & chapter & verse above</span>
 <span class="orderFlowFinger flex_item still_need_to_select_chapter_and_verse">select also chapter & verse right next to that</span>
-<span class="orderFlowFinger flex_item verse_selection_complete">got it!</span>
+<span class="orderFlowFinger flex_item verse_selection_complete">just a moment...</span>
 <span class="orderFlowFinger flex_item bf_links next_step">continue</span>
 </div>
 <div class="narrow_separator"></div>
@@ -2542,11 +2542,11 @@ $('select#select_book, select#select_chapter, select#select_verse').change(funct
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
-  setTimeout(function() {
+  var next_stepTimeoutID = setTimeout(function() {
 $(".next_step").css("background", "#292a00").show();
   }, 2000);
   setTimeout(function() {
-$(".verse_selection_complete").hide('slow');
+$(".verse_selection_complete").hide();
   }, 4000);
 
 // BEGIN Grab selected verse, show it on the mug, update the order, and texfill
@@ -2582,6 +2582,25 @@ $('#populated_verse_with_ajax').unblink();
   })
   .fail(function() {
     console.log( "unable to retrieve htat verse" );
+	$('#populated_verse_with_ajax').html("NOPE<br>you have no internet<br>or<br>you selected wrong chapter<br>or<br> you selected wrong verse<br>PLEASE TRY AGAIN");
+	$(".verse_selection_complete").hide();
+	$(".next_step").hide();
+	clearTimeout(next_stepTimeoutID);
+	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
+
+
+  setTimeout(function() {
+$('.populated_verse_with_ajax').textfill({
+			maxFontPixels: 200, minFontPixels: 200
+		});
+  }, 2000);
+  setTimeout(function() {
+  $('#populated_verse_with_ajax').blink();
+  }, 2000);
+  setTimeout(function() {
+$('#populated_verse_with_ajax').unblink();
+  }, 4000);
+	
   })
   .always(function() {
     console.log( "finished" );
