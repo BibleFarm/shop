@@ -2026,7 +2026,9 @@
 <span class="orderFlowFinger flex_item bf_links next_step">continue</span>
 </div>
 <div class="narrow_separator"></div>
-<div class="selected_bible_verse_fixed_on_mug"><span id="populated_verse_with_ajax">We will print you Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then chan ge the other 0 to your verse number.</span></div>
+<div class="selected_bible_verse_fixed_on_mug-table">
+<span id="populated_verse_with_ajax" class=" selected_bible_verse_fixed_on_mug">We will print you Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then chan ge the other 0 to your verse number.</span>
+</div>
 <div class="selected_bible_ref_fixed_on_mug"><span id="populated_ref_with_ajax">Bible Verse Reference</span></div>
 
 <div id="hidden_book_desired"></div>
@@ -2096,7 +2098,9 @@
 <!-- END render mug background image inside the modals-->
 <!-- ////////////////////////// -->
 
-<div class="rendered_customerName_in_modalName"><span class="rendered_customerName_in_modalName"></span></div>
+<div class="rendered_customerName_in_modalName-table">
+<span class="rendered_customerName_in_modalName"></span>
+</div>
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item">change verse</span>
@@ -2176,7 +2180,9 @@
 <span class="orderFlowFinger flex_item">add to cart</span>
 </div>
 <div class="narrow_separator"></div>
-<div class="rendered_customerName_in_modalFlowers"><span class="rendered_customerName_in_modalFlowers" style=""></span></div>
+<div class="rendered_customerName_in_modalFlowers-table">
+<span class="rendered_customerName_in_modalFlowers" style=""></span>
+</div>
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
 
   </div>
@@ -2484,7 +2490,7 @@ $('#amount').val('');
   <!-- ////////////////////////// -->
   // render the sample
 $('.selected_bible_verse_fixed_on_mug').textfill({
-			maxFontPixels: 200, minFontPixels: 200
+			maxFontPixels: 200
 		});
 
 $( "#CreateYourOwnDesign" ).on( "click", function() {
@@ -2569,7 +2575,7 @@ $('#populated_verse_with_ajax').html(removedItalicsAndRef);
 
   setTimeout(function() {
 $('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200, minFontPixels: 200
+			maxFontPixels: 200
 		});
   }, 2000);
   setTimeout(function() {
@@ -2591,7 +2597,7 @@ $('#populated_verse_with_ajax').unblink();
 
   setTimeout(function() {
 $('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200, minFontPixels: 200
+			maxFontPixels: 200
 		});
   }, 2000);
   setTimeout(function() {
