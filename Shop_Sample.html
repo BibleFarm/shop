@@ -2027,7 +2027,7 @@
 </div>
 <div class="narrow_separator"></div>
 <div class="selected_bible_verse_fixed_on_mug-table">
-<span id="populated_verse_with_ajax" class="selected_bible_verse_fixed_on_mug">We will print you Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then chan ge the other 0 to your verse number.</span>
+<span id="populated_verse_with_ajax" class="selected_bible_verse_fixed_on_mug">We will print your Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then change the other 0 to your verse number.</span>
 </div>
 <div class="selected_bible_ref_fixed_on_mug"><span id="populated_ref_with_ajax">Bible Verse Reference</span></div>
 
@@ -2656,7 +2656,7 @@ $('#populated_verse_with_ajax').unblink();
   })
   .fail(function() {
     console.log( "unable to retrieve htat verse" );
-	$('#populated_verse_with_ajax').html("NOPE<br>you have no internet<br>or<br>you selected wrong chapter<br>or<br> you selected wrong verse<br>PLEASE TRY AGAIN");
+	$('#populated_verse_with_ajax').html("Nope. You have no internet, or you selected the wrong chapter, or you selected the wrong verse. Please try again.");
 	$(".verse_selection_complete").hide();
 	$(".next_step").hide();
 	clearTimeout(next_stepTimeoutID);
@@ -2939,6 +2939,39 @@ $( ".rendered_customerName_in_modalFlowers > span" ).attr("style",newFontSize);
 // END blink.js
 
 
+////////////////////////////////////////////////////
+////BEGIN TEMPORARY TEXT STROKE ///////////////////////
+////////////////////////////////////////////////////
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+//$('body').css("background", "tan");
+//    $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#000000");
+//    $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#000000");
+//    $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#000000");
+//    $('.CUSTOMER_REF_table-cell').attr("style", "").css("color", "#000000");
+
+    $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#d5ad6d');
+    $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+    $('.rendered_customerName_in_modalName').textStroke(0.7,'#d5ad6d');
+    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#d5ad6d');
+    $('.made_with_love_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+    $('.heart_fixed_on_mug').textStroke(0.5,'#000000');
+});
+////////////////////////////////////////////////////
+////END TEMPORARY TEXT STROKE ///////////////////////
+////////////////////////////////////////////////////
 
 
 

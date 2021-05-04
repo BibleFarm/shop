@@ -200,7 +200,6 @@ width: 122px;
       background: #111111;
       z-index: 1;
       padding: 8px;
-      text-shadow: 2px 2px 1px #000000;
 	  overflow: auto;
     }
 	
@@ -219,6 +218,8 @@ height: 20px;
 line-height: 20px;
 font-family: "NeogreyMedium";
 font-size: 12px;
+font-weight: bold;
+color: #000000;
 text-align: center;
 z-index: 1;
 }
@@ -234,7 +235,6 @@ z-index: 1;
       background: #111111;
       z-index: 1;
       padding: 8px;
-      text-shadow: 2px 2px 1px #000000;
 	  overflow: auto;
     }
     .modal_customize_flowers {
@@ -247,7 +247,6 @@ z-index: 1;
       background: #111111;
       z-index: 1;
       padding: 8px;
-      text-shadow: 2px 2px 1px #000000;
 	  overflow: auto;
     }
     .place_the_order {
@@ -260,7 +259,6 @@ z-index: 1;
       background: #ffffff;
       z-index: 1;
       padding: 8px;
-      text-shadow: 2px 2px 1px #000000;
 	  overflow: auto;
     }
 #descriptionError, #priceLabelError {
@@ -315,7 +313,7 @@ vertical-align: middle;
 font-family: "Capsuularegular-Onm3";
 font-weight: bold;
 text-shadow: none;
-color: #d5ad6d;
+color: #000000;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -340,7 +338,7 @@ display: table-cell;
 vertical-align: middle;
 font-family: "Thekingofromance-z8jDX";
 text-shadow: none;
-color: #d5ad6d;
+color: #000000;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -366,7 +364,7 @@ display: table-cell;
 vertical-align: middle;
 font-family: "Thekingofromance-z8jDX";
 text-shadow: none;
-color: #d5ad6d;
+color: #000000;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -408,6 +406,8 @@ height: 20px;
 line-height: 20px;
 font-family: "NeogreyMedium";
 font-size: 12px;
+font-weight: bold;
+color: #000000;
 text-align: center;
 z-index: 1;
 }
