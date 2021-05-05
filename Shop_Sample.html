@@ -2645,17 +2645,15 @@ $('#amount').val('');
   <!-- ////////////////////////// -->
 $( ".addYourName" ).on( "click", function() {
 // when customer arrives here by clicking under a particular samle image
-$( ".changeVerse" ).on( "click", function() {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
-var completeRefNeeded = (bookNeeded + chapterNeeded + verseNeeded);
+var completeRefNeeded = (bookNeeded + '-' + chapterNeeded + '-' + verseNeeded);
 console.log(completeRefNeeded);
 // put verse selected in the modal
 $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
-});
 // open the modal
         $(".modal_customize_name").toggle("slow");
         $(".opacity_cover").show();
@@ -2717,7 +2715,6 @@ $('#description').val(completeDescription);
   <!-- ////////////////////////// -->
 $( ".changeFlowers" ).on( "click", function() {
 // when customer arrives here by clicking under a particular samle image
-$( ".changeVerse" ).on( "click", function() {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
@@ -2727,7 +2724,6 @@ console.log(completeRefNeeded);
 $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
-});
 // open the modal
         $(".modal_customize_flowers").toggle("slow");
 		$('.wrap_swiper_container_flowers').show();
@@ -2767,17 +2763,15 @@ $('#description').val(completeDescription);
   <!-- ////////////////////////// -->
 $( ".changeBackground" ).on( "click", function() {
 // when customer arrives here by clicking under a particular samle image
-$( ".changeVerse" ).on( "click", function() {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
-var completeRefNeeded = (bookNeeded + chapterNeeded + verseNeeded);
+var completeRefNeeded = (bookNeeded + '-' + chapterNeeded + '-' + verseNeeded);
 console.log(completeRefNeeded);
 // put verse selected in the modal
 $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
-});
 // open the modal
         $(".modal_customize_backgrounds").toggle("slow");
 		$('.wrap_swiper_container_backgrounds').show();
