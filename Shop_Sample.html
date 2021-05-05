@@ -1555,8 +1555,8 @@
 	
 <ul id="" class="wrap_menu_items">
 <li id="CreateYourOwnDesign" class="menu_item bf_links">create your own design</li>
-<li id="" class="changeFlowers menu_item bf_links">browse flowers</li>
-<li id="" class="changeBackground menu_item bf_links">browse backgrounds</li>
+<li id="" class="browseFlowers menu_item bf_links">browse flowers</li>
+<li id="" class="browseBackgrounds menu_item bf_links">browse backgrounds</li>
 <li id="" class="menu_item bf_links">about BibleFarm.org</li>
 <li id="" class="menu_item bf_links">contact us</li>
 <li id="" class="menu_item bf_links"> social icons</li>
@@ -2713,8 +2713,16 @@ $('#description').val(completeDescription);
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 3 - FLOWER -->
   <!-- ////////////////////////// -->
+// when customer arrives here via the menu
+$( ".browseFlowers" ).on( "click", function() {
+// open the modal
+        $(".modal_customize_flowers").toggle("slow");
+		$('.wrap_swiper_container_flowers').show();
+        $(".opacity_cover").show();
+		$('#flowers_selector').focus();
+});
+// when customer arrives here by clicking under a particular sample image
 $( ".changeFlowers" ).on( "click", function() {
-// when customer arrives here by clicking under a particular samle image
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
@@ -2761,8 +2769,16 @@ $('#description').val(completeDescription);
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 4 - BACKGROUND -->
   <!-- ////////////////////////// -->
+// when customer arrives here via the menu
+$( ".browseBackgrounds" ).on( "click", function() {
+// open the modal
+        $(".modal_customize_backgrounds").toggle("slow");
+		$('.wrap_swiper_container_backgrounds').show();
+        $(".opacity_cover").show();
+		$('#backgrounds_selector').focus();
+});
+// when customer arrives here by clicking under a particular sample image
 $( ".changeBackground" ).on( "click", function() {
-// when customer arrives here by clicking under a particular samle image
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
@@ -2776,7 +2792,7 @@ $(".selected_verse").text(completeRefNeeded);
         $(".modal_customize_backgrounds").toggle("slow");
 		$('.wrap_swiper_container_backgrounds').show();
         $(".opacity_cover").show();
-		$('#flowers_selector').focus();
+		$('#backgrounds_selector').focus();
 });
 // and hide it when clicking outside
 $(".opacity_cover").click(function() {
@@ -2784,7 +2800,7 @@ $(".opacity_cover").click(function() {
 		$('.wrap_swiper_container_backgrounds').hide();
 });
 // update the PayPal order details field
-$( "#flowers_selector" ).on( "keyup change", function() {
+$( "#backgrounds_selector" ).on( "keyup change", function() {
 $('#description').val('');
 
 var customerName = $(this).val();
@@ -2793,7 +2809,7 @@ console.log('customerName is: ' + customerName);
 var customerVerse = $("#customize_verse").val();
 console.log('customerVerse is: ' + customerVerse);
 
-var customerFlower = $("#flowers_selector").val();
+var customerFlower = $("#backgrounds_selector").val();
 console.log('customerFlower is: ' + customerFlower);
 
 var completeDescription = customerName + " - " + customerVerse + " - " + customerFlower;
