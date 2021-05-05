@@ -2646,7 +2646,7 @@ if ($('.selected_verse:contains("Nothing selected yet")').length > 0)
      $('.lets_change').show();
  }
 });
-// when customer arrives here by clicking under a particular samle image
+// when customer arrives here by clicking under a particular sample image
 $( ".changeVerse" ).on( "click", function() {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
@@ -2657,8 +2657,22 @@ console.log(completeRefNeeded);
 $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
-});
+// simulate the clicks and changes on the select boxes
+var booktoselect = $('#select_book option:contains("1-John")').filter(function() {return $(this).text() === '1-John';});
+$('#select_book option').removeClass('selected');
+//$('#select_book').trigger({type: 'click', which: 1});
+booktoselect.prop('selected', true).addClass('selected').trigger('change');
 
+var chaptertoselect = $('#select_chapter option:contains("1")').filter(function() {return $(this).text() === '1';});
+$('#select_chapter option').removeClass('selected');
+//$('#select_chapter').trigger({type: 'click', which: 1});
+chaptertoselect.prop('selected', true).addClass('selected').trigger('change');
+
+var versetoselect = $('#select_verse option:contains("2")').filter(function() {return $(this).text() === '2';});
+$('#select_verse option').removeClass('selected');
+//$('#select_verse').trigger({type: 'click', which: 1});
+versetoselect.prop('selected', true).addClass('selected').trigger('change');
+});
 
 
 
