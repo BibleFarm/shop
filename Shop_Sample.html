@@ -1556,7 +1556,7 @@
 <ul id="" class="wrap_menu_items">
 <li id="CreateYourOwnDesign" class="menu_item bf_links">create your own design</li>
 <li id="" class="changeFlowers menu_item bf_links">browse flowers</li>
-<li id="" class="menu_item bf_links">browse backgrounds</li>
+<li id="" class="changeBackground menu_item bf_links">browse backgrounds</li>
 <li id="" class="menu_item bf_links">about BibleFarm.org</li>
 <li id="" class="menu_item bf_links">contact us</li>
 <li id="" class="menu_item bf_links"> social icons</li>
@@ -2643,10 +2643,6 @@ $('#amount').val('');
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 2 - NAME -->
   <!-- ////////////////////////// -->
-
-  <!-- ////////////////////////// -->
-  <!-- BEGIN open addYourName -->
-  <!-- ////////////////////////// -->
 $( ".addYourName" ).on( "click", function() {
 // when customer arrives here by clicking under a particular samle image
 $( ".changeVerse" ).on( "click", function() {
@@ -2670,6 +2666,28 @@ $(".selected_verse").text(completeRefNeeded);
       $(".opacity_cover").click(function() {
         $(".modal_customize_name").hide("slow");
       });
+// first I need to render it in the rendered_customerName_in_modalName
+//AND ALSO IN rendered_customerName_in_modalFlowers AND ALSO IN rendered_customerName_in_modalBackgrounds
+	function renderIn_modalName() {
+		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalFlowers, .rendered_customerName_in_modalBackgrounds').html(
+			'<span>' + $('#customize_name').val() + '</span>'
+		);
+		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalFlowers, .rendered_customerName_in_modalBackgrounds').textfill({
+			maxFontPixels: 200
+		});
+	}
+	$('#customize_name').keyup(renderIn_modalName);
+	renderIn_modalName();
+	
+// THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
+$( "#customize_name" ).on( "keyup", function() {
+var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style");
+// AND THEN update it in the modals with flowers and backgrounds
+setTimeout(function(){
+$( ".rendered_customerName_in_modalFlowers > span" ).attr("style",newFontSize);
+$( ".rendered_customerName_in_modalBackgrounds > span" ).attr("style",newFontSize);
+}, 5000);
+});
 // update the PayPal order details field
 $( "#customize_name" ).on( "keyup change", function() {
 $('#description').val('');
@@ -2689,11 +2707,7 @@ console.log('completeDescription is: ' + completeDescription);
 $('#amount').val('');
 $('#description').val(completeDescription);
 
-      });
-  <!-- ////////////////////////// -->
-  <!-- END open addYourName -->
-  <!-- ////////////////////////// -->
-  
+});
   <!-- ////////////////////////// -->
   <!-- END STEP 2 - NAME -->
   <!-- ////////////////////////// -->
@@ -2701,18 +2715,13 @@ $('#description').val(completeDescription);
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 3 - FLOWER -->
   <!-- ////////////////////////// -->
-
-
-  <!-- ////////////////////////// -->
-  <!-- BEGIN open changeFlowers -->
-  <!-- ////////////////////////// -->
 $( ".changeFlowers" ).on( "click", function() {
 // when customer arrives here by clicking under a particular samle image
 $( ".changeVerse" ).on( "click", function() {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
-var completeRefNeeded = (bookNeeded + chapterNeeded + verseNeeded);
+var completeRefNeeded = (bookNeeded + '-' + chapterNeeded + '-' + verseNeeded);
 console.log(completeRefNeeded);
 // put verse selected in the modal
 $(".selected_verse").text(completeRefNeeded);
@@ -2726,13 +2735,10 @@ $(".selected_verse").text(completeRefNeeded);
 		$('#flowers_selector').focus();
 });
 // and hide it when clicking outside
-      // hide when click outside
-      $(".opacity_cover").click(function() {
+$(".opacity_cover").click(function() {
         $(".modal_customize_flowers").hide("slow");
 		$('.wrap_swiper_container_flowers').hide();
-
-		
-      });
+});
 // update the PayPal order details field
 $( "#flowers_selector" ).on( "keyup change", function() {
 $('#description').val('');
@@ -2752,20 +2758,12 @@ console.log('completeDescription is: ' + completeDescription);
 $('#amount').val('');
 $('#description').val(completeDescription);
 
-      });
-  <!-- ////////////////////////// -->
-  <!-- END open changeFlowers -->
-  <!-- ////////////////////////// -->
-  
+});
   <!-- ////////////////////////// -->
   <!-- END STEP 3 - FLOWER -->
   <!-- ////////////////////////// -->
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 4 - BACKGROUND -->
-  <!-- ////////////////////////// -->
-  
-  <!-- ////////////////////////// -->
-  <!-- BEGIN open changeBackground -->
   <!-- ////////////////////////// -->
 $( ".changeBackground" ).on( "click", function() {
 // when customer arrives here by clicking under a particular samle image
@@ -2787,13 +2785,10 @@ $(".selected_verse").text(completeRefNeeded);
 		$('#flowers_selector').focus();
 });
 // and hide it when clicking outside
-      // hide when click outside
-      $(".opacity_cover").click(function() {
+$(".opacity_cover").click(function() {
         $(".modal_customize_backgrounds").hide("slow");
 		$('.wrap_swiper_container_backgrounds').hide();
-
-		
-      });
+});
 // update the PayPal order details field
 $( "#flowers_selector" ).on( "keyup change", function() {
 $('#description').val('');
@@ -2813,19 +2808,13 @@ console.log('completeDescription is: ' + completeDescription);
 $('#amount').val('');
 $('#description').val(completeDescription);
 
-      });
-  <!-- ////////////////////////// -->
-  <!-- END open changeBackground -->
-  <!-- ////////////////////////// -->
-  
+});
   <!-- ////////////////////////// -->
   <!-- END STEP 4 - BACKGROUND -->
   <!-- ////////////////////////// -->
-
-  
   
   <!-- ////////////////////////// -->
-  <!-- BEGIN open place_the_order -->
+  <!-- BEGIN STEP 5 - PLACE THE ORDER -->
   <!-- ////////////////////////// -->
 $( ".done_customizing" ).on( "click", function() {
         $(".place_the_order").toggle("slow");
@@ -2838,60 +2827,8 @@ $( ".done_customizing" ).on( "click", function() {
         $(".place_the_order").hide("slow");
       });
   <!-- ////////////////////////// -->
-  <!-- END open place_the_order -->
+  <!-- END STEP 5 - PLACE THE ORDER -->
   <!-- ////////////////////////// -->
-
-// BEGIN realtime render and TextFill as we type in the customize_name
-/*
-$( "#customize_name" ).on( "keyup change", function() {
-var renderThisName = $(this).val();
-$('.rendered_customerName').text(renderThisName);
-setTimeout(function(){
-$('.rendered_customerName').textfill({
-	
-			debug            : false,
-			maxFontPixels    : 50,
-			innerTag         : 'span',
-			widthOnly        : false,
-			success          : null, // callback when a resizing is done
-			fail             : null, // callback when a resizing is failed
-			complete         : null, // callback when all is done
-			explicitWidth    : 230,
-			explicitHeight   : 100,
-			changeLineHeight : false,
-			truncateOnFail   : false,
-			allowOverflow    : false // If true, text will stay at minFontPixels but overflow container w/out failing 
-			
-});
-}, 1000);
-});
-*/
-	// first I need to render it in the rendered_customerName_in_modalName
-	//AND ALSO IN rendered_customerName_in_modalFlowers AND ALSO IN rendered_customerName_in_modalBackgrounds
-	function renderIn_modalName() {
-		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalFlowers, .rendered_customerName_in_modalBackgrounds').html(
-			'<span>' + $('#customize_name').val() + '</span>'
-		);
-		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalFlowers, .rendered_customerName_in_modalBackgrounds').textfill({
-			maxFontPixels: 200
-		});
-	}
-	$('#customize_name').keyup(renderIn_modalName);
-	renderIn_modalName();
-	
-	// grab the font-size of .rendered_customerName_in_modalName every time it changes
-$( "#customize_name" ).on( "keyup", function() {
-var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style");
-
-setTimeout(function(){
-
-$( ".rendered_customerName_in_modalFlowers > span" ).attr("style",newFontSize);
-$( ".rendered_customerName_in_modalBackgrounds > span" ).attr("style",newFontSize);
-
-}, 5000);
-
-});
-// END realtime render and TextFill as we type in the customize_name
 
 // BEGIN blink.js
 (function($) {
@@ -2923,9 +2860,8 @@ $( ".rendered_customerName_in_modalBackgrounds > span" ).attr("style",newFontSiz
 }(jQuery))
 // END blink.js
 
-
 ////////////////////////////////////////////////////
-////BEGIN TEMPORARY TEXT STROKE ///////////////////////
+////BEGIN TEMPORARY TEXT STROKE ////////////////////
 ////////////////////////////////////////////////////
 // BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
 $.fn.textStroke = function(r, colour) {
@@ -2958,9 +2894,6 @@ $(function(){
 ////////////////////////////////////////////////////
 ////END TEMPORARY TEXT STROKE ///////////////////////
 ////////////////////////////////////////////////////
-
-
-
 
 });
 </script>
