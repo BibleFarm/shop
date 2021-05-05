@@ -2611,6 +2611,45 @@ $('#amount').val('');
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 1 - VERSE -->
   <!-- ////////////////////////// -->
+////////////////////////// -->
+////////////////////////// -->
+////////////////////////// -->
+// initial book situation
+var selected_book = $('#select_book').find('.selected').html().split(' ')[0];
+ console.log('Upon landing - Book: ' + selected_book);
+// initial chapter situation
+var selected_chapter = $('#select_chapter').find('.selected').html().split(' ')[0];
+ console.log('Upon landing - Chapter: ' + selected_chapter);
+// initial verse situation
+var selected_verse = $('#select_verse').find('.selected').html().split(' ')[0];
+ console.log('Upon landing - Verse: ' + selected_verse);
+// hidden containers holding selections get updated when page visited
+$('#hidden_book_desired').text(selected_book);
+$('#hidden_chapter_desired').text(selected_chapter);
+$('#hidden_verse_desired').text(selected_verse);
+////////////////////////// -->
+// update class on the select elements and update the hidden divs
+$('select#select_book').change(function(){
+    $(this).find(':selected').addClass('selected')
+           .siblings('option').removeClass('selected');
+var selected_book = $('#select_book').find('.selected').html().split(' ')[0];
+$('#hidden_book_desired').text(selected_book);
+});
+$('select#select_chapter').change(function(){
+    $(this).find(':selected').addClass('selected')
+           .siblings('option').removeClass('selected');
+var selected_chapter = $('#select_chapter').find('.selected').html().split(' ')[0];
+$('#hidden_chapter_desired').text(selected_chapter);
+});
+$('select#select_verse').change(function(){
+    $(this).find(':selected').addClass('selected')
+           .siblings('option').removeClass('selected');
+var selected_verse = $('#select_verse').find('.selected').html().split(' ')[0];
+		   $('#hidden_verse_desired').text(selected_verse);
+});
+////////////////////////// -->
+////////////////////////// -->
+////////////////////////// -->
 
   <!-- ////////////////////////// -->
   <!-- END STEP 1 - VERSE -->
