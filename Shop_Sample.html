@@ -1554,7 +1554,7 @@
 -->
 	
 <ul id="" class="wrap_menu_items">
-<li id="CreateYourOwnDesign" class="menu_item bf_links">create your own design</li>
+<li id="" class="CreateYourOwnDesign menu_item bf_links">create your own design</li>
 <li id="" class="browseFlowers menu_item bf_links">browse flowers</li>
 <li id="" class="browseBackgrounds menu_item bf_links">browse backgrounds</li>
 <li id="" class="menu_item bf_links">about BibleFarm.org</li>
@@ -1569,7 +1569,7 @@
 <!-- ////////////////////////// -->
 <!-- BEGIN STEP 1 - VERSE -->
 <!-- ////////////////////////// -->
-<div id="modal_customize_verse" class="modal_customize_verse">
+<div id="" class="modal_customize_verse">
 <div class="orderFlowNoFinger current_verse_hidden">Your current verse: <span class="selected_verse">Nothing selected yet</span></div>
 <div class="orderFlowNoFinger lets_choose">let's choose a Bible verse here below</div>
 <div class="orderFlowNoFinger lets_change">you can always change it here below</div>
@@ -2048,10 +2048,6 @@
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 2 - NAME -->
   <!-- ////////////////////////// -->
-
-<!-- ////////////////////////// -->
-<!-- BEGIN modal to modal_customize_name -->
-<!-- ////////////////////////// -->
   <div class="modal_customize_name">
   <div class="orderFlowNoFinger current_verse_hidden">Your current verse: <span class="selected_verse">Nothing selected yet</span></div>
 <div class="orderFlowNoFinger">let's add your name or ministry name</div>
@@ -2112,10 +2108,6 @@
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
 
   </div>
-<!-- ////////////////////////// -->
-<!-- END modal to modal_customize_name -->
-<!-- ////////////////////////// -->
-
   <!-- ////////////////////////// -->
   <!-- END STEP 2 - NAME -->
   <!-- ////////////////////////// -->
@@ -2123,10 +2115,6 @@
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 3 - FLOWER -->
   <!-- ////////////////////////// -->
-
-<!-- ////////////////////////// -->
-<!-- BEGIN modal to modal_customize_flowers -->
-<!-- ////////////////////////// -->
   <div class="modal_customize_flowers">
   <div class="orderFlowNoFinger current_verse_hidden">Your current verse: <span class="selected_verse">Nothing selected yet</span></div>
 <div class="orderFlowNoFinger">let's choose some flowers</div>
@@ -2258,10 +2246,6 @@
 </div>
 <div class="narrow_separator"></div>
   </div>
-<!-- ////////////////////////// -->
-<!-- END modal to modal_customize_flowers -->
-<!-- ////////////////////////// -->
-
   <!-- ////////////////////////// -->
   <!-- END STEP 3 - FLOWER -->
   <!-- ////////////////////////// -->
@@ -2269,10 +2253,6 @@
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 4 - BACKGROUND -->
   <!-- ////////////////////////// -->
-
-<!-- ////////////////////////// -->
-<!-- BEGIN modal to modal_customize_backgrounds -->
-<!-- ////////////////////////// -->
   <div class="modal_customize_backgrounds">
   <div class="orderFlowNoFinger current_verse_hidden">Your current verse: <span class="selected_verse">Nothing selected yet</span></div>
 <div class="orderFlowNoFinger">let's choose a background</div>
@@ -2401,18 +2381,14 @@
 </div>
 <div class="narrow_separator"></div>
   </div>
-<!-- ////////////////////////// -->
-<!-- END modal to modal_customize_flowers -->
-<!-- ////////////////////////// -->
-
   <!-- ////////////////////////// -->
   <!-- END STEP 4 - BACKGROUND -->
   <!-- ////////////////////////// -->
 
-<!-- ////////////////////////// -->
-<!-- BEGIN modal to place_the_order -->
-<!-- ////////////////////////// -->
-  <div class="place_the_order">
+  <!-- ////////////////////////// -->
+  <!-- BEGIN STEP 5 - PLACE THE ORDER -->
+  <!-- ////////////////////////// -->
+  <div class="modal_place_the_order">
 <div id="smart-button-container">
 <div class="narrow_separator"></div>
     <div class="orderFlowNoFinger" style="text-align: center"><label for="description">Your order is: </label><input class="order-description" type="text" name="descriptionInput" id="description" size="50" value="order details go here" readonly></div>
@@ -2430,9 +2406,9 @@
     <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
   </div>
   </div>
-<!-- ////////////////////////// -->
-<!-- END modal to place_the_order -->
-<!-- ////////////////////////// -->
+  <!-- ////////////////////////// -->
+  <!-- END STEP 5 - PLACE THE ORDER -->
+  <!-- ////////////////////////// -->
 
 
 
@@ -2655,15 +2631,10 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_name").toggle("slow");
+        $(".modal_customize_name").show("slow");
         $(".opacity_cover").show();
 		$('#customize_name').focus();
 });
-// and hide it when clicking outside
-      // hide when click outside
-      $(".opacity_cover").click(function() {
-        $(".modal_customize_name").hide("slow");
-      });
 // first I need to render it in the rendered_customerName_in_modalName
 //AND ALSO IN rendered_customerName_in_modalFlowers AND ALSO IN rendered_customerName_in_modalBackgrounds
 	function renderIn_modalName() {
@@ -2716,7 +2687,7 @@ $('#description').val(completeDescription);
 // when customer arrives here via the menu
 $( ".browseFlowers" ).on( "click", function() {
 // open the modal
-        $(".modal_customize_flowers").toggle("slow");
+        $(".modal_customize_flowers").show("slow");
 		$('.wrap_swiper_container_flowers').show();
         $(".opacity_cover").show();
 		$('#flowers_selector').focus();
@@ -2733,15 +2704,10 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_flowers").toggle("slow");
+        $(".modal_customize_flowers").show("slow");
 		$('.wrap_swiper_container_flowers').show();
         $(".opacity_cover").show();
 		$('#flowers_selector').focus();
-});
-// and hide it when clicking outside
-$(".opacity_cover").click(function() {
-        $(".modal_customize_flowers").hide("slow");
-		$('.wrap_swiper_container_flowers').hide();
 });
 // update the PayPal order details field
 $( "#flowers_selector" ).on( "keyup change", function() {
@@ -2772,7 +2738,7 @@ $('#description').val(completeDescription);
 // when customer arrives here via the menu
 $( ".browseBackgrounds" ).on( "click", function() {
 // open the modal
-        $(".modal_customize_backgrounds").toggle("slow");
+        $(".modal_customize_backgrounds").show("slow");
 		$('.wrap_swiper_container_backgrounds').show();
         $(".opacity_cover").show();
 		$('#backgrounds_selector').focus();
@@ -2789,15 +2755,10 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_backgrounds").toggle("slow");
+        $(".modal_customize_backgrounds").show("slow");
 		$('.wrap_swiper_container_backgrounds').show();
         $(".opacity_cover").show();
 		$('#backgrounds_selector').focus();
-});
-// and hide it when clicking outside
-$(".opacity_cover").click(function() {
-        $(".modal_customize_backgrounds").hide("slow");
-		$('.wrap_swiper_container_backgrounds').hide();
 });
 // update the PayPal order details field
 $( "#backgrounds_selector" ).on( "keyup change", function() {
@@ -2827,18 +2788,19 @@ $('#description').val(completeDescription);
   <!-- BEGIN STEP 5 - PLACE THE ORDER -->
   <!-- ////////////////////////// -->
 $( ".done_customizing" ).on( "click", function() {
-        $(".place_the_order").toggle("slow");
+        $(".modal_place_the_order").show("slow");
         $(".opacity_cover").show();
 		$('#amount').focus();
 });
-// and hide it when clicking outside
-      // hide when click outside
-      $(".opacity_cover").click(function() {
-        $(".place_the_order").hide("slow");
-      });
   <!-- ////////////////////////// -->
   <!-- END STEP 5 - PLACE THE ORDER -->
   <!-- ////////////////////////// -->
+
+// hide any and all modals when click outside
+$(".opacity_cover").click(function() {
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .modal_customize_backgrounds, .modal_place_the_order").hide("slow");
+});
+
 
 // BEGIN blink.js
 (function($) {
@@ -2915,7 +2877,7 @@ $(function(){
 ////////////////////////////////////////////////////
 ////BEGIN Swiper Flowers ///////////////////////
 ////////////////////////////////////////////////////
-	$( ".changeFlowers" ).on( "click", function() {
+	$( ".browseFlowers, .changeFlowers" ).on( "click", function() {
 setTimeout(function(){
       var swiper = new Swiper(".mySwiper_flowers", {
             watchActiveIndex: true,
@@ -2940,7 +2902,7 @@ setTimeout(function(){
 ////////////////////////////////////////////////////
 ////BEGIN Swiper Backgrounds ///////////////////////
 ////////////////////////////////////////////////////
-	$( ".changeBackground" ).on( "click", function() {
+	$( ".browseBackgrounds, .changeBackground" ).on( "click", function() {
 setTimeout(function(){
       var swiper = new Swiper(".mySwiper_backgrounds", {
         navigation: {

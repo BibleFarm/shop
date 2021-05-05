@@ -1,16 +1,20 @@
-// when customer arrives here from the menu and there's no verse yet
-$( "#CreateYourOwnDesign" ).on( "click", function() {
-if ($('.selected_verse:contains("Nothing selected yet")').length > 0)
+$( ".CreateYourOwnDesign, .changeVerse" ).on( "click", function() {
+// close the menu_modal
+        $(".menu_modal").hide("slow");
+// open the modal
+        $(".modal_customize_verse").show("slow");
+        $(".opacity_cover").show();
+// display a selected book chapter verse or offer to choose one
+	if ($('.selected_verse:contains("Nothing selected yet")').length > 0)
  {
+// when customer has not yet selected a verse
      $('.lets_change').hide();
      $('.lets_choose').show();
  } else {
+// when customer has already previously selected a verse
      $('.lets_choose').hide();
      $('.lets_change').show();
- }
-});
-// when customer arrives here by clicking under a particular sample image
-$( ".changeVerse" ).on( "click", function() {
+// get 
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
@@ -35,11 +39,7 @@ var versetoselect = $('#select_verse option:contains("verseNeeded")').filter(fun
 $('#select_verse option').removeClass('selected');
 //$('#select_verse').trigger({type: 'click', which: 1});
 versetoselect.prop('selected', true).addClass('selected').trigger('change');
-});
-
-
-
-
+ }
 
 
   <!-- ////////////////////////// -->
@@ -71,18 +71,6 @@ var checkIfDivIsVisible = setInterval(function() {
   <!-- ////////////////////////// -->
 
 
-$( "#CreateYourOwnDesign, .changeVerse" ).on( "click", function() {
-// close the menu_modal
-        $(".menu_modal").hide("slow");
-// open the modal
-        $(".modal_customize_verse").toggle("slow");
-        $(".opacity_cover").show();
-});
-// and hide it when clicking outside
-      // hide when click outside
-      $(".opacity_cover").click(function() {
-        $(".modal_customize_verse").hide("slow");
-      });
   <!-- ////////////////////////// -->
 // initial book situation
 var selected_book = $('#select_book').find('.selected').html().split(' ')[0];
@@ -276,4 +264,6 @@ jqxhr.always(function() {
 <!-- ////////////////////////// -->
 // END say "got it!" when all 3 are selected and brign in the scripture
 <!-- ////////////////////////// -->
+
+
 
