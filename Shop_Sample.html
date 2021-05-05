@@ -114,7 +114,9 @@
     <div class="wrap_gofundme_modal_body box_shadow">
       <div class="gofundme_flex-container">
 
-<div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Deuteronomy-6-4' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs\Deuteronomy-6-4-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="addYourName flex_item bf_links">add YourName</span><span class="changeVerse flex_item bf_links" verse="Deuteronomy-6-4">change verse</span><span class="changeFlowers flex_item bf_links">change flowers</span></div></div>
+<div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Deuteronomy-6-4' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs\Deuteronomy-6-4-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="addYourName flex_item bf_links">add YourName</span><span class="changeVerse flex_item bf_links" verse="Deuteronomy-6-4">change verse</span><span class="changeFlowers flex_item bf_links">change flowers</span><span class="changeBackground flex_item bf_links">change background</span></div></div>
+
+
 <div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Deuteronomy-6-5' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs\Deuteronomy-6-5-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="addYourName flex_item bf_links">add YourName</span><span class="changeVerse flex_item bf_links" verse="Deuteronomy-6-5">change verse</span><span class="changeFlowers flex_item bf_links">change flowers</span></div></div>
 <div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Leviticus-19-18' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs\Leviticus-19-18-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="addYourName flex_item bf_links">add YourName</span><span class="changeVerse flex_item bf_links" verse="Leviticus-19-18">change verse</span><span class="changeFlowers flex_item bf_links">change flowers</span></div></div>
 <div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Jeremiah-29-11' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs\Jeremiah-29-11-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="addYourName flex_item bf_links">add YourName</span><span class="changeVerse flex_item bf_links" verse="Jeremiah-29-11">change verse</span><span class="changeFlowers flex_item bf_links">change flowers</span></div></div>
@@ -2261,6 +2263,13 @@
   <!-- END STEP 3 - FLOWER -->
   <!-- ////////////////////////// -->
 
+  <!-- ////////////////////////// -->
+  <!-- BEGIN STEP 4 - FLOWER -->
+  <!-- ////////////////////////// -->
+  
+  <!-- ////////////////////////// -->
+  <!-- END STEP 4 - FLOWER -->
+  <!-- ////////////////////////// -->
 
 <!-- ////////////////////////// -->
 <!-- BEGIN modal to place_the_order -->
@@ -2513,7 +2522,6 @@ var checkIfDivIsVisible = setInterval(function() {
    }
 }, 1000); // check every 100ms
 });
-	renderIn_modalVerse();
   <!-- ////////////////////////// -->
   <!-- ////////////////////////// -->
     // END render the sample verse
@@ -2627,7 +2635,6 @@ var checkIfDivIsVisible = setInterval(function() {
    }
 }, 100); // check every 100ms
 });
-	renderIn_modalVerse();
   <!-- ////////////////////////// -->
   <!-- ////////////////////////// -->
     // END render the sample verse
@@ -2656,7 +2663,7 @@ $('#populated_verse_with_ajax');
   })
   .fail(function() {
     console.log( "unable to retrieve htat verse" );
-	$('#populated_verse_with_ajax').html("Nope. You have no internet, or you selected the wrong chapter, or you selected the wrong verse. Please try again.");
+	$('#populated_verse_with_ajax').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
 	$(".verse_selection_complete").hide();
 	$(".next_step").hide();
 	clearTimeout(next_stepTimeoutID);
@@ -2690,7 +2697,6 @@ var checkIfDivIsVisible = setInterval(function() {
    }
 }, 100); // check every 100ms
 });
-	renderIn_modalVerse();
   <!-- ////////////////////////// -->
   <!-- ////////////////////////// -->
     // END render the sample verse

@@ -294,18 +294,18 @@ text-align:center;
 .selected_bible_verse_fixed_on_mug-table {
 position: fixed;
 display: table;
-top: 165px;
-left: 50px;
-width: 215px;
+top: 170px;
+left: 55px;
+width: 202px;
 height: 220px;
 z-index: 1;
 }
 .selected_bible_verse_fixed_on_mug {
 position: fixed;
 display: table-cell;
-top: 165px;
-left: 50px;
-width: 215px;
+top: 170px;
+left: 55px;
+width: 202px;
 height: 220px;
 z-index: 1;
 text-align: center;
