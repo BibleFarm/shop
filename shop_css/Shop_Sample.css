@@ -249,6 +249,18 @@ z-index: 1;
       padding: 8px;
 	  overflow: auto;
     }
+    .modal_customize_backgrounds {
+      position: fixed;
+      display: none;
+      height: calc(100% - 100px);
+      width: 296px;
+      top: calc(4px + 44px);
+      left: 4px;
+      background: #111111;
+      z-index: 1;
+      padding: 8px;
+	  overflow: auto;
+    }
     .place_the_order {
       position: fixed;
       display: none;
@@ -283,7 +295,7 @@ background: #222222;
 height: 4px;
 }
 .selected_verse {
-color: #d5ad6d;
+color: #ae9c80;
 }
 .placeholder_mug_side {
 display: inline-block;
@@ -369,6 +381,32 @@ white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.rendered_customerName_in_modalBackgrounds-table {
+position: fixed;
+display: table;
+    top: 164px;
+    left: 52px;
+    width: 196px;
+	height: 80px;
+    background: ;
+}
+.rendered_customerName_in_modalBackgrounds {
+position: fixed;
+display: table-cell;
+    top: 164px;
+    left: 52px;
+    width: 196px;
+	height: 80px;
+    background: ;
+	text-align: center;
+vertical-align: middle;
+font-family: "Thekingofromance-z8jDX";
+text-shadow: none;
+color: #000000;
+white-space: nowrap;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .wrap_continue_bar {
 display: flex;
 }
@@ -382,6 +420,30 @@ height: 220px;
     width: ;
 }
 img.images_inside_modal_customize_flowers {
+display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    max-width: 134px;
+    max-height: 280px;
+    display: block;
+    margin: 0 auto;
+    cursor: auto !important;
+    min-width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+	padding-top: 70px;
+}
+.wrap_background_images_inside_modal_customize_backgrounds {
+position: relative;
+display: block;
+width: 220px;
+height: 220px;
+    top: ;
+    left: ;
+    width: ;
+}
+img.images_inside_modal_customize_backgrounds {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -581,7 +643,7 @@ left: 20px;
 /* END brought in from wrap_image_to_mug_css_only.css */
 /* ************************ */
 
-.current_verse_hidden {display: none;}
+.current_verse_hidden {display: ;}
 .tell_us_to_swipe_sideways {
 dispaly: block;
 width: 100%;
@@ -597,6 +659,18 @@ background: red;
     padding: 0px;
 }
 .wrap_swiper_container_flowers {
+position: fixed;
+display: none;
+top: 170px;
+left: 8px;
+width: 296px;
+height: 250px;
+background: none;
+margin: 0 auto;
+padding: 0;
+z-index: 2;
+}
+.wrap_swiper_container_backgrounds {
 position: fixed;
 display: none;
 top: 170px;
@@ -644,6 +718,43 @@ z-index: 2;
       }
 /* ************* */
 /* END swiper flowers
+/* ************* */
+/* ************* */
+/* BEGIN swiper backgrounds
+/* ************* */
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: none;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+/* ************* */
+/* END swiper backgrounds
 /* ************* */
 .no_book_nor_chapter_nor_verse_selection_yet {
 display: ;
