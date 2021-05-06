@@ -2711,11 +2711,11 @@ $(".verse_selection_complete").hide();
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
-var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
+var completeVerseURLtoGrab = ('data_files/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
 console.log("completeVerseURLtoGrab is: " + completeVerseURLtoGrab);
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.post( completeVerseURLtoGrab, function() {
+var jqxhr = $.get( completeVerseURLtoGrab, function() {
   console.log( "Began bringing in the verse via Ajax" );
 })
   .done(function(result) {
@@ -2831,11 +2831,11 @@ $(".verse_selection_complete").hide();
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
-var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
+var completeVerseURLtoGrab = ('data_files/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
 console.log("completeVerseURLtoGrab is: " + completeVerseURLtoGrab);
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.post( completeVerseURLtoGrab, function() {
+var jqxhr = $.get( completeVerseURLtoGrab, function() {
   console.log( "Began bringing in the verse via Ajax" );
 })
   .done(function(result) {
@@ -2984,11 +2984,11 @@ $(".verse_selection_complete").hide();
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
-var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
+var completeVerseURLtoGrab = ('data_files/_yournamehere_/' + willGrabBook + '-' + willGrabChapter + '-' + willGrabVerse + '.html');
 console.log("completeVerseURLtoGrab is: " + completeVerseURLtoGrab);
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.post( completeVerseURLtoGrab, function() {
+var jqxhr = $.get( completeVerseURLtoGrab, function() {
   console.log( "Began bringing in the verse via Ajax" );
 })
   .done(function(result) {
