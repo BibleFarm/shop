@@ -2024,7 +2024,7 @@
 <span class="orderFlowFinger flex_item no_book_nor_chapter_nor_verse_selection_yet">please select book & chapter & verse above</span>
 <span class="orderFlowFinger flex_item still_need_to_select_chapter_and_verse">select also chapter & verse right next to that</span>
 <span class="orderFlowFinger flex_item verse_selection_complete">just a moment...</span>
-<span class="orderFlowFinger flex_item bf_links next_step">continue</span>
+<span class="orderFlowFinger flex_item bf_links step1_next_step2">continue</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="selected_bible_verse_fixed_on_mug-table">
@@ -2702,8 +2702,8 @@ console.log("The 5 seconds went by, so we should now have it rendered.");
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
-var next_stepTimeoutID = setTimeout(function() {
-$(".next_step").css("background", "#292a00").show();
+var step1_next_step2TimeoutID = setTimeout(function() {
+$(".step1_next_step2").css("background", "#292a00").show();
   }, 2000);
   setTimeout(function() {
 $(".verse_selection_complete").hide();
@@ -2715,7 +2715,7 @@ var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + wil
 console.log("completeVerseURLtoGrab is: " + completeVerseURLtoGrab);
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.get( completeVerseURLtoGrab, function() {
+var jqxhr = $.post( completeVerseURLtoGrab, function() {
   console.log( "Began bringing in the verse via Ajax" );
 })
   .done(function(result) {
@@ -2769,8 +2769,8 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
      $('.lets_choose').show();
      $('.lets_change').hide();
 	$(".verse_selection_complete").hide();
-	$(".next_step").hide();
-	clearTimeout(next_stepTimeoutID);
+	$(".step1_next_step2").hide();
+	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
 	
 ////////////////////////// -->
@@ -2822,8 +2822,8 @@ $('select#select_book, select#select_chapter, select#select_verse').change(funct
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
-var next_stepTimeoutID = setTimeout(function() {
-$(".next_step").css("background", "#292a00").show();
+var step1_next_step2TimeoutID = setTimeout(function() {
+$(".step1_next_step2").css("background", "#292a00").show();
   }, 2000);
   setTimeout(function() {
 $(".verse_selection_complete").hide();
@@ -2835,7 +2835,7 @@ var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + wil
 console.log("completeVerseURLtoGrab is: " + completeVerseURLtoGrab);
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.get( completeVerseURLtoGrab, function() {
+var jqxhr = $.post( completeVerseURLtoGrab, function() {
   console.log( "Began bringing in the verse via Ajax" );
 })
   .done(function(result) {
@@ -2889,8 +2889,8 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
      $('.lets_choose').show();
      $('.lets_change').hide();
 	$(".verse_selection_complete").hide();
-	$(".next_step").hide();
-	clearTimeout(next_stepTimeoutID);
+	$(".step1_next_step2").hide();
+	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
 	
 ////////////////////////// -->
@@ -2975,8 +2975,8 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
-var next_stepTimeoutID = setTimeout(function() {
-$(".next_step").css("background", "#292a00").show();
+var step1_next_step2TimeoutID = setTimeout(function() {
+$(".step1_next_step2").css("background", "#292a00").show();
   }, 2000);
   setTimeout(function() {
 $(".verse_selection_complete").hide();
@@ -2988,7 +2988,7 @@ var completeVerseURLtoGrab = ('https://team.biblefarm.org/_yournamehere_/' + wil
 console.log("completeVerseURLtoGrab is: " + completeVerseURLtoGrab);
 // Assign handlers immediately after making the request,
 // and remember the jqxhr object for this request
-var jqxhr = $.get( completeVerseURLtoGrab, function() {
+var jqxhr = $.post( completeVerseURLtoGrab, function() {
   console.log( "Began bringing in the verse via Ajax" );
 })
   .done(function(result) {
@@ -3042,8 +3042,8 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
      $('.lets_choose').show();
      $('.lets_change').hide();
 	$(".verse_selection_complete").hide();
-	$(".next_step").hide();
-	clearTimeout(next_stepTimeoutID);
+	$(".step1_next_step2").hide();
+	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
 	
 ////////////////////////// -->
