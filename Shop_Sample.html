@@ -2943,6 +2943,30 @@ jqxhr.always(function() {
 // BEGIN When coming from the changeVerse links ///// -->
 ////////////////////////// -->
 $( ".changeVerse" ).on( "click", function() {
+// when customer arrives here by clicking under a particular samle image
+var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
+var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
+var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
+var completeRefNeeded = (bookNeeded + '-' + chapterNeeded + '-' + verseNeeded);
+console.log(completeRefNeeded);
+// simulate the clicks and changes on the select boxes
+var booktoselect = $('#select_book option').filter(function() {return $(this).text() === bookNeeded;});
+$('#select_book option').removeClass('selected');
+$(booktoselect).prop('selected', true).addClass('selected').trigger('change');
+var chaptertoselect = $('#select_chapter option').filter(function() {return $(this).text() === chapterNeeded;});
+$('#select_chapter option').removeClass('selected');
+$(chaptertoselect).prop('selected', true).addClass('selected').trigger('change');
+var versetoselect = $('#select_verse option').filter(function() {return $(this).text() === verseNeeded;});
+$('#select_verse option').removeClass('selected');
+$(versetoselect).prop('selected', true).addClass('selected').trigger('change');
+// update the hidden divs
+$('#hidden_book_desired').text(bookNeeded);
+$('#hidden_chapter_desired').text(chapterNeeded);
+$('#hidden_verse_desired').text(verseNeeded);
+// put verse selected in the modal
+$(".selected_verse").text(completeRefNeeded);
+     $('.lets_choose').hide();
+     $('.lets_change').show();
 // open the modal
         $(".modal_customize_verse").show("slow");
         $(".opacity_cover").show();
