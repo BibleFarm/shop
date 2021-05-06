@@ -98,6 +98,12 @@ border-width: 0px;
     background: #444444;
     padding: 0px;
 }
+input:-internal-autofill-selected {
+	appearance: menulist-button;
+    background-color: /*rgb(232, 240, 254)*/ red !important;
+    background-image: none !important;
+    color: -internal-light-dark(black, white) !important;
+}
 .select_book {
 	display: inline-block;
 border-width: 0px;
@@ -306,7 +312,7 @@ text-align:center;
 .selected_bible_verse_fixed_on_mug-table {
 position: fixed;
 display: table;
-top: 170px;
+top: 200px;
 left: 55px;
 width: 202px;
 height: 220px;
@@ -315,7 +321,7 @@ z-index: 1;
 .selected_bible_verse_fixed_on_mug {
 position: fixed;
 display: table-cell;
-top: 170px;
+top: 200px;
 left: 55px;
 width: 202px;
 height: 220px;
@@ -332,7 +338,7 @@ color: #000000;
 .rendered_customerName_in_modalName-table {
 position: fixed;
 display: table;
-    top: 164px;
+    top: 194px;
     left: 52px;
     width: 196px;
 	height: 80px;
@@ -341,7 +347,7 @@ display: table;
 .rendered_customerName_in_modalName {
 position: fixed;
 display: table-cell;
-    top: 164px;
+    top: 194px;
     left: 52px;
     width: 196px;
 	height: 80px;
@@ -358,7 +364,7 @@ white-space: nowrap;
 .rendered_customerName_in_modalFlowers-table {
 position: fixed;
 display: table;
-    top: 164px;
+    top: 194px;
     left: 52px;
     width: 196px;
 	height: 80px;
@@ -367,7 +373,7 @@ display: table;
 .rendered_customerName_in_modalFlowers {
 position: fixed;
 display: table-cell;
-    top: 164px;
+    top: 194px;
     left: 52px;
     width: 196px;
 	height: 80px;
@@ -384,7 +390,7 @@ white-space: nowrap;
 .rendered_customerName_in_modalBackgrounds-table {
 position: fixed;
 display: table;
-    top: 164px;
+    top: 194px;
     left: 52px;
     width: 196px;
 	height: 80px;
@@ -393,7 +399,7 @@ display: table;
 .rendered_customerName_in_modalBackgrounds {
 position: fixed;
 display: table-cell;
-    top: 164px;
+    top: 194px;
     left: 52px;
     width: 196px;
 	height: 80px;
@@ -461,7 +467,7 @@ display: table-cell;
 .made_with_love_fixed_on_mug {
 position: fixed;
 display: block;
-top: 388px;
+top: 418px;
 left: 45px;
 width: 222px;
 height: 20px;
@@ -494,7 +500,7 @@ when background image is 792px x 320px we divide it by 24 frames, and the we get
 position: fixed;
     text-align: center;
     margin: 0 auto;
-    top: 148px;
+    top: 178px;
     left: 150px;
     /* width: 550px; */
     -moz-perspective: 900px;
