@@ -2954,6 +2954,23 @@ var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
 var completeRefNeeded = (bookNeeded + '-' + chapterNeeded + '-' + verseNeeded);
 console.log(completeRefNeeded);
+// simulate the clicks and changes on the select boxes
+var booktoselect = $('#select_book option:contains(bookNeeded)').filter(function() {return $(this).text() === 'bookNeeded';});
+console.log('looking for: ' + bookNeeded + ' in the select_book option tags');
+$('#select_book option').removeClass('selected');
+console.log('removing class="selected" from all option tags');
+//$('#select_book').trigger({type: 'click', which: 1});
+$(booktoselect).css('color', 'red').prop('selected', true).addClass('selected').trigger('change');
+console.log('prop selecting, adding class selected and triggering change');
+
+var chaptertoselect = $('#select_chapter option:contains(chapterNeeded)').filter(function() {return $(this).text() === 'chapterNeeded';});
+$('#select_chapter option').removeClass('selected');
+//$('#select_chapter').trigger({type: 'click', which: 1});
+$(chaptertoselect).prop('selected', true).addClass('selected').trigger('change');
+var versetoselect = $('#select_verse option:contains(verseNeeded)').filter(function() {return $(this).text() === 'verseNeeded';});
+$('#select_verse option').removeClass('selected');
+//$('#select_verse').trigger({type: 'click', which: 1});
+$(versetoselect).prop('selected', true).addClass('selected').trigger('change');
 // update the hidden divs
 $('#hidden_book_desired').text(bookNeeded);
 $('#hidden_chapter_desired').text(chapterNeeded);
@@ -3031,6 +3048,19 @@ var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
 var completeRefNeeded = (bookNeeded + '-' + chapterNeeded + '-' + verseNeeded);
 console.log(completeRefNeeded);
+// simulate the clicks and changes on the select boxes
+var booktoselect = $('#select_book option:contains(bookNeeded)').filter(function() {return $(this).text() === 'bookNeeded';});
+$('#select_book option').removeClass('selected');
+//$('#select_book').trigger({type: 'click', which: 1});
+$(booktoselect).prop('selected', true).addClass('selected').trigger('change');
+var chaptertoselect = $('#select_chapter option:contains(chapterNeeded)').filter(function() {return $(this).text() === 'chapterNeeded';});
+$('#select_chapter option').removeClass('selected');
+//$('#select_chapter').trigger({type: 'click', which: 1});
+$(chaptertoselect).prop('selected', true).addClass('selected').trigger('change');
+var versetoselect = $('#select_verse option:contains(verseNeeded)').filter(function() {return $(this).text() === 'verseNeeded';});
+$('#select_verse option').removeClass('selected');
+//$('#select_verse').trigger({type: 'click', which: 1});
+$(versetoselect).prop('selected', true).addClass('selected').trigger('change');
 // update the hidden divs
 $('#hidden_book_desired').text(bookNeeded);
 $('#hidden_chapter_desired').text(chapterNeeded);
@@ -3086,6 +3116,19 @@ var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
 var completeRefNeeded = (bookNeeded + '-' + chapterNeeded + '-' + verseNeeded);
 console.log(completeRefNeeded);
+// simulate the clicks and changes on the select boxes
+var booktoselect = $('#select_book option:contains(bookNeeded)').filter(function() {return $(this).text() === 'bookNeeded';});
+$('#select_book option').removeClass('selected');
+//$('#select_book').trigger({type: 'click', which: 1});
+$(booktoselect).prop('selected', true).addClass('selected').trigger('change');
+var chaptertoselect = $('#select_chapter option:contains(chapterNeeded)').filter(function() {return $(this).text() === 'chapterNeeded';});
+$('#select_chapter option').removeClass('selected');
+//$('#select_chapter').trigger({type: 'click', which: 1});
+$(chaptertoselect).prop('selected', true).addClass('selected').trigger('change');
+var versetoselect = $('#select_verse option:contains(verseNeeded)').filter(function() {return $(this).text() === 'verseNeeded';});
+$('#select_verse option').removeClass('selected');
+//$('#select_verse').trigger({type: 'click', which: 1});
+$(versetoselect).prop('selected', true).addClass('selected').trigger('change');
 // update the hidden divs
 $('#hidden_book_desired').text(bookNeeded);
 $('#hidden_chapter_desired').text(chapterNeeded);
