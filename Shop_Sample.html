@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="en-GB" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/DefinedTerm">
 <head>
@@ -1552,7 +1551,7 @@
       </form>
     </div>
 -->
-	
+
 <ul id="" class="wrap_menu_items">
 <li id="" class="CreateYourOwnDesign menu_item bf_links">create your own design</li>
 <li id="" class="browseFlowers menu_item bf_links">browse flowers</li>
@@ -2414,7 +2413,7 @@
 
 
 
-  
+
 
 
   <!-- ////////////////////////// -->
@@ -2473,7 +2472,7 @@
         shape: 'pill',
         label: 'pay',
         layout: 'vertical',
-        
+
       },
 
       onInit: function (data, actions) {
@@ -2670,7 +2669,7 @@ $( ".CreateYourOwnDesign" ).on( "click", function() {
 // when customer has not yet selected a verse
      $('.lets_change').hide();
      $('.lets_choose').show();
-	 
+
 ////////////////////////// -->
 ////////////////////////// -->
 // BEGIN render the welcome instructions
@@ -2696,7 +2695,7 @@ console.log("The 5 seconds went by, so we should now have it rendered.");
 // END render the welcome instructions
 ////////////////////////// -->
 ////////////////////////// -->
-	 
+
  } else {
 // if statement is to make sure all 3 select elements have been changed to something other than the defaults.
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
@@ -2772,7 +2771,7 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 	$(".step1_next_step2").hide();
 	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
-	
+
 ////////////////////////// -->
 ////////////////////////// -->
 // BEGIN render the fail and error verse
@@ -2804,9 +2803,9 @@ console.log( "Now things should be still okay, and ready to try again." );
   .always(function() {
     console.log( ".always function: Finished" );
   });
- 
+
 // Perform other work here ...
- 
+
 // Set another completion function for the request above
 jqxhr.always(function() {
   console.log( "jqxhr.always function: Second finished" );
@@ -2892,7 +2891,7 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 	$(".step1_next_step2").hide();
 	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
-	
+
 ////////////////////////// -->
 ////////////////////////// -->
 // BEGIN render the fail and error verse
@@ -2924,9 +2923,9 @@ console.log( "Now things should be still okay, and ready to try again." );
   .always(function() {
     console.log( ".always function: Finished" );
   });
- 
+
 // Perform other work here ...
- 
+
 // Set another completion function for the request above
 jqxhr.always(function() {
   console.log( "jqxhr.always function: Second finished" );
@@ -3045,7 +3044,7 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 	$(".step1_next_step2").hide();
 	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
-	
+
 ////////////////////////// -->
 ////////////////////////// -->
 // BEGIN render the fail and error verse
@@ -3077,9 +3076,9 @@ console.log( "Now things should be still okay, and ready to try again." );
   .always(function() {
     console.log( ".always function: Finished" );
   });
- 
+
 // Perform other work here ...
- 
+
 // Set another completion function for the request above
 jqxhr.always(function() {
   console.log( "jqxhr.always function: Second finished" );
@@ -3137,7 +3136,7 @@ $(".selected_verse").text(completeRefNeeded);
 	}
 	$('#customize_name').keyup(renderIn_modalName);
 	renderIn_modalName();
-	
+
 // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
 $( "#customize_name" ).on( "keyup", function() {
 var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style");
@@ -3170,7 +3169,7 @@ $('#description').val(completeDescription);
   <!-- ////////////////////////// -->
   <!-- END STEP 2 - NAME -->
   <!-- ////////////////////////// -->
-  
+
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 3 - FLOWER -->
   <!-- ////////////////////////// -->
@@ -3301,7 +3300,7 @@ $('#description').val(completeDescription);
   <!-- ////////////////////////// -->
   <!-- END STEP 4 - BACKGROUND -->
   <!-- ////////////////////////// -->
-  
+
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 5 - PLACE THE ORDER -->
   <!-- ////////////////////////// -->
