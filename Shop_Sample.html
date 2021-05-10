@@ -2183,7 +2183,6 @@ swipe sideways & click the one you like
 <div class="wrap_container_showing_selected_background"><img class="container_showing_selected_background" src="" alt="" /></div>
 
 
-
   </div>
 <!-- ////////////////////////// -->
 <!-- BEGIN swiper overlayed on top on mug -->
@@ -2248,6 +2247,8 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 <div class="placeholder_mug_side"><img class="" width="296" height="296" src="mug-front-blank.png" alt="" /></div>
+
+<div class="popup_ok_this_flower_theme_selected">selected</div>
 
   </div>
   <!-- ////////////////////////// -->
@@ -3440,27 +3441,36 @@ $(function(){
 ////////////////////////////////////////////////////
 ////BEGIN Swiper Flowers ///////////////////////
 ////////////////////////////////////////////////////
-	$( ".browseFlowers, .changeFlowers" ).on( "click", function() {
+$( ".browseFlowers, .changeFlowers" ).on( "click", function() {
 setTimeout(function(){
       var swiper = new Swiper(".mySwiper_flowers", {
-            watchActiveIndex: true,
-      on: {
-        slideChange: function() {
-          console.log(this.realIndex);
-      //    $('.real-index').html(this.realIndex);
-        }
-      },
-            on: {
-                click: function(){
-                    console.log(this.clickedIndex);
-					$('#hidden_lastClickedFlowerIndex').text(this.clickedIndex);
-                }
-                },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+watchActiveIndex: true,
+keyboard: {
+	enabled: true,
+	onlyInViewport: true,
+},
+on: {
+	slideChange: function() {
+	console.log(this.realIndex);
+//    $('.real-index').html(this.realIndex);
+	}
+},
+on: {
+	click: function(){
+	console.log(this.clickedIndex);
+	$('#hidden_lastClickedFlowerIndex').text(this.clickedIndex);
+	$('.popup_ok_this_flower_theme_selected').show('slow');
+	setTimeout(function(){
+	$('.popup_ok_this_flower_theme_selected').hide('slow');
+	}, 2000);
+	}
+},
+navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+},
+});
+	  
 	  var lastClickedFlowerIndex = +$('#hidden_lastClickedFlowerIndex').text();
 	  swiper.slideTo(lastClickedFlowerIndex);
 

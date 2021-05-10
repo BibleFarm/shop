@@ -836,3 +836,16 @@ display: table-cell;
     min-height: auto !important;
 	padding-top: 70px;
 }
+.popup_ok_this_flower_theme_selected {
+display: none;
+position: fixed;
+top: 258px;
+left: 58px;
+width: 200px;
+height: 100px;
+color: #d5ad6d;
+background: rgb(0,0,0,0.8);
+text-align: center;
+line-height: 100px;
+z-index: 2;
+}
