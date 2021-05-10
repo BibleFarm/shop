@@ -199,7 +199,7 @@ width: 122px;
     .modal_customize_verse {
       position: fixed;
       display: none;
-      height: calc(100% - 120px);
+      height: calc(100% - 126px);
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -308,7 +308,7 @@ margin-block-start: 0px;
 .narrow_separator {
 display: block;
 background: #444444;
-height: 4px;
+height: 1px;
 }
 .narrow_separator_as_bg {
 display: block;
