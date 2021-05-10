@@ -2063,31 +2063,21 @@
   <!-- BEGIN STEP 2 - NAME -->
   <!-- ////////////////////////// -->
   <div class="modal_customize_name">
-  
-  </div>
-  <!-- ////////////////////////// -->
-  <!-- END STEP 2 - NAME -->
-  <!-- ////////////////////////// -->
-
-  <!-- ////////////////////////// -->
-  <!-- BEGIN STEP 3 - FLOWER -->
-  <!-- ////////////////////////// -->
-  <div class="modal_customize_flowers">
 
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
 <div class="orderFlowNoFinger current_verse_hidden">Selected verse is: <span class="selected_verse">Nothing selected yet</span></div>
-<div class="orderFlowNoFinger">let's choose some flowers</div>
+<div class="orderFlowNoFinger">let's add your name or ministry name</div>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
+<input class="customize_name" name="" type="text" id="customize_name" value="" placeholder="type it here" width="" height="">
 
-<div class="tell_us_to_swipe_sideways">
-swipe sideways & click the one you like
-</div>
+<div class="narrow_separator_as_bg"></div>
+<div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 <div class="placeholder_mug_side"><img class="" width="296" height="296" src="mug-front-blank.png" alt="" /></div>
 <!-- ////////////////////////// -->
@@ -2133,8 +2123,94 @@ swipe sideways & click the one you like
 
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item addYourName">back to YourName</span>
-<span id="selectThisFlower" class="orderFlowFinger flex_item changeBackground">continue to backgrounds</span>
+<span class="orderFlowFinger flex_item changeVerse bf_links">back to change verse</span>
+<span class="orderFlowFinger flex_item changeFlowers bf_links">continue to flowers</span>
+</div>
+<div class="narrow_separator"></div>
+
+<div class="rendered_customerName_in_modalName-table">
+<span class="rendered_customerName_in_modalName"></span>
+</div>
+<div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
+
+<div class="wrap_container_showing_selected_flowers"><img class="container_showing_selected_flowers" src="" alt="" /></div>
+
+<div class="wrap_container_showing_selected_background"><img class="container_showing_selected_background" src="" alt="" /></div>
+
+  </div>
+  <!-- ////////////////////////// -->
+  <!-- END STEP 2 - NAME -->
+  <!-- ////////////////////////// -->
+
+  <!-- ////////////////////////// -->
+  <!-- BEGIN STEP 3 - FLOWER -->
+  <!-- ////////////////////////// -->
+  <div class="modal_customize_flowers">
+
+<div class="narrow_separator"></div>
+<div class="narrow_separator_as_bg"></div>
+
+<div class="orderFlowNoFinger current_verse_hidden">Selected verse is: <span class="selected_verse">Nothing selected yet</span></div>
+<div class="orderFlowNoFinger">let's choose some flowers</div>
+
+<div class="narrow_separator_as_bg"></div>
+<div class="narrow_separator"></div>
+<div class="narrow_separator_as_bg"></div>
+
+<div class="tell_us_to_swipe_sideways">
+swipe sideways & click the one you like
+</div>
+
+<div class="narrow_separator_as_bg"></div>
+<div class="narrow_separator"></div>
+<div class="narrow_separator_as_bg"></div>
+
+<div class="placeholder_mug_side"><img class="" width="296" height="296" src="mug-front-blank.png" alt="" /></div>
+<!-- ////////////////////////// -->
+<!-- BEGIN render mug background image inside the modals-->
+<!-- ////////////////////////// -->
+<div class="mug_render_cylinder_wrap_578x260_Center">
+<div class="frame">
+<div class="strip">
+<!--
+<div class="a"></div>
+<div class="b"></div>
+<div class="c"></div>
+<div class="d"></div>
+<div class="e"></div>
+<div class="f"></div>
+<div class="g"></div>
+-->
+<div class="h"></div>
+<div class="i"></div>
+<div class="j"></div>
+<div class="k"></div>
+<div class="l"></div>
+<div class="m"></div>
+<div class="n"></div>
+<div class="o"></div>
+<div class="p"></div>
+<div class="q"></div>
+<div class="r"></div>
+<!--
+<div class="s"></div>
+<div class="t"></div>
+<div class="u"></div>
+<div class="v"></div>
+<div class="w"></div>
+<div class="x"></div>
+-->
+</div>
+</div>
+</div>
+  <!-- ////////////////////////// -->
+<!-- END render mug background image inside the modals-->
+<!-- ////////////////////////// -->
+
+<div class="narrow_separator"></div>
+<div class="wrap_continue_bar">
+<span class="orderFlowFinger flex_item addYourName bf_links">back to YourName</span>
+<span id="selectThisFlower" class="orderFlowFinger flex_item changeBackground bf_links">continue to backgrounds</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalFlowers-table">
@@ -2233,7 +2309,11 @@ swipe sideways & click the one you like
 <div class="narrow_separator_as_bg"></div>
 
 <div class="tell_us_to_swipe_sideways">swipe sideways & click the one you like</div>
+
 <div class="narrow_separator_as_bg"></div>
+<div class="narrow_separator"></div>
+<div class="narrow_separator_as_bg"></div>
+
 <div class="placeholder_mug_side"><img class="" width="296" height="296" src="mug-front-blank.png" alt="" /></div>
 <!-- ////////////////////////// -->
 <!-- BEGIN render mug background image inside the modals-->
@@ -2278,8 +2358,8 @@ swipe sideways & click the one you like
 
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item changeFlowers">back to flowers</span>
-<span class="orderFlowFinger flex_item reviewOrder">review your order</span>
+<span class="orderFlowFinger flex_item changeFlowers bf_links">back to flowers</span>
+<span class="orderFlowFinger flex_item reviewOrder bf_links">review your order</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalBackgrounds-table">
@@ -2379,13 +2459,17 @@ swipe sideways & click the one you like
 <div class="narrow_separator_as_bg"></div>
 
 <div class="tell_us_to_swipe_sideways">looks good?</div>
+
 <div class="narrow_separator_as_bg"></div>
+<div class="narrow_separator"></div>
+<div class="narrow_separator_as_bg"></div>
+
 
 
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item changeBackground">back to backgrounds</span>
-<span class="orderFlowFinger flex_item placeOrder">place your order</span>
+<span class="orderFlowFinger flex_item changeBackground bf_links">back to backgrounds</span>
+<span class="orderFlowFinger flex_item placeOrder bf_links">place your order</span>
 </div>
 <div class="narrow_separator"></div>
 
@@ -2423,7 +2507,7 @@ swipe sideways & click the one you like
   </div>
   <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item reviewOrder">back to review your oder</span>
+<span class="orderFlowFinger flex_item reviewOrder bf_links">back to review your oder</span>
 </div>
 <div class="narrow_separator"></div>
 
@@ -3272,7 +3356,7 @@ $(".selected_verse").text(completeRefNeeded);
   <!-- BEGIN STEP 5 - REVIEW THE ORDER -->
   <!-- ////////////////////////// -->
 $( ".reviewOrder" ).on( "click", function() {
-        $(".modal_review_the_order").show("slow");
+        $(".modal_review_the_order").show();
         $(".opacity_cover").show();
 // grab the hidden text divs and combine them into the complete order details
 $('#description').val('');
@@ -3321,27 +3405,27 @@ $(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_
   <!-- Begin OrderFlow navigation -->
   <!-- ////////////////////////// -->
 $('.wrap_continue_bar').find('.changeVerse').on( "click", function() {
-$(".menu_modal, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide("slow");
+$(".menu_modal, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_verse').show();
 });  
 $('.wrap_continue_bar').find('.addYourName').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide("slow");
+$(".menu_modal, .modal_customize_verse, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_name').show();
 });  
 $('.wrap_continue_bar').find('.changeFlowers').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide("slow");
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_flowers, .wrap_swiper_container_flowers').show();
 });  
 $('.wrap_continue_bar').find('.changeBackground').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .modal_review_the_order, .modal_place_the_order").hide("slow");
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_backgrounds, .wrap_swiper_container_backgrounds').show();
 });  
 $('.wrap_continue_bar').find('.reviewOrder').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_place_the_order").hide("slow");
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_place_the_order").hide();
 $('.modal_review_the_order').show();
 });  
 $('.wrap_continue_bar').find('.placeOrder').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order").hide("slow");
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order").hide();
 $('.modal_place_the_order').show();
 });  
   <!-- ////////////////////////// -->

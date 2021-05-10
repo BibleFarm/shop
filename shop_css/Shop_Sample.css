@@ -221,7 +221,7 @@ text-align: center;
 .selected_bible_ref_fixed_on_mug {
 position: fixed;
 display: block;
-top: 410px;
+top: 412px;
 left: 46px;
 width: 222px;
 height: 20px;
@@ -238,7 +238,7 @@ z-index: 1;
     .modal_customize_name {
       position: fixed;
       display: none;
-      height: 446px;
+      height: 454px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -253,7 +253,7 @@ z-index: 1;
     .modal_customize_flowers {
       position: fixed;
       display: none;
-      height: 446px;
+      height: 454px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -268,7 +268,7 @@ z-index: 1;
     .modal_customize_backgrounds {
       position: fixed;
       display: none;
-      height: 446px;
+      height: 454px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -283,7 +283,7 @@ z-index: 1;
     .modal_review_the_order {
       position: fixed;
       display: none;
-      height: 446px;
+      height: 454px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -298,7 +298,7 @@ z-index: 1;
     .modal_place_the_order {
       position: fixed;
       display: none;
-      height: 446px;
+      height: 454px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -498,7 +498,7 @@ display: table-cell;
 .made_with_love_fixed_on_mug {
 position: fixed;
 display: block;
-top: 418px;
+top: 410px;
 left: 45px;
 width: 222px;
 height: 20px;
@@ -812,7 +812,7 @@ position: absolute;
 display: block;
 width: 220px;
 height: 220px;
-    top: 138px;
+    top: 137px;
     left: 42px;
 }
 img.container_showing_selected_flowers {
