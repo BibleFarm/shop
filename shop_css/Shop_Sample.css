@@ -474,26 +474,25 @@ display: table-cell;
 .wrap_background_images_inside_modal_customize_backgrounds {
 position: relative;
 display: block;
-width: 220px;
-height: 220px;
+width: 42px;
+height: 42px;
     top: ;
     left: ;
     width: ;
 }
 img.images_inside_modal_customize_backgrounds {
-display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 134px;
-    max-height: 280px;
-    display: block;
+    max-width: 42px;
+    max-height: 42px;
     margin: 0 auto;
     cursor: auto !important;
     min-width: auto !important;
-    height: auto !important;
+    width: 42px !important;
+    height: 42px !important;
     min-height: auto !important;
-	padding-top: 70px;
+	cursor: pointer;
 }
 .made_with_love_fixed_on_mug {
 position: fixed;
@@ -556,7 +555,7 @@ width: 24px;
 
 .strip div {
 	position: absolute;
-	background: #000 url(../578x260_Sample_1.png);  /* background image is 792px 320px, try with green-hills or thailand-sunrise.jpg */
+	background-image: url(../bg-bleed/D-01.png);  /* background image is 792px 320px, try with green-hills or thailand-sunrise.jpg */
 	/*background-size: contain;*/
 	border: /*solid rgb(145,87,0)*/;
 	border-width: /*thin 0*/;
@@ -698,8 +697,8 @@ background: red;
 position: fixed;
 display: none;
 top: 170px;
-left: 8px;
-width: 296px;
+left: 51px;
+width: 212px;
 height: 250px;
 background: none;
 margin: 0 auto;
@@ -709,10 +708,10 @@ z-index: 2;
 .wrap_swiper_container_backgrounds {
 position: fixed;
 display: none;
-top: 170px;
-left: 8px;
+top: 110px;
+left: 12px;
 width: 296px;
-height: 250px;
+height: 42px;
 background: none;
 margin: 0 auto;
 padding: 0;
@@ -752,12 +751,48 @@ z-index: 2;
         height: 100%;
         object-fit: cover;
       }
+.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-wrapper > .swiper-slide {
+
+}
+.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-button-next {
+	position: fixed;
+	top: 300px;
+	left: 278px;
+}
+.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-button-prev {
+	position: fixed;
+	top: 300px;
+	left: 8px;
+}
+
+
 /* ************* */
 /* END swiper flowers
 /* ************* */
 /* ************* */
 /* BEGIN swiper backgrounds
 /* ************* */
+.mySwiper_backgrounds {
+	
+}
+.wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-button-next {
+	display: none;
+}
+.wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-button-prev {
+	display: none;
+}
+.wrap_swiper_container_backgrounds > .mySwiper_backgrounds {
+	background: red;
+	max-width: 296px !important;
+}
+.wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-wrapper {
+	background: red;
+}
+.wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-wrapper > .swiper-slide {
+	background: black;
+	width: 46px !important;
+	cursor: pointer !important;
+}
       .swiper-container {
         width: 100%;
         height: 100%;

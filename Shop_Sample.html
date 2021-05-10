@@ -2049,6 +2049,7 @@
 <div id="hidden_flower_desired"></div>
 <div id="hidden_lastClickedFlowerIndex"></div>
 <div id="hidden_background_desired"></div>
+<div id="hidden_lastClickedBackgroundIndex"></div>
 
 
 
@@ -2379,6 +2380,10 @@ swipe sideways & click the one you like
     <div class="swiper-container mySwiper_backgrounds">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-00.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
 <img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-01.png" alt="" />
 </div>
 </div>
@@ -2438,6 +2443,9 @@ swipe sideways & click the one you like
 <span class="orderFlowFinger flex_item">add to cart</span>
 </div>
 <div class="narrow_separator"></div>
+
+<div class="popup_ok_this_background_theme_selected">selected</div>
+
   </div>
   <!-- ////////////////////////// -->
   <!-- END STEP 4 - BACKGROUND -->
@@ -3348,6 +3356,12 @@ $(".selected_verse").text(completeRefNeeded);
 		$('.wrap_swiper_container_backgrounds').show();
         $(".opacity_cover").show();
 });
+// make this clicked background image the selected one and show it in the other modals
+$( "img.images_inside_modal_customize_backgrounds" ).on( "click", function() {
+var selectedBackground = $(this).attr("src").replace(/bg-bleed\\/, '').replace(/\.png/, '');
+$( "#hidden_background_desired" ).text(selectedBackground);
+$('.container_showing_selected_background').attr("src", "bg-bleed/" + selectedBackground + ".png" );
+});
   <!-- ////////////////////////// -->
   <!-- END STEP 4 - BACKGROUND -->
   <!-- ////////////////////////// -->
@@ -3525,10 +3539,6 @@ on: {
 	click: function(){
 	console.log(this.clickedIndex);
 	$('#hidden_lastClickedFlowerIndex').text(this.clickedIndex);
-	$('.popup_ok_this_flower_theme_selected').show('slow');
-	setTimeout(function(){
-	$('.popup_ok_this_flower_theme_selected').hide();
-	}, 2000);
 	}
 },
 navigation: {
@@ -3542,6 +3552,13 @@ navigation: {
 
 }, 1000);
 });
+// The selection is recorded in the #hidden_lastClickedFlowerIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
+$( ".images_inside_modal_customize_flowers" ).on( "click", function() {
+	$('.popup_ok_this_flower_theme_selected').show('slow');
+	setTimeout(function(){
+	$('.popup_ok_this_flower_theme_selected').hide();
+	}, 2000);
+});
 ////////////////////////////////////////////////////
 ////END Swiper Flowers ///////////////////////
 ////////////////////////////////////////////////////
@@ -3551,12 +3568,37 @@ navigation: {
 	$( ".browseBackgrounds, .changeBackground" ).on( "click", function() {
 setTimeout(function(){
       var swiper = new Swiper(".mySwiper_backgrounds", {
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+watchActiveIndex: true,
+keyboard: {
+	enabled: true,
+	onlyInViewport: true,
+},
+on: {
+	slideChange: function() {
+	console.log(this.realIndex);
+//    $('.real-index').html(this.realIndex);
+	}
+},
+on: {
+	click: function(){
+	console.log(this.clickedIndex);
+	$('#hidden_lastClickedBackgroundIndex').text(this.clickedIndex);
+	}
+},
       });
 }, 1000);
+});
+// The selection is recorded in the #hidden_lastClickedBackgroundIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
+$( ".images_inside_modal_customize_backgrounds" ).on( "click", function() {
+setTimeout(function(){
+	$('.popup_ok_this_background_theme_selected').show('slow');
+	setTimeout(function(){
+	$('.popup_ok_this_background_theme_selected').hide();
+	}, 2000);
+// render mug background
+var backgroundNeeded = $('#hidden_background_desired').text();
+$('.mug_render_cylinder_wrap_578x260_Center > .frame > .strip').html('<div class="h" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="i" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="j" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="k" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="l" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="m" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="n" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="o" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="p" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="q" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="r" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div>');
+}, 2000);
 });
 ////////////////////////////////////////////////////
 ////END Swiper Backgrounds ///////////////////////
