@@ -199,7 +199,7 @@ width: 122px;
     .modal_customize_verse {
       position: fixed;
       display: none;
-      height: calc(100% - 126px);
+      height: 442px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -209,7 +209,7 @@ width: 122px;
       padding-right: 8px;
       padding-top: 0px;
       padding-bottom: 0px;
-	  overflow: auto;
+	  overflow: hidden;
     }
 	
 .wrap_bible_verse_selection {
