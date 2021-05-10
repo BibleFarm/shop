@@ -200,7 +200,7 @@ width: 122px;
     .modal_customize_verse {
       position: fixed;
       display: none;
-      height: 446px;
+      height: 454px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
@@ -238,61 +238,76 @@ z-index: 1;
     .modal_customize_name {
       position: fixed;
       display: none;
-      height: calc(100% - 100px);
+      height: 446px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
       background: #111111;
       z-index: 1;
-      padding: 8px;
-	  overflow: auto;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+	  overflow: hidden;
     }
     .modal_customize_flowers {
       position: fixed;
       display: none;
-      height: calc(100% - 100px);
+      height: 446px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
       background: #111111;
       z-index: 1;
-      padding: 8px;
-	  overflow: auto;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+	  overflow: hidden;
     }
     .modal_customize_backgrounds {
       position: fixed;
       display: none;
-      height: calc(100% - 100px);
+      height: 446px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
       background: #111111;
       z-index: 1;
-      padding: 8px;
-	  overflow: auto;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+	  overflow: hidden;
     }
     .modal_review_the_order {
       position: fixed;
       display: none;
-      height: calc(100% - 100px);
+      height: 446px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
       background: #111111;
       z-index: 1;
-      padding: 8px;
-	  overflow: auto;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+	  overflow: hidden;
     }
     .modal_place_the_order {
       position: fixed;
       display: none;
-      height: calc(100% - 100px);
+      height: 446px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
       background: #111111;
       z-index: 1;
-      padding: 8px;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
 	  overflow: auto;
     }
 #descriptionError, #priceLabelError {
@@ -314,7 +329,7 @@ height: 1px;
 .narrow_separator_as_bg {
 display: block;
 background: #222222;
-height: 0px;
+height: 1px;
 }
 .selected_verse {
 color: #ae9c80;
