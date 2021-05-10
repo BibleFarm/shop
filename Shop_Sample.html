@@ -2767,9 +2767,9 @@ console.log('Verse changed to: ' + selected_verse);
 ////////////////////////// -->
 $( ".CreateYourOwnDesign" ).on( "click", function() {
 // close the menu_modal
-        $(".menu_modal").hide("slow");
+        $(".menu_modal").hide();
 // open the modal
-        $(".modal_customize_verse").show("slow");
+        $(".modal_customize_verse").show();
         $(".opacity_cover").show();
 // display a selected book chapter verse or offer to choose one
 	if ($('.selected_verse:contains("Nothing selected yet")').length > 0)
@@ -2794,10 +2794,10 @@ $( ".CreateYourOwnDesign" ).on( "click", function() {
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
-}, 5000);
+}, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
-}, 5000);
+}, 3500);
 ////////////////////////// -->
 ////////////////////////// -->
 // END render the welcome instructions
@@ -2811,10 +2811,10 @@ $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
 var step1_next_step2TimeoutID = setTimeout(function() {
 $(".step1_next_step2").css("background", "#292a00").show();
-  }, 2000);
+  }, 1500);
   setTimeout(function() {
 $(".verse_selection_complete").hide();
-  }, 4000);
+  }, 3000);
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
@@ -2851,10 +2851,10 @@ console.log(".done function is now populating the text of the verse...");
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
-}, 5000);
+}, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
-}, 5000);
+}, 3500);
 // Update newly selected verse at the top
 var newlySelectedBook = $('#hidden_book_desired').text();
 var newlySelectedChapter = $('#hidden_chapter_desired').text();
@@ -2896,11 +2896,11 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
-}, 5000);
+}, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
 console.log( "Now things should be still okay, and ready to try again." );
-}, 5000);
+}, 3500);
 ////////////////////////// -->
 ////////////////////////// -->
 // END render the fail and error verse
@@ -2931,10 +2931,10 @@ $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
 var step1_next_step2TimeoutID = setTimeout(function() {
 $(".step1_next_step2").css("background", "#292a00").show();
-  }, 2000);
+  }, 1500);
   setTimeout(function() {
 $(".verse_selection_complete").hide();
-  }, 4000);
+  }, 3000);
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
@@ -2971,10 +2971,10 @@ console.log(".done function is now populating the text of the verse...");
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
-}, 5000);
+}, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
-}, 5000);
+}, 3500);
 // Update newly selected verse at the top
 var newlySelectedBook = $('#hidden_book_desired').text();
 var newlySelectedChapter = $('#hidden_chapter_desired').text();
@@ -3016,11 +3016,11 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
-}, 5000);
+}, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
 console.log( "Now things should be still okay, and ready to try again." );
-}, 5000);
+}, 3500);
 ////////////////////////// -->
 ////////////////////////// -->
 // END render the fail and error verse
@@ -3075,7 +3075,7 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_verse").show("slow");
+        $(".modal_customize_verse").show();
         $(".opacity_cover").show();
 // customer has selected a verse, so...
      $('.lets_change').show();
@@ -3084,10 +3084,10 @@ $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
 var step1_next_step2TimeoutID = setTimeout(function() {
 $(".step1_next_step2").css("background", "#292a00").show();
-  }, 2000);
+  }, 1500);
   setTimeout(function() {
 $(".verse_selection_complete").hide();
-  }, 4000);
+  }, 3000);
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
@@ -3124,10 +3124,10 @@ console.log(".done function is now populating the text of the verse...");
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
-}, 5000);
+}, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
-}, 5000);
+}, 3500);
 // Update newly selected verse at the top
 var newlySelectedBook = $('#hidden_book_desired').text();
 var newlySelectedChapter = $('#hidden_chapter_desired').text();
@@ -3169,11 +3169,11 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
-}, 5000);
+}, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
 console.log( "Now things should be still okay, and ready to try again." );
-}, 5000);
+}, 3500);
 ////////////////////////// -->
 ////////////////////////// -->
 // END render the fail and error verse
@@ -3228,7 +3228,7 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_name").show("slow");
+        $(".modal_customize_name").show();
         $(".opacity_cover").show();
 		$('#customize_name').focus();
 });
@@ -3252,7 +3252,7 @@ var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style"
 setTimeout(function(){
 $( ".rendered_customerName_in_modalFlowers > span" ).attr("style",newFontSize);
 $( ".rendered_customerName_in_modalBackgrounds > span" ).attr("style",newFontSize);
-}, 5000);
+}, 3500);
 // AND  it also gets updated in the hidden_name_desired
 $('#hidden_name_desired').text($('#customize_name').val());
 });
@@ -3266,7 +3266,7 @@ $('#hidden_name_desired').text($('#customize_name').val());
 // when customer arrives here via the menu
 $( ".browseFlowers" ).on( "click", function() {
 // open the modal
-        $(".modal_customize_flowers").show("slow");
+        $(".modal_customize_flowers").show();
 		$('.wrap_swiper_container_flowers').show();
         $(".opacity_cover").show();
 });
@@ -3296,7 +3296,7 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_flowers").show("slow");
+        $(".modal_customize_flowers").show();
 		$('.wrap_swiper_container_flowers').show();
         $(".opacity_cover").show();
 });
@@ -3315,7 +3315,7 @@ $('.container_showing_selected_flowers').attr("src", "bg-flowers/" + selectedFlo
 // when customer arrives here via the menu
 $( ".browseBackgrounds" ).on( "click", function() {
 // open the modal
-        $(".modal_customize_backgrounds").show("slow");
+        $(".modal_customize_backgrounds").show();
 		$('.wrap_swiper_container_backgrounds').show();
         $(".opacity_cover").show();
 });
@@ -3345,7 +3345,7 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_backgrounds").show("slow");
+        $(".modal_customize_backgrounds").show();
 		$('.wrap_swiper_container_backgrounds').show();
         $(".opacity_cover").show();
 });
@@ -3395,7 +3395,7 @@ $('#description').val(completeDescription);
   <!-- BEGIN STEP 6 - PLACE THE ORDER -->
   <!-- ////////////////////////// -->
 $( ".placeOrder" ).on( "click", function() {
-        $(".modal_place_the_order").show("slow");
+        $(".modal_place_the_order").show();
         $(".opacity_cover").show();
 		$('.order-amount').focus();
 });
@@ -3405,7 +3405,7 @@ $( ".placeOrder" ).on( "click", function() {
 
 // hide any and all modals when click outside
 $(".opacity_cover").click(function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide("slow");
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 });
 
   <!-- ////////////////////////// -->
@@ -3469,40 +3469,6 @@ $('.modal_place_the_order').show();
 }(jQuery))
 // END blink.js
 
-////////////////////////////////////////////////////
-////BEGIN TEMPORARY TEXT STROKE ////////////////////
-////////////////////////////////////////////////////
-// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
-$.fn.textStroke = function(r, colour) {
-var rules = [];
-var steps = 24;
-for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
-var x = r*Math.cos(t);
-var y = r*Math.sin(t);
-x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
-y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
-rules.push( x + "px " + y + "px 0px " + colour );
-}
-this.css('textShadow',rules.join());
-};
-$(function(){
-//$('body').css("background", "tan");
-//    $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#000000");
-//    $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#000000");
-//    $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#000000");
-//    $('.CUSTOMER_REF_table-cell').attr("style", "").css("color", "#000000");
-
-    $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#d5ad6d');
-    $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#d5ad6d');
-    $('.rendered_customerName_in_modalName').textStroke(0.7,'#d5ad6d');
-    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#d5ad6d');
-    $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#d5ad6d');
-    $('.made_with_love_fixed_on_mug').textStroke(0.5,'#d5ad6d');
-    $('.heart_fixed_on_mug').textStroke(0.5,'#000000');
-});
-////////////////////////////////////////////////////
-////END TEMPORARY TEXT STROKE ///////////////////////
-////////////////////////////////////////////////////
 
 });
 </script>
@@ -3547,7 +3513,7 @@ navigation: {
 });
 // The selection is recorded in the #hidden_lastClickedFlowerIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
 $( ".images_inside_modal_customize_flowers" ).on( "click", function() {
-	$('.popup_ok_this_flower_theme_selected').show('slow');
+	$('.popup_ok_this_flower_theme_selected').show();
 	setTimeout(function(){
 	$('.popup_ok_this_flower_theme_selected').hide();
 	}, 2000);
@@ -3587,14 +3553,153 @@ on: {
 // The selection is recorded in the #hidden_lastClickedBackgroundIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
 $( ".images_inside_modal_customize_backgrounds" ).on( "click", function() {
 setTimeout(function(){
-	$('.popup_ok_this_background_theme_selected').show('slow');
+	$('.popup_ok_this_background_theme_selected').show();
 	setTimeout(function(){
 	$('.popup_ok_this_background_theme_selected').hide();
 	}, 2000);
 // render mug background
 var backgroundNeeded = $('#hidden_background_desired').text();
 $('.mug_render_cylinder_wrap_578x260_Center > .frame > .strip').html('<div class="h" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="i" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="j" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="k" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="l" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="m" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="n" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="o" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="p" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="q" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="r" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div>');
-}, 2000);
+}, 100);
+// change text color & stroke based on background
+setTimeout(function(){
+// if url has a "D"
+if ( $("#hidden_background_desired").text().indexOf('D') > -1 ) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+    $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
+    $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#d5ad6d");
+    $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
+    $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
+
+    $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#000000');
+    $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#000000');
+    $('.rendered_customerName_in_modalName').textStroke(0.7,'#000000');
+    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#000000');
+    $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#000000');
+    $('.made_with_love_fixed_on_mug').textStroke(0.5,'#000000');
+    $('.heart_fixed_on_mug').textStroke(0.5,'#000000');
+});
+// END textStroke
+}
+// if url has a "d"
+if ( $("#hidden_background_desired").text().indexOf('d') > -1 ) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+    $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
+    $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#d5ad6d");
+    $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
+    $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
+
+    $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#000000');
+    $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#000000');
+    $('.rendered_customerName_in_modalName').textStroke(0.7,'#000000');
+    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#000000');
+    $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#000000');
+    $('.made_with_love_fixed_on_mug').textStroke(0.5,'#000000');
+    $('.heart_fixed_on_mug').textStroke(0.5,'#000000');
+});
+// END textStroke
+}
+// if url has a "L"
+if ( $("#hidden_background_desired").text().indexOf('L') > -1 ) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+    $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#000000");
+    $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#000000");
+    $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#000000");
+    $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
+
+    $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#d5ad6d');
+    $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+    $('.rendered_customerName_in_modalName').textStroke(0.7,'#d5ad6d');
+    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#d5ad6d');
+    $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#d5ad6d');
+    $('.made_with_love_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+    $('.heart_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+});
+// END textStroke
+}
+// if url has a "l"
+if ( $("#hidden_background_desired").text().indexOf('l') > -1 ) {
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+    $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#000000");
+    $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#000000");
+    $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#000000");
+    $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
+
+    $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#d5ad6d');
+    $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+    $('.rendered_customerName_in_modalName').textStroke(0.7,'#d5ad6d');
+    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#d5ad6d');
+    $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#d5ad6d');
+    $('.made_with_love_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+    $('.heart_fixed_on_mug').textStroke(0.5,'#d5ad6d');
+});
+// END textStroke
+}
+}, 500);
 });
 ////////////////////////////////////////////////////
 ////END Swiper Backgrounds ///////////////////////
