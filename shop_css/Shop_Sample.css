@@ -221,7 +221,7 @@ text-align: center;
 .selected_bible_ref_fixed_on_mug {
 position: fixed;
 display: block;
-top: 400px;
+top: 410px;
 left: 46px;
 width: 222px;
 height: 20px;
@@ -343,7 +343,7 @@ text-align:center;
 .selected_bible_verse_fixed_on_mug-table {
 position: fixed;
 display: table;
-top: 180px;
+top: 190px;
 left: 55px;
 width: 202px;
 height: 220px;
@@ -352,7 +352,7 @@ z-index: 1;
 .selected_bible_verse_fixed_on_mug {
 position: fixed;
 display: table-cell;
-top: 180px;
+top: 190px;
 left: 55px;
 width: 202px;
 height: 220px;
@@ -531,7 +531,7 @@ when background image is 792px x 320px we divide it by 24 frames, and the we get
 position: fixed;
     text-align: center;
     margin: 0 auto;
-    top: 156px;
+    top: 170px;
     left: 150px;
     /* width: 550px; */
     -moz-perspective: 900px;
@@ -680,9 +680,8 @@ left: 20px;
 /* END brought in from wrap_image_to_mug_css_only.css */
 /* ************************ */
 
-.current_verse_hidden {display: ;}
 .tell_us_to_swipe_sideways {
-dispaly: block;
+display: block;
 width: 100%;
 height: 42px;
 line-height: 42px;
@@ -832,13 +831,12 @@ display: table-cell;
 	padding-top: 70px;
 }
 .wrap_container_showing_selected_background {
-position: relative;
+position: absolute;
 display: block;
 width: 220px;
 height: 220px;
-    top: ;
-    left: ;
-    width: ;
+    top: 138px;
+    left: 42px;
 }
 img.container_showing_selected_background {
 display: table-cell;
@@ -867,4 +865,7 @@ background: rgb(0,0,0,0.8);
 text-align: center;
 line-height: 100px;
 z-index: 2;
+}
+.yourOrderIs {
+	display: none;
 }
