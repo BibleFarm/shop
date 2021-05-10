@@ -267,14 +267,26 @@ z-index: 1;
       padding: 8px;
 	  overflow: auto;
     }
-    .place_the_order {
+    .modal_review_the_order {
       position: fixed;
       display: none;
       height: calc(100% - 100px);
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
-      background: #ffffff;
+      background: #111111;
+      z-index: 1;
+      padding: 8px;
+	  overflow: auto;
+    }
+    .modal_place_the_order {
+      position: fixed;
+      display: none;
+      height: calc(100% - 100px);
+      width: 296px;
+      top: calc(4px + 44px);
+      left: 4px;
+      background: #111111;
       z-index: 1;
       padding: 8px;
 	  overflow: auto;
@@ -773,5 +785,54 @@ display: none;
 display: none;
 	background: #111111;
 }
-#hidden_book_desired,#hidden_chapter_desired,#hidden_verse_desired {display:none;}
+#hidden_book_desired,#hidden_chapter_desired,#hidden_verse_desired,#hidden_name_desired,#hidden_flower_desired,#hidden_background_desired, #hidden_lastClickedFlowerIndex {display:none;}
+
 .still_need_to_select_chapter_and_verse {display:none;}
+
+.wrap_container_showing_selected_flowers {
+position: absolute;
+display: block;
+width: 220px;
+height: 220px;
+    top: 138px;
+    left: 42px;
+}
+img.container_showing_selected_flowers {
+display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    max-width: 134px;
+    max-height: 280px;
+    display: block;
+    margin: 0 auto;
+    cursor: auto !important;
+    min-width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+	padding-top: 70px;
+}
+.wrap_container_showing_selected_background {
+position: relative;
+display: block;
+width: 220px;
+height: 220px;
+    top: ;
+    left: ;
+    width: ;
+}
+img.container_showing_selected_background {
+display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    max-width: 134px;
+    max-height: 280px;
+    display: block;
+    margin: 0 auto;
+    cursor: auto !important;
+    min-width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+	padding-top: 70px;
+}
