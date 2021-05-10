@@ -2136,8 +2136,6 @@
 
 <div class="wrap_container_showing_selected_flowers"><img class="container_showing_selected_flowers" src="" alt="" /></div>
 
-<div class="wrap_container_showing_selected_background"><img class="container_showing_selected_background" src="" alt="" /></div>
-
   </div>
   <!-- ////////////////////////// -->
   <!-- END STEP 2 - NAME -->
@@ -2218,9 +2216,6 @@ swipe sideways & click the one you like
 <span class="rendered_customerName_in_modalFlowers" style=""></span>
 </div>
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
-
-<div class="wrap_container_showing_selected_background"><img class="container_showing_selected_background" src="" alt="" /></div>
-
 
   </div>
 <!-- ////////////////////////// -->
@@ -2303,13 +2298,13 @@ swipe sideways & click the one you like
 <div class="narrow_separator_as_bg"></div>
 
 <div class="orderFlowNoFinger current_verse_hidden">Selected verse is: <span class="selected_verse">Nothing selected yet</span></div>
-<div class="orderFlowNoFinger">let's choose a background</div>
+<div class="orderFlowNoFinger">swipe sideways & click on palette colors</div>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="tell_us_to_swipe_sideways">swipe sideways & click the one you like</div>
+<div class="tell_us_to_swipe_sideways_bg"></div>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
@@ -2482,8 +2477,6 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 
 <div class="wrap_container_showing_selected_flowers"><img class="container_showing_selected_flowers" src="" alt="" /></div>
-<div class="wrap_container_showing_selected_background"><img class="container_showing_selected_background" src="" alt="" /></div>
-
 
 </div>
 
@@ -3568,6 +3561,9 @@ $( ".images_inside_modal_customize_flowers" ).on( "click", function() {
 	$( ".browseBackgrounds, .changeBackground" ).on( "click", function() {
 setTimeout(function(){
       var swiper = new Swiper(".mySwiper_backgrounds", {
+freeMode: true,
+        slidesPerView: 6,
+        spaceBetween: 2,
 watchActiveIndex: true,
 keyboard: {
 	enabled: true,
@@ -3597,7 +3593,7 @@ setTimeout(function(){
 	}, 2000);
 // render mug background
 var backgroundNeeded = $('#hidden_background_desired').text();
-$('.mug_render_cylinder_wrap_578x260_Center > .frame > .strip').html('<div class="h" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="i" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="j" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="k" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="l" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="m" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="n" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="o" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="p" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="q" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="r" style="background-image: url(D:/Github/shop/bg-bleed/' + backgroundNeeded  + '.png)"></div>');
+$('.mug_render_cylinder_wrap_578x260_Center > .frame > .strip').html('<div class="h" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="i" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="j" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="k" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="l" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="m" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="n" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="o" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="p" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="q" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div><div class="r" style="background-image: url(bg-bleed/' + backgroundNeeded  + '.png)"></div>');
 }, 2000);
 });
 ////////////////////////////////////////////////////

@@ -685,12 +685,24 @@ width: 100%;
 height: 42px;
 line-height: 42px;
 text-align:center;
-background: red;
     color: #d5ad6d;
     font-size: 20px;
     font-family: 'PT_Sans-Narrow-Web-Regular';
     font-weight: bold;
     background: #444444;
+    padding: 0px;
+}
+.tell_us_to_swipe_sideways_bg {
+display: block;
+width: 100%;
+height: 42px;
+line-height: 42px;
+text-align:center;
+    color: #d5ad6d;
+    font-size: 20px;
+    font-family: 'PT_Sans-Narrow-Web-Regular';
+    font-weight: bold;
+    background: #000000;
     padding: 0px;
 }
 .wrap_swiper_container_flowers {
@@ -781,6 +793,7 @@ z-index: 2;
 .wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-button-prev {
 	display: none;
 }
+/*
 .wrap_swiper_container_backgrounds > .mySwiper_backgrounds {
 	background: red;
 	max-width: 296px !important;
@@ -793,6 +806,7 @@ z-index: 2;
 	width: 46px !important;
 	cursor: pointer !important;
 }
+*/
       .swiper-container {
         width: 100%;
         height: 100%;
@@ -848,7 +862,7 @@ display: block;
 width: 220px;
 height: 220px;
     top: 137px;
-    left: 42px;
+    left: 43px;
 }
 img.container_showing_selected_flowers {
 display: table-cell;
@@ -888,7 +902,7 @@ display: table-cell;
     min-height: auto !important;
 	padding-top: 70px;
 }
-.popup_ok_this_flower_theme_selected {
+.popup_ok_this_flower_theme_selected, .popup_ok_this_background_theme_selected {
 display: none;
 position: fixed;
 top: 258px;
