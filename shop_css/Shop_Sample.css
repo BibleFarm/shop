@@ -165,7 +165,8 @@ display: block;
 text-align: center;
 line-height: 22px;
 background: #222222;
-padding: 2px;
+padding-top: 2px;
+padding-bottom: 4px;
 }
 .orderFlowFinger {
 display: block;
@@ -199,7 +200,7 @@ width: 122px;
     .modal_customize_verse {
       position: fixed;
       display: none;
-      height: 442px;
+      height: 446px;
       width: 296px;
       top: calc(4px + 44px);
       left: 4px;
