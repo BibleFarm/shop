@@ -1564,7 +1564,15 @@
 <!-- ////////////////////////// -->
 <!-- END menu_modal -->
 <!-- ////////////////////////// -->
-
+<!-- ////////////////////////// -->
+<!-- BEGIN help_modal -->
+<!-- ////////////////////////// -->
+  <div class="help_modal">
+  hola rhis is the help modal
+  </div>
+<!-- ////////////////////////// -->
+<!-- BEGIN help_modal -->
+<!-- ////////////////////////// -->
 <!-- ////////////////////////// -->
 <!-- BEGIN STEP 1 - VERSE -->
 <!-- ////////////////////////// -->
@@ -2034,7 +2042,7 @@
 <span class="orderFlowFinger flex_item no_book_nor_chapter_nor_verse_selection_yet">please select book & chapter & verse above</span>
 <span class="orderFlowFinger flex_item still_need_to_select_chapter_and_verse">select also chapter & verse right next to that</span>
 <span class="orderFlowFinger flex_item verse_selection_complete">just a moment...</span>
-<span class="orderFlowFinger flex_item bf_links addYourName step1_next_step2">continue to add YourName</span>
+<span class="orderFlowFinger flex_item bf_links addYourName step1_next_step2 continue_to_next_step">continue to add YourName</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="selected_bible_verse_fixed_on_mug-table">
@@ -2051,6 +2059,39 @@
 <div id="hidden_background_desired"></div>
 <div id="hidden_lastClickedBackgroundIndex"></div>
 
+<div class="popup_ok_this_verse_selected">
+<div class="wrap_waiting">
+  <table>
+    <tr>
+      <td>
+        <span class="hidden_1 class_hide_show">
+          The Bible
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="hidden_2 class_hide_show">
+          contains
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="hidden_3 class_hide_show">
+          31.102 verses
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="hidden_4 class_hide_show">
+<div class="wait_to_load_options">loading in <span class="countdown_loading_addthis_options">3</span></div>        </span>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
 
 
 
@@ -2125,7 +2166,7 @@
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item changeVerse bf_links">back to change verse</span>
-<span class="orderFlowFinger flex_item changeFlowers bf_links">continue to flowers</span>
+<span class="orderFlowFinger flex_item changeFlowers bf_links continue_to_next_step">continue to flowers</span>
 </div>
 <div class="narrow_separator"></div>
 
@@ -2209,7 +2250,7 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item addYourName bf_links">back to YourName</span>
-<span id="selectThisFlower" class="orderFlowFinger flex_item changeBackground bf_links">continue to backgrounds</span>
+<span id="selectThisFlower" class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to backgrounds</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalFlowers-table">
@@ -2355,7 +2396,7 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item changeFlowers bf_links">back to flowers</span>
-<span class="orderFlowFinger flex_item reviewOrder bf_links">review your order</span>
+<span class="orderFlowFinger flex_item reviewOrder bf_links continue_to_next_step">review your order</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalBackgrounds-table">
@@ -2472,7 +2513,7 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item changeBackground bf_links">back to backgrounds</span>
-<span class="orderFlowFinger flex_item placeOrder bf_links">place your order</span>
+<span class="orderFlowFinger flex_item placeOrder bf_links continue_to_next_step">place your order</span>
 </div>
 <div class="narrow_separator"></div>
 
@@ -2539,7 +2580,8 @@ swipe sideways & click the one you like
 <script src="shop_js/jquery.zoom.min.js" type="text/javascript"></script>
 <!-- jquery_textfill_062.js -->
 <script type="text/javascript" src="shop_js/jquery_textfill_062.js"></script>
-
+<!-- jquery_textillate.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw==" crossorigin="anonymous"></script>
 
   <!-- ////////////////////////// -->
   <!-- END JS dependencies -->
@@ -2766,6 +2808,48 @@ console.log('Verse changed to: ' + selected_verse);
 // BEGIN When coming from the menu Create Your Own ///// -->
 ////////////////////////// -->
 $( ".CreateYourOwnDesign" ).on( "click", function() {
+	///////////////////////////////////////////////////
+	/// BEGIN waitingto_load_verse_countdown ///////
+	///////////////////////////////////////////////////
+$('.popup_ok_this_verse_selected').show();
+$(".wait_to_load_options").show();
+    $('.hidden_1').removeClass('class_hide_show');
+    $('.hidden_2').removeClass('class_hide_show');
+    $('.hidden_3').removeClass('class_hide_show');
+    $('.hidden_4').removeClass('class_hide_show');
+	var timer1,
+		clock = 3;
+	$(startup);
+	function startup() {
+		$(start).trigger({
+			type: "click",
+			which: 1
+		});
+	}
+	function start() {
+		clock = 3;
+		$(".countdown_loading_addthis_options").html("" + clock + "");
+		timer1 = setInterval(countdown, 1000);
+	}
+	function countdown() {
+		clock -= 1;
+		$(".countdown_loading_addthis_options").html("" + clock + "");
+		if (clock == 0) {
+			clearInterval(timer1);
+			$("#btn_countdown_start").prop("disabled", false);
+			$(".wait_to_load_options").hide("slow");
+		}
+	}
+  setTimeout(function() {
+$('.popup_ok_this_verse_selected').hide("slow"); 
+    $('.hidden_1').addClass('class_hide_show');
+    $('.hidden_2').addClass('class_hide_show');
+    $('.hidden_3').addClass('class_hide_show');
+    $('.hidden_4').addClass('class_hide_show');
+  }, 3500);
+	///////////////////////////////////////////////////
+	/// END waitingto_load_verse_countdown ///////
+	///////////////////////////////////////////////////
 // close the menu_modal
         $(".menu_modal").hide();
 // open the modal
@@ -2927,6 +3011,48 @@ jqxhr.always(function() {
 $('select#select_book, select#select_chapter, select#select_verse').change(function(){
 // if statement is to make sure all 3 select elements have been changed to something other than the defaults.
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
+	///////////////////////////////////////////////////
+	/// BEGIN waitingto_load_verse_countdown ///////
+	///////////////////////////////////////////////////
+$('.popup_ok_this_verse_selected').show();
+$(".wait_to_load_options").show();
+    $('.hidden_1').removeClass('class_hide_show');
+    $('.hidden_2').removeClass('class_hide_show');
+    $('.hidden_3').removeClass('class_hide_show');
+    $('.hidden_4').removeClass('class_hide_show');
+	var timer1,
+		clock = 3;
+	$(startup);
+	function startup() {
+		$(start).trigger({
+			type: "click",
+			which: 1
+		});
+	}
+	function start() {
+		clock = 3;
+		$(".countdown_loading_addthis_options").html("" + clock + "");
+		timer1 = setInterval(countdown, 1000);
+	}
+	function countdown() {
+		clock -= 1;
+		$(".countdown_loading_addthis_options").html("" + clock + "");
+		if (clock == 0) {
+			clearInterval(timer1);
+			$("#btn_countdown_start").prop("disabled", false);
+			$(".wait_to_load_options").hide("slow");
+		}
+	}
+  setTimeout(function() {
+$('.popup_ok_this_verse_selected').hide("slow"); 
+    $('.hidden_1').addClass('class_hide_show');
+    $('.hidden_2').addClass('class_hide_show');
+    $('.hidden_3').addClass('class_hide_show');
+    $('.hidden_4').addClass('class_hide_show');
+  }, 3500);
+	///////////////////////////////////////////////////
+	/// END waitingto_load_verse_countdown ///////
+	///////////////////////////////////////////////////
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
 $(".verse_selection_complete").css("background", "#042400").show();
 var step1_next_step2TimeoutID = setTimeout(function() {
@@ -3050,6 +3176,48 @@ jqxhr.always(function() {
 // BEGIN When coming from the changeVerse links ///// -->
 ////////////////////////// -->
 $( ".changeVerse" ).on( "click", function() {
+	///////////////////////////////////////////////////
+	/// BEGIN waitingto_load_verse_countdown ///////
+	///////////////////////////////////////////////////
+$('.popup_ok_this_verse_selected').show();
+$(".wait_to_load_options").show();
+    $('.hidden_1').removeClass('class_hide_show');
+    $('.hidden_2').removeClass('class_hide_show');
+    $('.hidden_3').removeClass('class_hide_show');
+    $('.hidden_4').removeClass('class_hide_show');
+	var timer1,
+		clock = 3;
+	$(startup);
+	function startup() {
+		$(start).trigger({
+			type: "click",
+			which: 1
+		});
+	}
+	function start() {
+		clock = 3;
+		$(".countdown_loading_addthis_options").html("" + clock + "");
+		timer1 = setInterval(countdown, 1000);
+	}
+	function countdown() {
+		clock -= 1;
+		$(".countdown_loading_addthis_options").html("" + clock + "");
+		if (clock == 0) {
+			clearInterval(timer1);
+			$("#btn_countdown_start").prop("disabled", false);
+			$(".wait_to_load_options").hide("slow");
+		}
+	}
+  setTimeout(function() {
+$('.popup_ok_this_verse_selected').hide("slow"); 
+    $('.hidden_1').addClass('class_hide_show');
+    $('.hidden_2').addClass('class_hide_show');
+    $('.hidden_3').addClass('class_hide_show');
+    $('.hidden_4').addClass('class_hide_show');
+  }, 3500);
+	///////////////////////////////////////////////////
+	/// END waitingto_load_verse_countdown ///////
+	///////////////////////////////////////////////////
 // when customer arrives here by clicking under a particular samle image
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
@@ -3405,7 +3573,7 @@ $( ".placeOrder" ).on( "click", function() {
 
 // hide any and all modals when click outside
 $(".opacity_cover").click(function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order, .help_modal").hide();
 });
 
   <!-- ////////////////////////// -->
@@ -3468,6 +3636,16 @@ $('.modal_place_the_order').show();
     }
 }(jQuery))
 // END blink.js
+
+////////////////////////////////////////////////////
+////BEGIN help modal ///////////////////////
+////////////////////////////////////////////////////
+$( "#info" ).on( "click", function() {
+$( ".help_modal" ).show('slow');
+});
+////////////////////////////////////////////////////
+////END help modal ///////////////////////
+////////////////////////////////////////////////////
 
 
 });
@@ -3704,6 +3882,8 @@ $(function(){
 ////////////////////////////////////////////////////
 ////END Swiper Backgrounds ///////////////////////
 ////////////////////////////////////////////////////
+
+
 </script>
 
 </body>

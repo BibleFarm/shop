@@ -23,6 +23,19 @@
   src: url(../shop_fonts/Thekingofromance-z8jDX.otf) format("opentype");
 }
 
+.help_modal {
+      position: fixed;
+      display: none;
+      height: 454px;
+      width: 296px;
+      top: calc(4px + 44px);
+      left: 4px;
+      background: #111111;
+      z-index: 1;
+      padding: 8px;
+      text-shadow: 2px 2px 1px #000000;
+    }
+
 
 .wrap_menu_items {
 list-style: none;
@@ -39,10 +52,17 @@ max-width: 320px;
 	background: #111111;
 }
 .menu_item {
-flex: inherit;
-    font-weight: bold;
+    flex: inherit;
+    font-weight: normal;
     font-size: 20px;
     justify-content: center;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 4px;
+    padding: 12px;
+    width: 200px;
+    text-align: center;
+    background: #222222;
 }
 
 
@@ -328,7 +348,7 @@ margin-block-start: 0px;
 #invoiceidError {display:none;}
 .narrow_separator {
 display: block;
-background: #444444;
+background: #d5ad6d;
 height: 1px;
 }
 .narrow_separator_as_bg {
@@ -451,7 +471,9 @@ white-space: nowrap;
 }
 .wrap_continue_bar {
 display: flex;
+min-height: 44px;
 }
+.continue_to_next_step {background: #222222}
 .wrap_flower_images_inside_modal_customize_flowers {
 position: relative;
 display: block;
@@ -910,16 +932,43 @@ display: table-cell;
 .popup_ok_this_flower_theme_selected, .popup_ok_this_background_theme_selected {
 display: none;
 position: fixed;
-top: 258px;
+top: 180px;
 left: 58px;
 width: 200px;
-height: 100px;
+height: 230px;
 color: #d5ad6d;
+font-size: 40px;
 background: rgb(0,0,0,0.8);
 text-align: center;
-line-height: 100px;
+line-height: 200px;
 z-index: 2;
 }
+.popup_ok_this_verse_selected {
+display: none;
+position: absolute;
+top: 105px;
+left: 8px;
+width: calc(100% - 16px);
+	height: 303px;
+color: #d5ad6d;
+font-size: 20px;
+background: #250000;
+text-align: center;
+z-index: 2;
+}
+/* BEGIN waiting for verse to load */
+.wrap_waiting {height: 60%; margin-top: 20%; margin-bottom: 20%;}
+.wrap_waiting > table {border: none; width: 100%; height: 100%}
+.wrap_waiting > table tr {text-align: center; vertical-align: middle; line-height: }
+.wrap_waiting > table tr td {vertical-align: middle;}
+.hidden_1, .hidden_2, .hidden_3, .hidden_4{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.class_hide_show {display: none}
+/* END waiting for verse to load */
+
 .yourOrderIs {
 	display: none;
 }
