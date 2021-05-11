@@ -120,6 +120,22 @@ border-width: 0px;
     background: #333333;
     padding: 0px;
 }
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0px solid #d5ad6d;
+  -webkit-text-fill-color: #d5ad6d;
+  -webkit-box-shadow: 0 0 0px 1000px #333333 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 input:-internal-autofill-selected {
 	appearance: menulist-button;
     background-color: /*rgb(232, 240, 254)*/ red !important;
