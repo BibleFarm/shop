@@ -574,7 +574,7 @@ position: fixed;
     text-align: center;
     margin: 0 auto;
     top: 170px;
-    left: 150px;
+    left: 153px;
     /* width: 550px; */
     -moz-perspective: 900px;
     -webkit-perspective: 1600;
@@ -987,4 +987,15 @@ z-index: 2;
 
 .yourOrderIs {
 	display: none;
+}
+
+/**********************/
+#result_wrap_for_canvas_take_picture_1 {
+	position: fixed;
+	display: block;
+	top: 0px;
+	left: 0px;
+	background: red;
+	width: 296px;
+	height: 296px;
 }
