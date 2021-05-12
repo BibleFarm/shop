@@ -601,6 +601,22 @@ color: #000000;
 text-align: center;
 z-index: 1;
 }
+.selected_bible_ref_fixed_on_mug_in_modalReviewOrder {
+position: fixed;
+display: block;
+top: 358px;
+left: 170px;
+width: 96px;
+height: 10px;
+line-height: 10px;
+font-family: "NeogreyMedium";
+font-size: 5px;
+font-weight: bold;
+color: #000000;
+text-align: center;
+z-index: 1;
+text-shadow: none;
+}
 	
 	
     .modal_customize_name {
@@ -734,6 +750,33 @@ color: #000000;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.selected_bible_verse_fixed_on_mug_in_modalReviewOrder-table {
+position: fixed;
+display: table;
+top: 96px;
+left: 88px;
+width: 202px;
+height: 220px;
+z-index: 1;
+transform: scale(0.5);
+}
+.selected_bible_verse_fixed_on_mug_in_modalReviewOrder {
+position: fixed;
+display: table-cell;
+top: 190px;
+left: 55px;
+width: 202px;
+height: 220px;
+z-index: 1;
+text-align: center;
+vertical-align: middle;
+font-family: "Capsuularegular-Onm3";
+font-weight: bold;
+text-shadow: none;
+color: #000000;
+-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .rendered_customerName_in_modalName-table {
 position: fixed;
 display: table;
@@ -815,7 +858,7 @@ white-space: nowrap;
 .rendered_customerName_in_modalReviewOrder-table {
 position: fixed;
 display: table;
-    top: 130px;
+    top: 128px;
     left: -24px;
     width: 196px;
 	height: 80px;
@@ -895,20 +938,43 @@ img.images_inside_modal_customize_backgrounds {
 position: fixed;
 display: block;
 top: 410px;
-left: 45px;
+left: 50px;
 width: 222px;
 height: 20px;
 line-height: 20px;
 font-family: "NeogreyMedium";
-font-size: 12px;
+font-size: 11px;
 font-weight: bold;
 color: #000000;
 text-align: center;
+text-shadow: none;
 z-index: 1;
 }
 .heart_fixed_on_mug {
 color: red;
-font-size: 12px;
+font-size: 11px;
+text-shadow: none;
+}
+.made_with_love_fixed_on_mug_little_Left {
+position: fixed;
+display: block;
+top: 358px;
+left: 54px;
+width: 96px;
+height: 10px;
+line-height: 10px;
+font-family: "NeogreyMedium";
+font-size: 5px;
+font-weight: bold;
+color: #000000;
+text-align: center;
+text-shadow: none;
+z-index: 1;
+}
+.heart_fixed_on_mug_little_Left {
+color: red;
+font-size: 5px;
+text-shadow: none;
 }
 
 /* ************************ */
@@ -1085,7 +1151,7 @@ position: fixed;
     text-align: center;
     margin: 0 auto;
     top: 237px;
-    left: 95px;
+    left: 94px;
     /* width: 550px; */
     -moz-perspective: 900px;
     -webkit-perspective: 1600;

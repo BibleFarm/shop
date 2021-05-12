@@ -2054,9 +2054,9 @@
 </div>
 <div class="narrow_separator"></div>
 <div class="selected_bible_verse_fixed_on_mug-table">
-<span id="populated_verse_with_ajax" class="selected_bible_verse_fixed_on_mug">We will print your Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then change the other 0 to your verse number.</span>
+<span id="" class="selected_bible_verse_fixed_on_mug populated_verse_with_ajax">We will print your Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then change the other 0 to your verse number.</span>
 </div>
-<div class="selected_bible_ref_fixed_on_mug"><span id="populated_ref_with_ajax">Bible Verse Reference</span></div>
+<div class="selected_bible_ref_fixed_on_mug populated_ref_with_ajax"><span id="">Bible Verse Reference</span></div>
 
 <div id="hidden_book_desired"></div>
 <div id="hidden_chapter_desired"></div>
@@ -2640,8 +2640,15 @@ swipe sideways & click the one you like
 <span class="rendered_customerName_in_modalReviewOrder" style=""></span>
 </div>
 
-
 <div class="wrap_container_showing_selected_flowers_little_Left"><img class="container_showing_selected_flowers_little_Left" src="" alt="" /></div>
+
+<div class="made_with_love_fixed_on_mug_little_Left">made with <span class="heart_fixed_on_mug_little_Left">❤ </span> at BibleFarm.org</div>
+
+<div class="selected_bible_verse_fixed_on_mug_in_modalReviewOrder-table">
+<span id="" class="selected_bible_verse_fixed_on_mug_in_modalReviewOrder populated_verse_with_ajax_in_modalReviewOrder">We will print your Bible verse here. Click above to select a book. Then change the first 0 to your chapter number. Then change the other 0 to your verse number.</span>
+</div>
+<div class="selected_bible_ref_fixed_on_mug_in_modalReviewOrder populated_ref_with_ajax_in_modalReviewOrder"><span id="">Bible Verse Reference</span></div>
+
 
 </div>
 
@@ -2988,16 +2995,31 @@ $('.popup_ok_this_verse_selected').hide("slow");
 ////////////////////////// -->
 ////////////////////////// -->
 	function renderIn_modalVerse() {
-		$('#populated_verse_with_ajax').html(
-			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		$('.populated_verse_with_ajax').html(
+			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('#populated_verse_with_ajax').textfill({
+		$('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
+}, 3500);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+}, 3500);
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
 }, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
@@ -3033,10 +3055,12 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 var html = jQuery('<div>').html(result);
 var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
-$('#populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
+$('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
 
-$('#populated_verse_with_ajax').html(removedItalicsAndRef);
+$('.populated_verse_with_ajax').html(removedItalicsAndRef);
+console.log(".done function is now populating the text of the verse...");
+$('.populated_verse_with_ajax_in_modalReviewOrder').html(removedItalicsAndRef);
 console.log(".done function is now populating the text of the verse...");
 
 ////////////////////////// -->
@@ -3045,16 +3069,31 @@ console.log(".done function is now populating the text of the verse...");
 ////////////////////////// -->
 ////////////////////////// -->
 	function renderIn_modalVerse() {
-		$('#populated_verse_with_ajax').html(
-			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		$('.populated_verse_with_ajax').html(
+			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('#populated_verse_with_ajax').textfill({
+		$('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
+}, 3500);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+}, 3500);
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
 }, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
@@ -3074,7 +3113,8 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
   })
   .fail(function() {
     console.log( ".fail function: Unable to retrieve that verse" );
-	$('#populated_verse_with_ajax').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
+	$('.populated_verse_with_ajax').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
+	$('.populated_verse_with_ajax_in_modalReviewOrder').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
 // things went wrong, so we're back to square one
 	$(".selected_verse").text("Nothing selected yet");
      $('.lets_choose').show();
@@ -3090,16 +3130,32 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 ////////////////////////// -->
 ////////////////////////// -->
 	function renderIn_modalVerse() {
-		$('#populated_verse_with_ajax').html(
-			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		$('.populated_verse_with_ajax').html(
+			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('#populated_verse_with_ajax').textfill({
+		$('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
+}, 3500);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+console.log( "Now things should be still okay, and ready to try again." );
+}, 3500);
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
 }, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
@@ -3195,10 +3251,12 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 var html = jQuery('<div>').html(result);
 var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
-$('#populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
+$('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
 
-$('#populated_verse_with_ajax').html(removedItalicsAndRef);
+$('.populated_verse_with_ajax').html(removedItalicsAndRef);
+console.log(".done function is now populating the text of the verse...");
+$('.populated_verse_with_ajax_in_modalReviewOrder').html(removedItalicsAndRef);
 console.log(".done function is now populating the text of the verse...");
 
 ////////////////////////// -->
@@ -3207,10 +3265,10 @@ console.log(".done function is now populating the text of the verse...");
 ////////////////////////// -->
 ////////////////////////// -->
 	function renderIn_modalVerse() {
-		$('#populated_verse_with_ajax').html(
-			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		$('.populated_verse_with_ajax').html(
+			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('#populated_verse_with_ajax').textfill({
+		$('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
 	}
@@ -3221,6 +3279,22 @@ renderIn_modalVerse();
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
 }, 3500);
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
+}, 3500);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+}, 3500);
+
 // Update newly selected verse at the top
 var newlySelectedBook = $('#hidden_book_desired').text();
 var newlySelectedChapter = $('#hidden_chapter_desired').text();
@@ -3236,7 +3310,8 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
   })
   .fail(function() {
     console.log( ".fail function: Unable to retrieve that verse" );
-	$('#populated_verse_with_ajax').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
+	$('.populated_verse_with_ajax').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
+	$('.populated_verse_with_ajax_in_modalReviewOrder').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
 // things went wrong, so we're back to square one
 	$(".selected_verse").text("Nothing selected yet");
      $('.lets_choose').show();
@@ -3252,16 +3327,32 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 ////////////////////////// -->
 ////////////////////////// -->
 	function renderIn_modalVerse() {
-		$('#populated_verse_with_ajax').html(
-			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		$('.populated_verse_with_ajax').html(
+			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('#populated_verse_with_ajax').textfill({
+		$('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
+}, 3500);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+console.log( "Now things should be still okay, and ready to try again." );
+}, 3500);
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
 }, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
@@ -3390,10 +3481,14 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 var html = jQuery('<div>').html(result);
 var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
-$('#populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
+$('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
+  console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
+$('.populated_ref_with_ajax_in_modalReviewOrder').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
 
-$('#populated_verse_with_ajax').html(removedItalicsAndRef);
+$('.populated_verse_with_ajax').html(removedItalicsAndRef);
+console.log(".done function is now populating the text of the verse...");
+$('.populated_verse_with_ajax_in_modalReviewOrder').html(removedItalicsAndRef);
 console.log(".done function is now populating the text of the verse...");
 
 ////////////////////////// -->
@@ -3402,16 +3497,31 @@ console.log(".done function is now populating the text of the verse...");
 ////////////////////////// -->
 ////////////////////////// -->
 	function renderIn_modalVerse() {
-		$('#populated_verse_with_ajax').html(
-			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		$('.populated_verse_with_ajax').html(
+			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('#populated_verse_with_ajax').textfill({
+		$('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
+}, 3500);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+}, 3500);
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
 }, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
@@ -3431,7 +3541,8 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
   })
   .fail(function() {
     console.log( ".fail function: Unable to retrieve that verse" );
-	$('#populated_verse_with_ajax').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
+	$('.populated_verse_with_ajax').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
+	$('.populated_verse_with_ajax_in_modalReviewOrder').html("Nope. You selected the wrong chapter, or you selected the wrong verse. or you have no internet. Please try again.");
 // things went wrong, so we're back to square one
 	$(".selected_verse").text("Nothing selected yet");
      $('.lets_choose').show();
@@ -3447,16 +3558,32 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 ////////////////////////// -->
 ////////////////////////// -->
 	function renderIn_modalVerse() {
-		$('#populated_verse_with_ajax').html(
-			'<span>' + $('#populated_verse_with_ajax').text() + '</span>'
+		$('.populated_verse_with_ajax').html(
+			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('#populated_verse_with_ajax').textfill({
+		$('.populated_verse_with_ajax').textfill({
 			maxFontPixels: 200
 		});
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
 renderIn_modalVerse();
+}, 3500);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+console.log( "Now things should be still okay, and ready to try again." );
+}, 3500);
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
 }, 3500);
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
