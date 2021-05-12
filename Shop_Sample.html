@@ -2049,7 +2049,6 @@
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item no_book_nor_chapter_nor_verse_selection_yet">please select book & chapter & verse above</span>
 <span class="orderFlowFinger flex_item still_need_to_select_chapter_and_verse">select also chapter & verse right next to that</span>
-<span class="orderFlowFinger flex_item verse_selection_complete">just a moment...</span>
 <span class="orderFlowFinger flex_item bf_links addYourName step1_next_step2 continue_to_next_step">continue to add YourName</span>
 </div>
 <div class="narrow_separator"></div>
@@ -3034,13 +3033,9 @@ console.log("The 5 seconds went by, so we should now have it rendered.");
 // if statement is to make sure all 3 select elements have been changed to something other than the defaults.
 if (($('#hidden_book_desired').text() != 'select') && ($('#hidden_chapter_desired').text() != '0') && ($('#hidden_verse_desired').text() != '0')) {
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
-$(".verse_selection_complete").css("background", "#042400").show();
 var step1_next_step2TimeoutID = setTimeout(function() {
 $(".step1_next_step2").css("background", "#292a00").show();
   }, 1500);
-  setTimeout(function() {
-$(".verse_selection_complete").hide();
-  }, 3000);
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
@@ -3119,7 +3114,6 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 	$(".selected_verse").text("Nothing selected yet");
      $('.lets_choose').show();
      $('.lets_change').hide();
-	$(".verse_selection_complete").hide();
 	$(".step1_next_step2").hide();
 	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
@@ -3230,13 +3224,9 @@ $('.popup_ok_this_verse_selected').hide("slow");
 	/// END waitingto_load_verse_countdown ///////
 	///////////////////////////////////////////////////
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
-$(".verse_selection_complete").css("background", "#042400").show();
 var step1_next_step2TimeoutID = setTimeout(function() {
 $(".step1_next_step2").css("background", "#292a00").show();
   }, 1500);
-  setTimeout(function() {
-$(".verse_selection_complete").hide();
-  }, 3000);
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
@@ -3316,7 +3306,6 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 	$(".selected_verse").text("Nothing selected yet");
      $('.lets_choose').show();
      $('.lets_change').hide();
-	$(".verse_selection_complete").hide();
 	$(".step1_next_step2").hide();
 	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
@@ -3460,13 +3449,9 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_change').show();
      $('.lets_choose').hide();
 $(".no_book_nor_chapter_nor_verse_selection_yet").hide();
-$(".verse_selection_complete").css("background", "#042400").show();
 var step1_next_step2TimeoutID = setTimeout(function() {
 $(".step1_next_step2").css("background", "#292a00").show();
   }, 1500);
-  setTimeout(function() {
-$(".verse_selection_complete").hide();
-  }, 3000);
 var willGrabBook = $('#hidden_book_desired').text();
 var willGrabChapter = $('#hidden_chapter_desired').text();
 var willGrabVerse = $('#hidden_verse_desired').text();
@@ -3547,7 +3532,6 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 	$(".selected_verse").text("Nothing selected yet");
      $('.lets_choose').show();
      $('.lets_change').hide();
-	$(".verse_selection_complete").hide();
 	$(".step1_next_step2").hide();
 	clearTimeout(step1_next_step2TimeoutID);
 	$(".no_book_nor_chapter_nor_verse_selection_yet").show();
@@ -3802,6 +3786,22 @@ console.log('completeDescription is: ' + completeDescription);
 
 $('#amount').val('');
 $('#description').val(completeDescription);
+// re-render the textfill
+	function renderIn_modalReviewOrder() {
+		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
+			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
+		);
+		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
+			maxFontPixels: 200
+		});
+	}
+console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
+setTimeout(function() {
+renderIn_modalReviewOrder();
+}, 1000);
+setTimeout(function() {
+console.log("The 5 seconds went by, so we should now have it rendered.");
+}, 1000);
 
 });
   <!-- ////////////////////////// -->
@@ -3831,10 +3831,16 @@ $(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_
 $('.wrap_continue_bar').find('.changeVerse').on( "click", function() {
 $(".menu_modal, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_verse').show();
+// give it time to update in order to prevent messup while is says undefined - undefined - undefined
+$('.selected_verse').hide();
+setTimeout(function() {
+$('.selected_verse').show();
+}, 1000);
 });  
 $('.wrap_continue_bar').find('.addYourName').on( "click", function() {
 $(".menu_modal, .modal_customize_verse, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_name').show();
+$('.customize_name').focus();
 });  
 $('.wrap_continue_bar').find('.changeFlowers').on( "click", function() {
 $(".menu_modal, .modal_customize_verse, .modal_customize_name, .wrap_swiper_container_backgrounds, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();

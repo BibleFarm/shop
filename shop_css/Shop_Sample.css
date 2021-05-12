@@ -1337,10 +1337,6 @@ z-index: 2;
 .no_book_nor_chapter_nor_verse_selection_yet {
 display: ;
 }
-.verse_selection_complete {
-display: none;
-	background: #111111;
-}
 .step1_next_step2 {
 display: none;
 	background: #111111;
