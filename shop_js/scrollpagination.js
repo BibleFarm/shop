@@ -67,7 +67,7 @@
                 if(data.content != null){
                     $(opts.loading).text(opts.loadingText);
                     $.each(data.content,function(index, value){
-                        html += "<li style='opacity:0;-moz-opacity: 0;filter: alpha(opacity=0);'><p>" + value + "</p></li>";
+                        html += value;
                         dataCount = parseInt(index) + 1;
                     });
                     $(obj).append(html);
