@@ -58,7 +58,7 @@
         }
         $(obj).children().attr('rel', 'loaded');
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: opts.url,
             data: opts.data,
             dataType: 'json',
