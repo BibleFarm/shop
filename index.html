@@ -13,9 +13,9 @@ done	wrap_continue_bar min-height 44px
 help modal:
 done	create the actual modal
 still NN to think about what to say
-NN to see if it looks nice.. changed the purechat theme color to #d5ad6d
+done	NN to see if it looks nice.. changed the purechat theme color to #d5ad6d
 
-NN to see... got rid of the "just a moment" thing so let's see if this solves the problem when we click on "verse" on a sample from the page
+done	NN to see... got rid of the "just a moment" thing so let's see if this solves the problem when we click on "verse" on a sample from the page
 
 done	on click "continue to add YourName", NN to input focus in the name field
  
@@ -23,6 +23,103 @@ done	on click "review your order" NN to re-render textfill
 
 done	on click "back to change verse" NN a setTimeout 1000ms hide in the selected_verse while is says undefined - undefined - undefined
 
+themes
+			> 
+			> 
+		
+backgrounds
+			> lighter gradients
+			> darker gradients
+			> lighter patterns
+			> darker patterns
+			
 create the white & black backgrounds and set white to default upon arrival
 On arrival, NN to detect background situation & change font color & stroke accordingly
 
+
+
+
+
+<!-- ////////////////////////// -->
+<!-- BEGIN swiper overlayed on top on mug -->
+<!-- ////////////////////////// -->
+<!-- Swiper BEGIN -->
+<div class="wrap_swiper_container_backgrounds">
+    <div class="swiper-container mySwiper_backgrounds">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-00.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-01.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\L-02.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-03.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-04.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-05.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-06.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-07.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-08.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_background_images_inside_modal_customize_backgrounds">
+<img class="lazyload lazyloaded images_inside_modal_customize_backgrounds" data-src="bg-bleed\D-09.png" alt="" />
+</div>
+</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+</div>
+<!-- Swiper END -->
+<!-- ////////////////////////// -->
+<!-- END swiper overlayed on top on mug -->
+<!-- ////////////////////////// -->
+
+
+
+
+      var swiper = new Swiper(".mySwiper_backgrounds", {
+freeMode: true,
+        slidesPerView: 1,
+        spaceBetween: 2,
+watchActiveIndex: true,
+keyboard: {
+	enabled: true,
+	onlyInViewport: true,
+},
+on: {
+	slideChange: function() {
+	console.log(this.realIndex);
+//    $('.real-index').html(this.realIndex);
+	}
+},
+on: {
+	click: function(){
+	console.log(this.clickedIndex);
+	$('#hidden_lastClickedBackgroundIndex').text(this.clickedIndex);
+	}
+},
+      });

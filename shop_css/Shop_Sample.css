@@ -664,6 +664,21 @@ text-shadow: none;
       padding-bottom: 0px;
 	  overflow: hidden;
     }
+    .modal_customize_backgrounds_new {
+      position: fixed;
+      display: none;
+      height: 454px;
+      width: 296px;
+      top: calc(4px + 44px);
+      left: 4px;
+      background: #111111;
+      z-index: 1;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+	  overflow: hidden;
+    }
     .modal_review_the_order {
       position: fixed;
       display: none;
@@ -999,6 +1014,16 @@ position: fixed;
     -moz-perspective: 900px;
     -webkit-perspective: 1600;
 }
+.mug_render_cylinder_wrap_578x260_Center_in_slides {
+position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    top: 18px;
+    left: 141px;
+    /* width: 550px; */
+    -moz-perspective: 900px;
+    -webkit-perspective: 1600;
+}
 .mug_render_cylinder_wrap_578x260_Center:hover * {
 	-moz-animation-play-state:paused;
 	-webkit-animation-play-state:paused}
@@ -1018,7 +1043,7 @@ width: 24px;
 
 .strip div {
 	position: absolute;
-	background-image: url(../bg-bleed/D-01.png);  /* background image is 792px 320px, try with green-hills or thailand-sunrise.jpg */
+	/*background-image: url(../bg-bleed/D-01.png);*/  /* background image is 792px 320px, try with green-hills or thailand-sunrise.jpg */
 	/*background-size: contain;*/
 	border: /*solid rgb(145,87,0)*/;
 	border-width: /*thin 0*/;
@@ -1213,10 +1238,10 @@ z-index: 2;
 .wrap_swiper_container_backgrounds {
 position: fixed;
 display: none;
-top: 110px;
+top: 154px;
 left: 12px;
 width: 296px;
-height: 42px;
+height: 301px;
 background: none;
 margin: 0 auto;
 padding: 0;
@@ -1275,7 +1300,7 @@ z-index: 2;
 /* END swiper flowers
 /* ************* */
 /* ************* */
-/* BEGIN swiper backgrounds
+/* BEGIN swiper thumnails loop lighter gradients
 /* ************* */
 .mySwiper_backgrounds {
 	
@@ -1286,20 +1311,18 @@ z-index: 2;
 .wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-button-prev {
 	display: none;
 }
-/*
-.wrap_swiper_container_backgrounds > .mySwiper_backgrounds {
-	background: red;
-	max-width: 296px !important;
-}
-.wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-wrapper {
-	background: red;
-}
-.wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-wrapper > .swiper-slide {
-	background: black;
-	width: 46px !important;
-	cursor: pointer !important;
-}
-*/
+	  .wrap_swiper_container_backgrounds_solids {
+	  position: fixed;
+	  display: none;
+	  top: 151px;
+	  left: 12px;
+	  width: 296px;
+	  height: 302px;
+	  margin: 0;
+	  padding: 0;
+	  z-index: 1;
+	  }
+
       .swiper-container {
         width: 100%;
         height: 100%;
@@ -1329,10 +1352,53 @@ z-index: 2;
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        /*object-fit: cover;*/
+      }
+
+      .swiper-container {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .mySwiper2 {
+        height: 302px;
+        width: 100%;
+		position: absolute;
+      }
+
+      .mySwiper {
+        height: 42px;
+        box-sizing: border-box;
+        padding: 1px 0;
+		position: absolute;
+		top: 260px;
+      }
+
+      .mySwiper .swiper-slide {
+        width: 20%;
+        height: 100%;
+        opacity: 0.5;
+      }
+
+      .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        /*object-fit: cover;*/
       }
 /* ************* */
-/* END swiper backgrounds
+/* END swiper thumnails loop lighter gradients
 /* ************* */
 .no_book_nor_chapter_nor_verse_selection_yet {
 display: ;
@@ -1468,3 +1534,26 @@ z-index: 2;
 	width: 296px;
 	height: 296px;
 }
+.background_selection_intructions {
+	
+}
+.wrap_background_options {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 42px;
+	line-height: 42px;
+	background: #222222;
+}
+.space_maker_296x296 {
+display: block;
+width: 296px;
+height: 302px;
+}
+
+	
+	
+	
+	
+	
