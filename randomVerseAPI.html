@@ -1,5 +1,7 @@
 <html>
 <head>
+</head>
+<body>
 <script>
 const jsonData = {
 "0":"In the beginning God created the heaven and the earth.",
@@ -201,15 +203,14 @@ const jsonData = {
 "196":"And it came to pass in the six hundredth and first year, in the first <i>month</i>, the first <i>day</i> of the month, the waters were dried up from off the earth: and Noah removed the covering of the ark, and looked, and, behold, the face of the ground was dry.",
 "197":"And in the second month, on the seven and twentieth day of the month, was the earth dried.",
 }
+
 const values = Object.values(jsonData)
 
 const randomValue = values[parseInt(Math.random() * values.length)]
 
 console.log(randomValue)
 
-document.body.innerHTML += '<pre>["' + randomValue + '"]</pre>';
+document.body.innerHTML += '<pre style="word-wrap: break-word; white-space: pre-wrap;">["' + randomValue + '"]</pre>';
 </script>
-</head>
-<body>
 </body>
 </html>
