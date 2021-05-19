@@ -92,9 +92,7 @@
 <body class="">
 
   <div class="opacity_cover">
-    <div class="menu_icon_clone">
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#d5ad6d"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-    </div>
+    <div class="menu_icon_clone"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#d5ad6d"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
   </div>
   <!-- Pinterest pin this image -->
   <img class="pinterest_pin_this_image" src="https://team.biblefarm.org/_BibleFarm_og_image_1200x630_2019_02_03.png" data-pin-url="https://team.biblefarm.org/Mindy" data-pin-description="BibleFarm.org is a group of Bible doers. Donate & provide better nutrition for these kids. The team delivers clothes, shoes & we teach the children to put all their trust in Jesus (John 1:12), share (1John 3:17), apologize (Mat. 5:24) & forgive. #biblefarm">
@@ -112,10 +110,14 @@
 
     <div class="wrap_gofundme_modal_body box_shadow">
       <div class="gofundme_flex-container">
-
+<!--
 <div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Deuteronomy-6-4' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs/Deuteronomy-6-4-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="Deuteronomy" chapter="6" verse="4">verses</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changeFlowers flex_item bf_links">flowers</span><span class="changeBackground flex_item bf_links">backgrounds</span></div></div>
 
 <div><a class='bf_links' href='https://team.biblefarm.org/Mindy/1-John-3-8' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs/1-John-3-8-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="1-John" chapter="3" verse="8">verses</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changeFlowers flex_item bf_links">flowers</span><span class="changeBackground flex_item bf_links">backgrounds</span></div></div>
+-->
+<div id="hidden_welcome"></div>
+<div id="hidden_div_verse"></div>
+<div id="hidden_div_ref"></div>
 
       </div>
     </div>
@@ -151,11 +153,11 @@
 
 <ul id="" class="wrap_menu_items">
 <li id="" class="CreateYourOwnDesign menu_item bf_links">create your own design</li>
-<li id="" class="browseFlowers menu_item bf_links">browse flowers</li>
-<li id="" class="browseBackgrounds menu_item bf_links">browse backgrounds</li>
+<li id="" class="browseFlowers menu_item bf_links">browse pictures</li>
+<li id="" class="browseBackgrounds menu_item bf_links">browse themes</li>
 <li id="" class="menu_item bf_links">about BibleFarm.org</li>
 <li id="info" class="menu_item bf_links open_purechat">contact us</li>
-<li id="" class="menu_item bf_links"> social icons</li>
+<li id="" class="menu_item bf_links">social icons</li>
 </ul>
 </div>
 <!-- ////////////////////////// -->
@@ -715,8 +717,8 @@
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="orderFlowNoFinger current_verse_hidden">Selected verse is: <span class="selected_verse">Nothing selected yet</span></div>
 <div class="orderFlowNoFinger">let's add your name or ministry name</div>
+<div class="orderFlowNoFinger">more characters means smaller font size</div>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
@@ -772,7 +774,7 @@
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item changeVerse bf_links">back to change verse</span>
-<span class="orderFlowFinger flex_item changeFlowers bf_links continue_to_next_step">continue to flowers</span>
+<span class="orderFlowFinger flex_item changeFlowers bf_links continue_to_next_step">continue to pictures</span>
 </div>
 <div class="narrow_separator"></div>
 
@@ -796,15 +798,17 @@
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="orderFlowNoFinger current_verse_hidden">Selected verse is: <span class="selected_verse">Nothing selected yet</span></div>
-<div class="orderFlowNoFinger">let's choose some flowers</div>
+<div class="orderFlowNoFinger">choose which pictures you'd like to view</div>
+<div class="orderFlowNoFinger">then slide sideways & click to select one</div>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="tell_us_to_swipe_sideways">
-swipe sideways & click the one you like
+<div class="wrap_themes_options">
+<div class="flex_item bf_links">view biblical</div>
+<div class="flex_item bf_links">view flowers</div>
+<div class="flex_item bf_links">view scenery</div>
 </div>
 
 <div class="narrow_separator_as_bg"></div>
@@ -856,7 +860,7 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item addYourName bf_links">back to YourName</span>
-<span id="selectThisFlower" class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to backgrounds</span>
+<span class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to themes</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalFlowers-table">
@@ -948,7 +952,7 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="wrap_background_options">
+<div class="wrap_themes_options">
 <div class="flex_item bf_links">view solids</div>
 <div class="flex_item bf_links">view gradients</div>
 <div class="flex_item bf_links">view patterns</div>
@@ -963,7 +967,7 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item changeFlowers bf_links">back to flowers</span>
+<span class="orderFlowFinger flex_item changeFlowers bf_links">back to pictures</span>
 <span class="orderFlowFinger flex_item reviewOrder bf_links continue_to_next_step">review your order</span>
 </div>
 <div class="narrow_separator"></div>
@@ -1073,14 +1077,14 @@ swipe sideways & click the one you like
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="orderFlowNoFinger current_verse_hidden">Selected verse is: <span class="selected_verse">Nothing selected yet</span></div>
-<div class="orderFlowNoFinger">let's review your order</div>
+<div class="orderFlowNoFinger">tiny preview may look blurry & not well</div>
+<div class="orderFlowNoFinger">centered but don't worry about a thing</div>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="tell_us_to_swipe_sideways">looks good?</div>
+<div class="tell_us_to_swipe_sideways">we manually review and fix everything</div>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
@@ -1201,7 +1205,7 @@ swipe sideways & click the one you like
 
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item changeBackground bf_links">back to backgrounds</span>
+<span class="orderFlowFinger flex_item changeBackground bf_links">back to themes</span>
 <span class="orderFlowFinger flex_item placeOrder bf_links continue_to_next_step">place your order</span>
 </div>
 <div class="narrow_separator"></div>
@@ -1211,6 +1215,7 @@ swipe sideways & click the one you like
 </div>
 
 <div class="wrap_container_showing_selected_flowers_little_Left"><img class="container_showing_selected_flowers_little_Left" src="" alt="" /></div>
+
 
 <div class="made_with_love_fixed_on_mug_little_Left">made with <span class="heart_fixed_on_mug_little_Left">❤ </span> at BibleFarm.org</div>
 
@@ -1393,6 +1398,87 @@ swipe sideways & click the one you like
 
 <script>
 $(document).ready(function(){
+////////////////////////////////////////////////////
+////BEGIN Infinite Scroll Random Verses ///////////////////////
+////////////////////////////////////////////////////
+$(document).ready(function(){
+      getWelcome();
+      getWelcome();
+      getWelcome();
+      getWelcome();
+      getWelcome();
+      getWelcome();
+      getWelcome();
+      getWelcome();
+      getWelcome();
+      getWelcome();
+});
+/////////////////////////////////////
+// BEGIN get random json record
+/////////////////////////////////////
+function getWelcome() {
+  var ajaxRequest = new XMLHttpRequest();
+  ajaxRequest.onreadystatechange = function () {
+    if (ajaxRequest.readyState == 4) {
+      //the request is completed, now check its status
+      if (ajaxRequest.status == 200) {
+        //turn JSON into array
+        var messagesArray = JSON.parse(ajaxRequest.responseText);
+        //get random object from array
+        var randomIndex = Math.floor(Math.random() * messagesArray.length);
+        var messageObj = messagesArray[randomIndex];
+        //use that object to set content and color
+        var welcomeDiv = document.getElementById("hidden_welcome");
+        welcomeDiv.innerHTML = messageObj.ref;
+        welcomeDiv.style.color = messageObj.color;
+        // BEGIN / get these things and put them in the hidden divs
+  //      var verse = messageObj.ref;
+        var b = messageObj.b;
+        var c = messageObj.c;
+        var v = messageObj.v;
+  //      $('#hidden_div_verse').html(verse);
+  //      $('#hidden_div_ref').html(ref);
+        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_side"><img class="" width="296" height="296" src="mug_side_R.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">allVerses</span><span class="addYourName flex_item bf_links">addYourName</span><span class="changeFlowers flex_item bf_links">allPictures</span><span class="changeBackground flex_item bf_links">allThemes</span></div><div class="share bf_links">share</div></div>');
+        // END / get these things and put them in the hidden divs
+      } else {
+        console.log("Status error: " + ajaxRequest.status);
+      }
+    } else {
+      console.log("Ignored readyState: " + ajaxRequest.readyState);
+    }
+  };
+  ajaxRequest.open(
+    "GET",
+    "data_files/1396_b_c_v.json"
+  );
+  ajaxRequest.send();
+}
+/////////////////////////////////////
+// END get random json record
+/////////////////////////////////////
+
+$(window).on("resize scroll", function () {
+  var currentscrollHeight = 0;
+    const scrollHeight = $(document).height();
+    const scrollPos = Math.floor($(window).height() + $(window).scrollTop());
+    const isBottom = scrollHeight - 200 < scrollPos;
+    if (isBottom && currentscrollHeight < scrollHeight) {
+/////////////////////////////////////////////
+      getWelcome();
+/////////////////////////////////////////////
+    //    currentscrollHeight = scrollHeight;
+    }
+});
+////////////////////////////////////////////////////
+////END Infinite Scroll Random Verses ///////////////////////
+////////////////////////////////////////////////////
+
+
+
+
+
+
+
   <!-- ////////////////////////// -->
   <!-- BEGIN Preorder setup for PayPal integration -->
   <!-- ////////////////////////// -->
@@ -1946,7 +2032,8 @@ jqxhr.always(function() {
 ////////////////////////// -->
 // BEGIN When coming from the changeVerse links ///// -->
 ////////////////////////// -->
-$( ".changeVerse" ).on( "click", function() {
+$( "body" ).on( "click", ".changeVerse", function(event) {
+// event.preventDefault();
 	///////////////////////////////////////////////////
 	/// BEGIN waitingto_load_verse_countdown ///////
 	///////////////////////////////////////////////////
@@ -2172,7 +2259,7 @@ jqxhr.always(function() {
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 2 - NAME -->
   <!-- ////////////////////////// -->
-$(".sharing_sub_panel").find( ".addYourName" ).on( "click", function() {
+$( "body" ).on( "click", ".addYourName", function(event) {
 // when customer arrives here by clicking under a particular samle image
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
@@ -2242,7 +2329,7 @@ $( ".browseFlowers" ).on( "click", function() {
         $(".opacity_cover").show();
 });
 // when customer arrives here by clicking under a particular sample image
-$(".sharing_sub_panel").find( ".changeFlowers" ).on( "click", function() {
+$( "body" ).on( "click", ".changeFlowers", function(event) {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
@@ -2292,7 +2379,7 @@ $( ".browseBackgrounds" ).on( "click", function() {
         $(".opacity_cover").show();
 });
 // when customer arrives here by clicking under a particular sample image
-$(".sharing_sub_panel").find( ".changeBackground" ).on( "click", function() {
+$( "body" ).on( "click", ".changeBackground", function(event) {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');

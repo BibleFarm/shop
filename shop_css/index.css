@@ -121,7 +121,7 @@
       background: black;
     }
 
-    .gofundme_flex-container > div {
+    .gofundme_flex-container > div > div {
 text-align: center;
 margin-left: 4px;
 margin-right: 4px;
@@ -174,6 +174,7 @@ max-width: 312px;
 height: 44px;
 line-height: 44px;
 margin-top: -4px;
+text-align: center;
     }
 
     .redirect_user {
@@ -586,11 +587,12 @@ font-weight: bold;
 color: #000000;
 text-align: center;
 z-index: 1;
+text-shadow: none;
 }
 .selected_bible_ref_fixed_on_mug_in_modalReviewOrder {
 position: fixed;
 display: block;
-top: 358px;
+top: 352px;
 left: 170px;
 width: 96px;
 height: 10px;
@@ -728,19 +730,19 @@ text-align:center;
 .selected_bible_verse_fixed_on_mug-table {
 position: fixed;
 display: table;
-top: 190px;
+top: 194px;
 left: 55px;
 width: 202px;
-height: 220px;
+height: 218px;
 z-index: 1;
 }
 .selected_bible_verse_fixed_on_mug {
 position: fixed;
 display: table-cell;
-top: 190px;
+top: 194px;
 left: 55px;
 width: 202px;
-height: 220px;
+height: 218px;
 z-index: 1;
 text-align: center;
 vertical-align: middle;
@@ -757,43 +759,43 @@ display: table;
 top: 96px;
 left: 88px;
 width: 202px;
-height: 220px;
+height: 210px;
 z-index: 1;
 transform: scale(0.5);
 }
 .selected_bible_verse_fixed_on_mug_in_modalReviewOrder {
 position: fixed;
-display: table-cell;
-top: 190px;
-left: 55px;
-width: 202px;
-height: 220px;
-z-index: 1;
-text-align: center;
-vertical-align: middle;
-font-family: "Capsuularegular-Onm3";
-font-weight: bold;
-text-shadow: none;
-color: #000000;
--webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    display: table-cell;
+    top: 190px;
+    left: 60px;
+    width: 192px;
+    height: 210px;
+    z-index: 1;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Capsuularegular-Onm3";
+    font-weight: bold;
+    text-shadow: none;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	}
 .rendered_customerName_in_modalName-table {
 position: fixed;
 display: table;
-    top: 194px;
-    left: 52px;
-    width: 196px;
-	height: 80px;
+    top: 184px;
+    left: 62px;
+    width: 176px;
+	height: 86px;
     background: ;
 }
 .rendered_customerName_in_modalName {
 position: fixed;
 display: table-cell;
-    top: 194px;
-    left: 52px;
-    width: 196px;
-	height: 80px;
+    top: 184px;
+    left: 62px;
+    width: 176px;
+	height: 86px;
     background: ;
 	text-align: center;
 vertical-align: middle;
@@ -807,19 +809,19 @@ white-space: nowrap;
 .rendered_customerName_in_modalFlowers-table {
 position: fixed;
 display: table;
-    top: 194px;
-    left: 52px;
-    width: 196px;
-	height: 80px;
+    top: 184px;
+    left: 62px;
+    width: 176px;
+	height: 86px;
     background: ;
 }
 .rendered_customerName_in_modalFlowers {
 position: fixed;
 display: table-cell;
-    top: 194px;
-    left: 52px;
-    width: 196px;
-	height: 80px;
+    top: 184px;
+    left: 62px;
+    width: 176px;
+	height: 86px;
     background: ;
 	text-align: center;
 vertical-align: middle;
@@ -833,19 +835,19 @@ white-space: nowrap;
 .rendered_customerName_in_modalBackgrounds-table {
 position: fixed;
 display: table;
-    top: 194px;
-    left: 52px;
-    width: 196px;
-	height: 80px;
+    top: 184px;
+    left: 62px;
+    width: 176px;
+	height: 86px;
     background: ;
 }
 .rendered_customerName_in_modalBackgrounds {
 position: fixed;
 display: table-cell;
-    top: 194px;
-    left: 52px;
-    width: 196px;
-	height: 80px;
+    top: 184px;
+    left: 62px;
+    width: 176px;
+	height: 86px;
     background: ;
 	text-align: center;
 vertical-align: middle;
@@ -861,7 +863,7 @@ position: fixed;
 display: table;
     top: 128px;
     left: -24px;
-    width: 196px;
+    width: 166px;
 	height: 80px;
     background: ;
 transform: scale(0.5);
@@ -870,8 +872,8 @@ transform: scale(0.5);
 position: fixed;
 display: table-cell;
     top: 194px;
-    left: 52px;
-    width: 196px;
+    left: 72px;
+    width: 166px;
 	height: 80px;
     background: ;
 	text-align: center;
@@ -938,7 +940,7 @@ img.images_inside_modal_customize_backgrounds {
 .made_with_love_fixed_on_mug {
 position: fixed;
 display: block;
-top: 410px;
+top: 406px;
 left: 50px;
 width: 222px;
 height: 20px;
@@ -959,7 +961,7 @@ text-shadow: none;
 .made_with_love_fixed_on_mug_little_Left {
 position: fixed;
 display: block;
-top: 358px;
+top: 352px;
 left: 54px;
 width: 96px;
 height: 10px;
@@ -1399,49 +1401,47 @@ display: none;
 
 .wrap_container_showing_selected_flowers {
 position: absolute;
-display: block;
-width: 220px;
-height: 220px;
-    top: 137px;
-    left: 43px;
-}
+    display: block;
+    width: 196px;
+    height: 138px;
+    top: 222px;
+    left: 58px;
+	}
 img.container_showing_selected_flowers {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 134px;
-    max-height: 280px;
+    max-width: 196px;
+    max-height: 138px;
     display: block;
     margin: 0 auto;
     cursor: auto !important;
     min-width: auto !important;
     height: auto !important;
     min-height: auto !important;
-	padding-top: 70px;
 }
 .wrap_container_showing_selected_flowers_little_Left {
 position: absolute;
 display: block;
-width: 110px;
-height: 110px;
-    top: 200px;
-    left: 46px;
+width: 94px;
+height: 64px;
+    top: 242px;
+    left: 52px;
 }
 img.container_showing_selected_flowers_little_Left {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 67px;
-    max-height: 140px;
+    max-width: 100px;
+    max-height: 64px;
     display: block;
     margin: 0 auto;
     cursor: auto !important;
     min-width: auto !important;
     height: auto !important;
     min-height: auto !important;
-	padding-top: 35px;
 }
 .wrap_container_showing_selected_background {
 position: absolute;
@@ -1523,7 +1523,7 @@ z-index: 2;
 .background_selection_intructions {
 	
 }
-.wrap_background_options {
+.wrap_pictures_options, .wrap_themes_options {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1548,3 +1548,24 @@ height: 302px;
   font-family: "NeogreyMedium" !important;
 	font-size: 14px !important;
 }
+
+/*///////////////////////////////////////////////////
+////BEGIN Infinite Scroll Random Verses ///////////////////////
+///////////////////////////////////////////////////*/
+#hidden_welcome, #hidden_div_verse, #hidden_div_ref {display:none}
+.wrap_featured_item {
+	margin: 4px;
+	background: #333333
+	}
+.share {
+position: absolute;
+    margin-top: -130px;
+    margin-left: 238px !important;
+    width: 70px !important;
+    height: 70px;
+    line-height: 70px;
+	font-size: 19px;
+	}
+/*///////////////////////////////////////////////////
+////BEGIN Infinite Scroll Random Verses ///////////////////////
+///////////////////////////////////////////////////*/
