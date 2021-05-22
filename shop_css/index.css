@@ -84,10 +84,11 @@
       text-align: center;
       border: 0px solid black;
       font-size: 20px;
-      font-family: "David";
+      font-family: "PT_Sans-Narrow-Web-Regular",sans-serif;
       line-height: 50px;
       width: 100%;
 	  overflow: hidden;
+    z-index: 1;
     }
 
     .wrap_gofundme_modal_bar_bottom {
@@ -249,6 +250,7 @@ text-align: center;
       cursor: pointer;
 	  padding-top: 4px;
 	  padding-bottom:4px;
+    z-index: 1;
     }
 
     #search {
@@ -1559,8 +1561,8 @@ height: 302px;
 	}
 .share {
 position: absolute;
-    margin-top: -130px;
-    margin-left: 238px !important;
+    margin-top: -274px;
+    margin-left: 244px !important;
     width: 70px !important;
     height: 70px;
     line-height: 70px;

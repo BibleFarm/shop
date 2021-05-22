@@ -136,87 +136,19 @@
 /* BEGIN site_title & site_made animation
 /* *************************** */
 /* *************************** */
-// TextScramble
-// ——————————————————————————————————————————————————
+$(function () {
+  count = 0;
+  wordsArray = ['<span class="customize_title bf_links">customize for $10 shipping included</span>', '<span class="made_title bf_links">made with <span class="red_heart">❤</span> at BibleFarm.org</span>'];
+  setInterval(function () {
+    count++;
+    $("#site_title").fadeOut(400, function () {
+      $(this).html(wordsArray[count % wordsArray.length]).fadeIn(400);
+    });
+  }, 5000);
+});
 
-class TextScramble {
-  constructor(el) {
-    this.el = el
-    this.chars = 'קראטוןםפשדגכעיחלךףזסבהנמצתץ          '
-    this.update = this.update.bind(this)
-  }
-  setText(newText) {
-    const oldText = this.el.innerText
-    const length = Math.max(oldText.length, newText.length)
-    const promise = new Promise((resolve) => this.resolve = resolve)
-    this.queue = []
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || ''
-      const to = newText[i] || ''
-      const start = Math.floor(Math.random() * 20)
-      const end = start + Math.floor(Math.random() * 20)
-      this.queue.push({ from, to, start, end })
-    }
-    cancelAnimationFrame(this.frameRequest)
-    this.frame = 0
-    this.update()
-    return promise
-  }
-  update() {
-    let output = ''
-    let complete = 0
-    for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i]
-      if (this.frame >= end) {
-        complete++
-        output += to
-      } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
-          char = this.randomChar()
-          this.queue[i].char = char
-        }
-        output += `<span class="temp">${char}</span>`
-      } else {
-        output += from
-      }
-    }
-    this.el.innerHTML = output
-    if (complete === this.queue.length) {
-      this.resolve()
-    } else {
-      this.frameRequest = requestAnimationFrame(this.update)
-      this.frame++
-    }
-  }
-  randomChar() {
-    return this.chars[Math.floor(Math.random() * this.chars.length)]
-  }
-}
-
-// ——————————————————————————————————————————————————
-// Example
-// ——————————————————————————————————————————————————
-
-const phrases = [
-  '<span class="customize_title bf_links">customize for $10 shipping included</span>',
-  '<span class="made_title bf_links">made with <span class="red_heart">❤</span> at BibleFarm.org</span>'
-]
-
-const el = document.querySelector('#site_title')
-const fx = new TextScramble(el)
-let counter = 0
-const next = () => {
-  fx.setText(phrases[counter]).then(() => {
-    setTimeout(next, 5000)
-  })
-  counter = (counter + 1) % phrases.length
-}
-
-next();
-
-
-// from
-// https://codepen.io/zenonchaos/pen/NMEyJz
+// '<span class="customize_title bf_links">customize for $10 shipping included</span>',
+// '<span class="made_title bf_links">made with <span class="red_heart">❤</span> at BibleFarm.org</span>'
 /* *************************** */
 /* *************************** */
 /* END site_title & site_made animation
