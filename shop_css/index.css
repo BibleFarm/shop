@@ -436,7 +436,7 @@ border-width: 0px;
 }
 /* Change autocomplete styles in WebKit */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -567,7 +567,7 @@ width: 122px;
       padding-bottom: 0px;
 	  overflow: hidden;
     }
-	
+
 .wrap_bible_verse_selection {
 display: block;
 width: 320px;
@@ -605,8 +605,8 @@ text-align: center;
 z-index: 1;
 text-shadow: none;
 }
-	
-	
+
+
     .modal_customize_name {
       position: fixed;
       display: none;
@@ -724,7 +724,7 @@ color: #ae9c80;
 .placeholder_mug_side {
 display: inline-block;
 width: 296px;
-height: 296px;
+height: 444px;
 text-align:center;
 }
 .selected_bible_verse_fixed_on_mug-table {
@@ -1015,7 +1015,7 @@ position: absolute;
 .mug_render_cylinder_wrap_578x260_Center:hover * {
 	-moz-animation-play-state:paused;
 	-webkit-animation-play-state:paused}
-	  
+
 .frame {
 width: 24px;
     -moz-transform-style: preserve-3d;
@@ -1023,7 +1023,7 @@ width: 24px;
     -moz-transform: rotateX(0deg) rotateY(45deg) rotateZ(15deg) translate3d(0px,0px,0px);
     -webkit-transform: rotateX(-2.5deg) rotateY(180deg) rotateZ(0deg) translate3d(0px,0px,0px);
 }
-	
+
 .strip {-moz-transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	-moz-animation: spin 100s infinite linear;
@@ -1045,23 +1045,23 @@ width: 24px;
 .strip .a {background-position: 0 0; /* reaches the 576px width*/
 	   -moz-transform: rotateY(0deg) translateZ(111px);
 	-webkit-transform: rotateY(0deg) translateZ(111px)}
-		
+
 .strip .b {background-position: 552px 0;
 	   -moz-transform: rotateY(15deg) translateZ(111px);
 	-webkit-transform: rotateY(15deg) translateZ(111px)}
-	
+
 .strip .c {background-position: 528px 0;
 	   -moz-transform: rotateY(30deg) translateZ(111px);
 	-webkit-transform: rotateY(30deg) translateZ(111px)}
-	
+
 .strip .d {background-position: 504px 0;
 	   -moz-transform: rotateY(45deg) translateZ(111px);
-	-webkit-transform: rotateY(45deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(45deg) translateZ(111px)}
+
 .strip .e {background-position: 480px 0;
 	   -moz-transform: rotateY(60deg) translateZ(111px);
-	-webkit-transform: rotateY(60deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(60deg) translateZ(111px)}
+
 .strip .f {background-position: 456px 0;
 	   -moz-transform: rotateY(75deg) translateZ(111px);
 	-webkit-transform: rotateY(75deg) translateZ(111px)}
@@ -1069,71 +1069,71 @@ width: 24px;
 .strip .g {background-position: 432px 0;
 	   -moz-transform: rotateY(90deg) translateZ(111px);
 	-webkit-transform: rotateY(90deg) translateZ(111px)}
-	
+
 .strip .h {background-position: 408px 0;
 	   -moz-transform: rotateY(105deg) translateZ(111px);
-	-webkit-transform: rotateY(105deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(105deg) translateZ(111px)}
+
 .strip .i {background-position: 384px 0;
 	   -moz-transform: rotateY(120deg) translateZ(111px);
-	-webkit-transform: rotateY(120deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(120deg) translateZ(111px)}
+
 .strip .j {background-position: 360px 0;
 	   -moz-transform: rotateY(135deg) translateZ(111px);
 	-webkit-transform: rotateY(135deg) translateZ(111px)}
-	
+
 .strip .k {background-position: 336px 0;
 	   -moz-transform: rotateY(150deg) translateZ(111px);
 	-webkit-transform: rotateY(150deg) translateZ(111px)}
-		
+
 .strip .l {background-position: 312px 0;
 	   -moz-transform: rotateY(165deg) translateZ(111px);
-	-webkit-transform: rotateY(165deg) translateZ(111px)}	
-		
+	-webkit-transform: rotateY(165deg) translateZ(111px)}
+
 .strip .m {background-position: 288px 0;
 	   -moz-transform: rotateY(180deg) translateZ(111px);
-	-webkit-transform: rotateY(180deg) translateZ(111px)}		
-		
+	-webkit-transform: rotateY(180deg) translateZ(111px)}
+
 .strip .n {background-position: 264px 0;
 	   -moz-transform: rotateY(195deg) translateZ(111px);
 	-webkit-transform: rotateY(195deg) translateZ(111px)}
-	
+
 .strip .o {background-position: 240px 0;
 	   -moz-transform: rotateY(210deg) translateZ(111px);
 	-webkit-transform: rotateY(210deg) translateZ(111px)}
-	
+
 .strip .p {background-position: 216px 0;
 	   -moz-transform: rotateY(225deg) translateZ(111px);
-	-webkit-transform: rotateY(225deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(225deg) translateZ(111px)}
+
 .strip .q {background-position: 192px 0;
 	   -moz-transform: rotateY(240deg) translateZ(111px);
-	-webkit-transform: rotateY(240deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(240deg) translateZ(111px)}
+
 .strip .r {background-position: 168px 0;
 	   -moz-transform: rotateY(255deg) translateZ(111px);
 	-webkit-transform: rotateY(255deg) translateZ(111px)}
-	
+
 .strip .s {background-position: 144px 0;
 	   -moz-transform: rotateY(270deg) translateZ(111px);
 	-webkit-transform: rotateY(270deg) translateZ(111px)}
-	
+
 .strip .t {background-position: 120px 0;
 	   -moz-transform: rotateY(285deg) translateZ(111px);
-	-webkit-transform: rotateY(285deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(285deg) translateZ(111px)}
+
 .strip .u {background-position: 96px 0;
 	   -moz-transform: rotateY(300deg) translateZ(111px);
-	-webkit-transform: rotateY(300deg) translateZ(111px)}	
-	
+	-webkit-transform: rotateY(300deg) translateZ(111px)}
+
 .strip .v {background-position: 72px 0;
 	   -moz-transform: rotateY(315deg) translateZ(111px);
 	-webkit-transform: rotateY(315deg) translateZ(111px)}
-	
+
 .strip .w {background-position: 48px 0;
 	   -moz-transform: rotateY(330deg) translateZ(111px);
 	-webkit-transform: rotateY(330deg) translateZ(111px)}
-	
+
 .strip .x {background-position: 24px 0;
 	   -moz-transform: rotateY(345deg) translateZ(111px);
 	-webkit-transform: rotateY(345deg) translateZ(111px)}
@@ -1141,7 +1141,7 @@ width: 24px;
 @-moz-keyframes spin {
 	from { -moz-transform: rotateY(0)}
 	to   { -moz-transform: rotateY(-360deg)}}
-	
+
 @-webkit-keyframes spin {
 	from { -webkit-transform: rotateY(0)}
 	to   { -webkit-transform: rotateY(-360deg)}}
@@ -1291,7 +1291,7 @@ z-index: 2;
 /* BEGIN swiper thumnails loop lighter gradients
 /* ************* */
 .mySwiper_backgrounds {
-	
+
 }
 .wrap_swiper_container_backgrounds > .mySwiper_backgrounds > .swiper-button-next {
 	display: none;
@@ -1521,7 +1521,7 @@ z-index: 2;
 	height: 296px;
 }
 .background_selection_intructions {
-	
+
 }
 .wrap_pictures_options, .wrap_themes_options {
 	display: flex;
@@ -1538,7 +1538,7 @@ width: 296px;
 height: 302px;
 }
 
-	
+
 #site_title {margin-left: 32px;}
 .customize_title {
   font-family: "PT_Sans-Narrow-Web-Regular" !important;
