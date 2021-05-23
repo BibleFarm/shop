@@ -153,8 +153,10 @@
 
 <ul id="" class="wrap_menu_items">
 <li id="" class="CreateYourOwnDesign menu_item bf_links">create your own design</li>
+<li id="" class="CreateYourOwnDesign menu_item bf_links">choose your Bible verse</li>
+<li id="" class="addYourName menu_item bf_links">add YourName</li>
 <li id="" class="browseFlowers menu_item bf_links">browse pictures</li>
-<li id="" class="browseBackgrounds menu_item bf_links">browse themes</li>
+<!--<li id="" class="browseBackgrounds menu_item bf_links">browse themes</li>-->
 <li id="" class="menu_item bf_links">about BibleFarm.org</li>
 <li id="info" class="menu_item bf_links open_purechat">contact us</li>
 <li id="" class="menu_item bf_links">social icons</li>
@@ -860,7 +862,8 @@
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item addYourName bf_links">back to YourName</span>
-<span class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to themes</span>
+<!--<span class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to themes</span>-->
+<span class="orderFlowFinger flex_item reviewOrder bf_links continue_to_next_step">review your order</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalFlowers-table">
@@ -1205,7 +1208,8 @@
 
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item changeBackground bf_links">back to themes</span>
+<!--<span class="orderFlowFinger flex_item changeBackground bf_links">back to themes</span>-->
+<span class="orderFlowFinger flex_item changeFlowers bf_links">back to pictures</span>
 <span class="orderFlowFinger flex_item placeOrder bf_links continue_to_next_step">place your order</span>
 </div>
 <div class="narrow_separator"></div>
@@ -1438,7 +1442,7 @@ function getWelcome() {
         var v = messageObj.v;
   //      $('#hidden_div_verse').html(verse);
   //      $('#hidden_div_ref').html(ref);
-        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_side"><img class="" width="296" height="444" src="296x444_mug_feature.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">allVerses</span><span class="addYourName flex_item bf_links">addYourName</span><span class="changeFlowers flex_item bf_links">allPictures</span><span class="changeBackground flex_item bf_links">allThemes</span></div><div class="share bf_links">share</div></div>');
+        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_featured"><img class="" width="296" height="444" src="296x444_mug_feature.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">change verse</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changeFlowers flex_item bf_links">change picture</span></div><div class="share bf_links">share</div></div>');
         // END / get these things and put them in the hidden divs
       } else {
         console.log("Status error: " + ajaxRequest.status);

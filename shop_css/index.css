@@ -726,6 +726,12 @@ color: #ae9c80;
 .placeholder_mug_side {
 display: inline-block;
 width: 296px;
+height: 296px;
+text-align:center;
+}
+.placeholder_mug_featured {
+display: inline-block;
+width: 296px;
 height: 444px;
 text-align:center;
 }
@@ -1557,7 +1563,7 @@ height: 302px;
 #hidden_welcome, #hidden_div_verse, #hidden_div_ref {display:none}
 .wrap_featured_item {
 	margin: 4px;
-	background: #333333
+	background: #111111
 	}
 .share {
 position: absolute;
