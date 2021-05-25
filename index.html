@@ -660,8 +660,8 @@
 <div id="hidden_book_desired"></div>
 <div id="hidden_chapter_desired"></div>
 <div id="hidden_verse_desired"></div>
-<div id="hidden_name_desired"></div>
-<div id="hidden_picture_desired"></div>
+<div id="hidden_name_desired">Your Name</div>
+<div id="hidden_picture_desired">nothing</div>
 <div id="hidden_lastClickedPictureIndex"></div>
 <div id="hidden_lastActivePictureIndex"></div>
 <div id="hidden_background_desired">L-00</div>
@@ -1060,6 +1060,7 @@
 
 
 <div class="popup_ok_this_picture_selected">selected</div>
+<div class="wrap_container_showing_selected_picture"><img class="container_showing_selected_picture" src="" alt="" /></div>
 
   </div>
   <!-- ////////////////////////// -->
@@ -2439,7 +2440,7 @@ $(".rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures,.
 
 // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
 
-$( "#customize_name" ).on( "keyup", function() {
+$( "#customize_name" ).on( "keyup change", function() {
 var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style");
 // give it a second to pass along the attr style newFontSize
 // AND THEN update it in the modals with picture and backgrounds
@@ -2450,6 +2451,11 @@ $( ".rendered_customerName_in_modalReviewOrder > span" ).attr("style",newFontSiz
 }, 3500);
 // AND  it also gets updated in the hidden_name_desired
 $('#hidden_name_desired').text($('#customize_name').val());
+// restore the review your order button to normal just in case
+$('.checkIfNameIsEdited').text('review your order').removeClass('checkIfNameIsEdited').addClass('NameHasBeenEdited').css('color', '#d5ad6d');
+if ($('#hidden_picture_desired').text() != 'nothing') {
+  $('body').find('.NameHasBeenEdited').removeClass("stillNeedToaddYourName").removeClass('NameHasBeenEdited').addClass('reviewOrder');
+}
 });
 
   <!-- ////////////////////////// -->
@@ -2463,7 +2469,6 @@ $('#hidden_name_desired').text($('#customize_name').val());
 $( ".browsePictures" ).on( "click", function() {
 // open the modal
         $(".modal_customize_picture").show();
-		$('.select_a_category_to_load_gallery').show();
         $(".opacity_cover").show();
 });
 // when customer arrives here by clicking under a particular sample image
@@ -2493,8 +2498,13 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_change').show();
 // open the modal
         $(".modal_customize_picture").show();
-		$('.select_a_category_to_load_gallery').show();
         $(".opacity_cover").show();
+        // if user had already chosen a picture
+        if ($('#hidden_picture_desired').text() != 'nothing') {
+        $('.select_a_category_to_load_gallery').hide();
+        } else {
+        $('.select_a_category_to_load_gallery').show();
+        }
 });
 // make this clicked flowers image the selected one and show it in the other modals
 $( "img.images_inside_modal_customize_picture" ).on( "click", function() {
@@ -2593,10 +2603,7 @@ $('.container_showing_selected_background').attr("src", "bg-bleed/" + selectedBa
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 5 - REVIEW THE ORDER -->
   <!-- ////////////////////////// -->
-$( ".checkIfPictureIsSelected" ).on( "click", function() {
-  if (!$(this).hasClass('reviewOrder')) {
-    $(this).text('select a picture').css('color', '#ff5757');
-  } else {
+  $( "body" ).on( "click", ".reviewOrder", function(event) {
   $(".wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery").hide();
   $(".modal_review_the_order").show();
         $(".opacity_cover").show();
@@ -2609,13 +2616,13 @@ console.log('customerName is: ' + customerName);
 var customerVerse = ($('#hidden_book_desired').text() + '-' + $('#hidden_chapter_desired').text() + '-' + $('#hidden_verse_desired').text());
 console.log('customerVerse is: ' + customerVerse);
 
-var customerFlower = $("#hidden_flower_desired").text();
-console.log('customerFlower is: ' + customerFlower);
+var customerPicture = $("#hidden_picture_desired").text();
+console.log('customerPicture is: ' + customerPicture);
 
 var customerBackground = $("#hidden_background_desired").text();
 console.log('customerBackground is: ' + customerBackground);
 
-var completeDescription = customerVerse + " - " + customerName + " - " + customerFlower + " - " +customerBackground;
+var completeDescription = customerVerse + " - " + customerName + " - " + customerPicture + " - " + customerBackground;
 console.log('completeDescription is: ' + completeDescription);
 
 $('#amount').val('');
@@ -2636,7 +2643,6 @@ renderIn_modalReviewOrder();
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
 }, 1000);
-}
 });
   <!-- ////////////////////////// -->
   <!-- END STEP 5 - REVIEW THE ORDER -->
@@ -2760,12 +2766,6 @@ keyboard: {
 	onlyInViewport: true,
 },
 on: {
-	transitionEnd: function() {
-    var lastActivePictureIndex = $('.swiper-slide-active > div > img').attr('src');
-	  $('#hidden_lastActivePictureIndex').text(this.activeIndex);
-	}
-},
-on: {
 	click: function(){
 	console.log(this.clickedIndex);
 	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
@@ -2777,123 +2777,76 @@ navigation: {
 },
 });
 
-	//  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
-	//  mySwiper_biblical.slideTo(lastClickedPictureIndex);
+	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
+	  mySwiper_biblical.slideTo(lastClickedPictureIndex);
 
-    mySwiper_biblical.on('transitionEnd', function() {
+    mySwiper_biblical.on('click', function() {
       console.log('*** mySwiper_biblical.realIndex', mySwiper_biblical.realIndex);
-      var hidden_picture_desired = $('.swiper-slide-active > div > img').attr('src').replace(/p\\/, '').replace(/\.png/, '');
+      var hidden_picture_desired = $('.mySwiper_biblical > .swiper-wrapper > .swiper-slide-active > div > img').attr('src').replace(/p\\/, '').replace(/\.png/, '');
       $('#hidden_picture_desired').text(hidden_picture_desired);
       $('.container_showing_selected_picture').attr("src", "p/" + hidden_picture_desired + ".png" );
       $('.container_showing_selected_picture_little_Left').attr("src", "p/" + hidden_picture_desired + ".png" );
     });
 
 }, 1000);
-// now we know that the user has browsed pictures
-$('.checkIfPictureIsSelected').text('review your order').addClass('reviewOrder').css('color', '#d5ad6d');
-});
-// The selection is recorded in the #hidden_lastClickedPictureIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
-$( ".images_inside_modal_customize_picture" ).on( "click", function() {
-	$('.popup_ok_this_picture_selected').show();
-	setTimeout(function(){
-	$('.popup_ok_this_picture_selected').hide();
-	}, 2000);
 });
 ////////////////////////////////////////////////////
 ////END Swiper biblical ///////////////////////
 ////////////////////////////////////////////////////
-////////////////////////////////////////////////////
-////BEGIN Swiper flowers ///////////////////////
-////////////////////////////////////////////////////
-$( "#view_flowers" ).on( "click", function() {
-  $('.select_a_category_to_load_gallery').hide();
-  $('.wrap_swiper_container_flowers').show();
-  $('.wrap_swiper_container_scenery').hide();
-  $('.wrap_swiper_container_biblical').hide();
-setTimeout(function(){
-      var swiper = new Swiper(".mySwiper_flowers", {
-watchActiveIndex: true,
-keyboard: {
-	enabled: true,
-	onlyInViewport: true,
-},
-on: {
-	slideChange: function() {
-	console.log(this.realIndex);
-//    $('.real-index').html(this.realIndex);
-	}
-},
-on: {
-	click: function(){
-	console.log(this.clickedIndex);
-	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
-	}
-},
-navigation: {
-	nextEl: ".swiper-button-next",
-	prevEl: ".swiper-button-prev",
-},
-});
 
-	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
-	  swiper.slideTo(lastClickedPictureIndex);
 
-}, 1000);
-});
-// The selection is recorded in the #hidden_lastClickedFlowerIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
+////////////////////////////////////////////////////
+////BEGIN Validations to continue to revieOrder, we check if 1. verse 2. name 3 picture // if they're selected ///////////////////////
+////////////////////////////////////////////////////
+// The selection is recorded in the #hidden_lastClickedPictureIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
 $( ".images_inside_modal_customize_picture" ).on( "click", function() {
+  $('.checkIfPictureIsSelected').text('review your order').removeClass('checkIfPictureIsSelected').addClass('checkIfNameIsEdited').css('color', '#d5ad6d');
 	$('.popup_ok_this_picture_selected').show();
 	setTimeout(function(){
 	$('.popup_ok_this_picture_selected').hide();
 	}, 2000);
+  // check if we got a everything in order to turn on reviewOrder
+  if ( ($('#hidden_name_desired').text() != 'Your Name') && ($('#hidden_picture_desired').text() != 'nothing') ) {
+  console.log('all things have boeen completed');
+  // now that we know that the user has completed all the steps
+  $('body').find('.checkIfNameIsEdited').text('review your order').removeClass('stillNeedToaddYourName').removeClass('checkIfNameIsEdited').addClass('reviewOrder').css('color', '#d5ad6d');
+  }
+});
+// check if we got a picture
+$( ".checkIfPictureIsSelected" ).on( "click", function() {
+if ($('#hidden_picture_desired').text() == 'nothing') {
+  console.log('no picture yet selected');
+  $(this).html("select a picture").css('color','#ff5757');
+} else {
+  $(this).removeClass("checkIfPictureIsSelected");
+}
+// check if we got a name
+if ( ($('#hidden_picture_desired').text() != 'nothing') && ($('#hidden_name_desired').text() == 'Your Name') ) {
+  console.log('gota a picture but still need a name');
+  $('.checkIfNameIsEdited').html("let's add YourName").css('color','#ff5757').addClass('stillNeedToaddYourName');
+  setTimeout(function(){
+  $('.addYourName').trigger({
+  			type: "click",
+  			which: 1
+  		});
+  }, 2000);
+}
 });
 ////////////////////////////////////////////////////
-////END Swiper flowers ///////////////////////
+////END Validations to continue to revieOrder, we check if 1. verse 2. name 3 picture // if they're selected ///////////////////////
 ////////////////////////////////////////////////////
-////////////////////////////////////////////////////
-////BEGIN Swiper scenery ///////////////////////
-////////////////////////////////////////////////////
-$( "#view_scenery" ).on( "click", function() {
-setTimeout(function(){
-      var swiper = new Swiper(".mySwiper_scenery", {
-watchActiveIndex: true,
-keyboard: {
-	enabled: true,
-	onlyInViewport: true,
-},
-on: {
-	slideChange: function() {
-	console.log(this.realIndex);
-//    $('.real-index').html(this.realIndex);
-	}
-},
-on: {
-	click: function(){
-	console.log(this.clickedIndex);
-	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
-	}
-},
-navigation: {
-	nextEl: ".swiper-button-next",
-	prevEl: ".swiper-button-prev",
-},
-});
 
-	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
-	  swiper.slideTo(lastClickedPictureIndex);
 
-}, 1000);
-});
-// The selection is recorded in the #hidden_lastClickedFlowerIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
-$( ".images_inside_modal_customize_picture" ).on( "click", function() {
-	$('.popup_ok_this_picture_selected').show();
-	setTimeout(function(){
-	$('.popup_ok_this_picture_selected').hide();
-	}, 2000);
-});
-////////////////////////////////////////////////////
-////END Swiper scenery ///////////////////////
-////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////
 ////BEGIN swiper thumnails loop lighter gradients ///////////////////////
 ////////////////////////////////////////////////////
