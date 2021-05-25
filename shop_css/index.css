@@ -22,6 +22,11 @@
   font-family: "Thekingofromance-z8jDX";
   src: url(../shop_fonts/Thekingofromance-z8jDX.otf) format("opentype");
 }
+@font-face {
+  font-family: 'OpenSansCondensed-Light';
+  src: url(../shop_fonts/OpenSansCondensed-Light.ttf) format("opentype");
+}
+
 
 /* *************************** */
 /* *************************** */
@@ -157,13 +162,6 @@ max-width: 312px;
     }
 
     img.lazyloaded {
-cursor: pointer;
-width: 312px;
-min-width: 312px;
-max-width: 312px;
-height: 164px;
-min-height: 164px;
-max-height: 164px;
     }
 
     .sharing_sub_panel {
@@ -624,7 +622,7 @@ text-shadow: none;
       padding-bottom: 0px;
 	  overflow: hidden;
     }
-    .modal_customize_flowers {
+    .modal_customize_picture {
       position: fixed;
       display: none;
       height: 454px;
@@ -738,23 +736,23 @@ text-align:center;
 .selected_bible_verse_fixed_on_mug-table {
 position: fixed;
 display: table;
-top: 194px;
-left: 55px;
-width: 202px;
-height: 218px;
+top: 190px;
+left: 60px;
+width: 200px;
+height: 200px;
 z-index: 1;
 }
 .selected_bible_verse_fixed_on_mug {
 position: fixed;
 display: table-cell;
-top: 194px;
-left: 55px;
-width: 202px;
-height: 218px;
+top: 190px;
+left: 60px;
+width: 200px;
+height: 200px;
 z-index: 1;
 text-align: center;
 vertical-align: middle;
-font-family: "Capsuularegular-Onm3";
+font-family: 'OpenSansCondensed-Light';
 font-weight: bold;
 text-shadow: none;
 color: #000000;
@@ -764,10 +762,10 @@ color: #000000;
 .selected_bible_verse_fixed_on_mug_in_modalReviewOrder-table {
 position: fixed;
 display: table;
-top: 96px;
-left: 88px;
-width: 202px;
-height: 210px;
+top: 102px;
+left: 86px;
+width: 200px;
+height: 200px;
 z-index: 1;
 transform: scale(0.5);
 }
@@ -776,12 +774,12 @@ position: fixed;
     display: table-cell;
     top: 190px;
     left: 60px;
-    width: 192px;
-    height: 210px;
+    width: 200px;
+    height: 200px;
     z-index: 1;
     text-align: center;
     vertical-align: middle;
-    font-family: "Capsuularegular-Onm3";
+    font-family: 'OpenSansCondensed-Light';
     font-weight: bold;
     text-shadow: none;
     color: #000000;
@@ -791,19 +789,19 @@ position: fixed;
 .rendered_customerName_in_modalName-table {
 position: fixed;
 display: table;
-    top: 184px;
-    left: 62px;
-    width: 176px;
-	height: 86px;
+top: 176px;
+left: 72px;
+width: 160px;
+height: 80px;
     background: ;
 }
 .rendered_customerName_in_modalName {
 position: fixed;
 display: table-cell;
-    top: 184px;
-    left: 62px;
-    width: 176px;
-	height: 86px;
+top: 176px;
+left: 72px;
+width: 160px;
+height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
@@ -813,23 +811,24 @@ color: #000000;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 100px;
 }
-.rendered_customerName_in_modalFlowers-table {
+.rendered_customerName_in_modalPictures-table {
 position: fixed;
 display: table;
-    top: 184px;
-    left: 62px;
-    width: 176px;
-	height: 86px;
+top: 176px;
+left: 72px;
+width: 160px;
+height: 80px;
     background: ;
 }
-.rendered_customerName_in_modalFlowers {
+.rendered_customerName_in_modalPictures {
 position: fixed;
 display: table-cell;
-    top: 184px;
-    left: 62px;
-    width: 176px;
-	height: 86px;
+top: 176px;
+left: 72px;
+width: 160px;
+height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
@@ -839,23 +838,24 @@ color: #000000;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 100px;
 }
 .rendered_customerName_in_modalBackgrounds-table {
 position: fixed;
 display: table;
-    top: 184px;
-    left: 62px;
-    width: 176px;
-	height: 86px;
+top: 176px;
+left: 72px;
+width: 160px;
+height: 80px;
     background: ;
 }
 .rendered_customerName_in_modalBackgrounds {
 position: fixed;
 display: table-cell;
-    top: 184px;
-    left: 62px;
-    width: 176px;
-	height: 86px;
+top: 176px;
+left: 72px;
+width: 160px;
+height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
@@ -865,24 +865,25 @@ color: #000000;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 100px;
 }
 .rendered_customerName_in_modalReviewOrder-table {
 position: fixed;
 display: table;
-    top: 128px;
-    left: -24px;
-    width: 166px;
-	height: 80px;
+top: 216px;
+left: 22px;
+width: 160px;
+height: 80px;
     background: ;
 transform: scale(0.5);
 }
 .rendered_customerName_in_modalReviewOrder {
 position: fixed;
 display: table-cell;
-    top: 194px;
-    left: 72px;
-    width: 166px;
-	height: 80px;
+top: 0px;
+left: 0px;
+width: 160px;
+height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
@@ -892,35 +893,29 @@ color: #000000;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 100px;
 }
 .wrap_continue_bar {
 display: flex;
 min-height: 44px;
 }
 .continue_to_next_step {background: #222222}
-.wrap_flower_images_inside_modal_customize_flowers {
+.wrap_images_inside_modal_customize_picture {
 position: relative;
 display: block;
-width: 220px;
-height: 220px;
-    top: ;
-    left: ;
-    width: ;
+max-width: 208px;
+max-height: 140px;
 }
-img.images_inside_modal_customize_flowers {
+img.images_inside_modal_customize_picture {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 134px;
-    max-height: 280px;
+    max-width: 208px;
+    max-height: 140px;
     display: block;
     margin: 0 auto;
     cursor: auto !important;
-    min-width: auto !important;
-    height: auto !important;
-    min-height: auto !important;
-	padding-top: 70px;
 }
 .wrap_background_images_inside_modal_customize_backgrounds {
 position: relative;
@@ -1001,6 +996,7 @@ when background image is 792px x 320px we divide it by 24 frames, and the we get
 
 */
 .mug_render_cylinder_wrap_578x260_Center {
+  display: none;
 position: fixed;
     text-align: center;
     margin: 0 auto;
@@ -1011,6 +1007,7 @@ position: fixed;
     -webkit-perspective: 1600;
 }
 .mug_render_cylinder_wrap_578x260_Center_in_slides {
+  display: none;
 position: absolute;
     text-align: center;
     margin: 0 auto;
@@ -1021,6 +1018,7 @@ position: absolute;
     -webkit-perspective: 1600;
 }
 .mug_render_cylinder_wrap_578x260_Center:hover * {
+  display: none;
 	-moz-animation-play-state:paused;
 	-webkit-animation-play-state:paused}
 
@@ -1168,6 +1166,7 @@ left: 20px;
 /* BEGIN transform scale 0.5 for review your order */
 /* ************************ */
 .mug_render_cylinder_wrap_578x260_Center_little_Left {
+  display: none;
 position: fixed;
     text-align: center;
     margin: 0 auto;
@@ -1179,6 +1178,7 @@ position: fixed;
 	transform: scale(0.5);
 }
 .mug_render_cylinder_wrap_578x260_Center_little_Right {
+  display: none;
 position: fixed;
     text-align: center;
     margin: 0 auto;
@@ -1219,13 +1219,13 @@ text-align:center;
     background: #000000;
     padding: 0px;
 }
-.wrap_swiper_container_flowers {
+.wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery {
 position: fixed;
 display: none;
-top: 170px;
-left: 51px;
-width: 212px;
-height: 250px;
+top: 264px;
+left: 56px;
+width: 208px;
+height: 140px;
 background: none;
 margin: 0 auto;
 padding: 0;
@@ -1244,7 +1244,7 @@ padding: 0;
 z-index: 2;
 }
 /* ************* */
-/* BEGIN swiper flowers
+/* BEGIN swipers inside picture modal
 /* ************* */
       .swiper-container {
         width: 100%;
@@ -1277,15 +1277,24 @@ z-index: 2;
         height: 100%;
         object-fit: cover;
       }
-.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-wrapper > .swiper-slide {
+.wrap_swiper_container_biblical > .mySwiper_biblical > .swiper-wrapper > .swiper-slide,
+.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-wrapper > .swiper-slide,
+.wrap_swiper_container_scenery > .mySwiper_scenery > .swiper-wrapper > .swiper-slide
+ {
 
 }
-.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-button-next {
+.wrap_swiper_container_biblical > .mySwiper_biblical > .swiper-button-next,
+.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-button-next,
+.wrap_swiper_container_scenery > .mySwiper_scenery > .swiper-button-next
+ {
 	position: fixed;
 	top: 300px;
 	left: 278px;
 }
-.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-button-prev {
+.wrap_swiper_container_biblical > .mySwiper_biblical > .swiper-button-prev,
+.wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-button-prev,
+.wrap_swiper_container_scenery > .mySwiper_scenery > .swiper-button-prev
+{
 	position: fixed;
 	top: 300px;
 	left: 8px;
@@ -1293,7 +1302,7 @@ z-index: 2;
 
 
 /* ************* */
-/* END swiper flowers
+/* END swipers inside picture modal
 /* ************* */
 /* ************* */
 /* BEGIN swiper thumnails loop lighter gradients
@@ -1353,7 +1362,7 @@ z-index: 2;
 
       .swiper-container {
         width: 100%;
-        height: 300px;
+        height: 100%;
         margin-left: auto;
         margin-right: auto;
       }
@@ -1407,21 +1416,21 @@ display: none;
 
 .still_need_to_select_chapter_and_verse {display:none;}
 
-.wrap_container_showing_selected_flowers {
+.wrap_container_showing_selected_picture {
 position: absolute;
     display: block;
-    width: 196px;
-    height: 138px;
-    top: 222px;
-    left: 58px;
+    width: 208px;
+    height: 140px;
+    top: 216px;
+    left: 52px;
 	}
-img.container_showing_selected_flowers {
+img.container_showing_selected_picture {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 196px;
-    max-height: 138px;
+    max-width: 208px;
+    max-height: 140px;
     display: block;
     margin: 0 auto;
     cursor: auto !important;
@@ -1429,21 +1438,21 @@ display: table-cell;
     height: auto !important;
     min-height: auto !important;
 }
-.wrap_container_showing_selected_flowers_little_Left {
+.wrap_container_showing_selected_picture_little_Left {
 position: absolute;
 display: block;
-width: 94px;
-height: 64px;
-    top: 242px;
-    left: 52px;
+width: 104px;
+height: 70px;
+    top: 234px;
+    left: 48px;
 }
-img.container_showing_selected_flowers_little_Left {
+img.container_showing_selected_picture_little_Left {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 100px;
-    max-height: 64px;
+    max-width: 104px;
+    max-height: 70px;
     display: block;
     margin: 0 auto;
     cursor: auto !important;
@@ -1474,7 +1483,7 @@ display: table-cell;
     min-height: auto !important;
 	padding-top: 70px;
 }
-.popup_ok_this_flower_theme_selected, .popup_ok_this_background_theme_selected {
+.popup_ok_this_picture_selected, .popup_ok_this_background_theme_selected {
 display: none;
 position: fixed;
 top: 180px;
@@ -1502,6 +1511,7 @@ text-align: center;
 z-index: 2;
 }
 /* BEGIN waiting for verse to load */
+/*
 .wrap_waiting {height: 60%; margin-top: 20%; margin-bottom: 20%;}
 .wrap_waiting > table {border: none; width: 100%; height: 100%}
 .wrap_waiting > table tr {text-align: center; vertical-align: middle; line-height: }
@@ -1512,6 +1522,7 @@ z-index: 2;
   text-align: center;
 }
 .class_hide_show {display: none}
+*/
 /* END waiting for verse to load */
 
 .yourOrderIs {
@@ -1577,3 +1588,19 @@ position: absolute;
 /*///////////////////////////////////////////////////
 ////BEGIN Infinite Scroll Random Verses ///////////////////////
 ///////////////////////////////////////////////////*/
+
+
+
+
+
+.select_a_category_to_load_gallery {
+  display: none;
+    position: absolute;
+    top: 240px;
+    left: 25%;
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+    text-shadow: none;
+}

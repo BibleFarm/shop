@@ -84,6 +84,7 @@
 
     <link rel="stylesheet" href="shop_css/index.css" />
 
+
 <style>
 
 </style>
@@ -111,9 +112,9 @@
     <div class="wrap_gofundme_modal_body box_shadow">
       <div class="gofundme_flex-container">
 <!--
-<div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Deuteronomy-6-4' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs/Deuteronomy-6-4-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="Deuteronomy" chapter="6" verse="4">verses</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changeFlowers flex_item bf_links">flowers</span><span class="changeBackground flex_item bf_links">backgrounds</span></div></div>
+<div><a class='bf_links' href='https://team.biblefarm.org/Mindy/Deuteronomy-6-4' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs/Deuteronomy-6-4-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="Deuteronomy" chapter="6" verse="4">verses</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changePicture flex_item bf_links">pictures</span><span class="changeBackground flex_item bf_links">backgrounds</span></div></div>
 
-<div><a class='bf_links' href='https://team.biblefarm.org/Mindy/1-John-3-8' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs/1-John-3-8-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="1-John" chapter="3" verse="8">verses</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changeFlowers flex_item bf_links">flowers</span><span class="changeBackground flex_item bf_links">backgrounds</span></div></div>
+<div><a class='bf_links' href='https://team.biblefarm.org/Mindy/1-John-3-8' target="_blank"><img class="lazyload lazyloaded" width="312" height="164" data-src="Output_Generated_Images_Mugs/1-John-3-8-mug.png" alt="" /></a><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="1-John" chapter="3" verse="8">verses</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changePicture flex_item bf_links">pictures</span><span class="changeBackground flex_item bf_links">backgrounds</span></div></div>
 -->
 <div id="hidden_welcome"></div>
 <div id="hidden_div_verse"></div>
@@ -155,7 +156,7 @@
 <li id="" class="CreateYourOwnDesign menu_item bf_links">create your own design</li>
 <li id="" class="CreateYourOwnDesign menu_item bf_links">choose your Bible verse</li>
 <li id="" class="addYourName menu_item bf_links">add YourName</li>
-<li id="" class="browseFlowers menu_item bf_links">browse pictures</li>
+<li id="" class="browsePictures menu_item bf_links">browse & choose a picture</li>
 <!--<li id="" class="browseBackgrounds menu_item bf_links">browse themes</li>-->
 <li id="" class="menu_item bf_links">about BibleFarm.org</li>
 <li id="info" class="menu_item bf_links open_purechat">contact us</li>
@@ -644,10 +645,6 @@
 <!-- ////////////////////////// -->
 <!-- END wrap_for_canvas_take_picture_1-->
 <!-- ////////////////////////// -->
-
-  <!-- ////////////////////////// -->
-<!-- END render mug background image inside the modals-->
-<!-- ////////////////////////// -->
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item no_book_nor_chapter_nor_verse_selection_yet">please select book & chapter & verse above</span>
@@ -664,11 +661,12 @@
 <div id="hidden_chapter_desired"></div>
 <div id="hidden_verse_desired"></div>
 <div id="hidden_name_desired"></div>
-<div id="hidden_flower_desired"></div>
-<div id="hidden_lastClickedFlowerIndex"></div>
+<div id="hidden_picture_desired"></div>
+<div id="hidden_lastClickedPictureIndex"></div>
+<div id="hidden_lastActivePictureIndex"></div>
 <div id="hidden_background_desired">L-00</div>
 <div id="hidden_lastClickedBackgroundIndex"></div>
-
+<!--
 <div class="popup_ok_this_verse_selected">
 <div class="wrap_waiting">
   <table>
@@ -702,7 +700,7 @@
   </table>
 </div>
 </div>
-
+-->
 
 
 
@@ -776,7 +774,7 @@
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item changeVerse bf_links">back to change verse</span>
-<span class="orderFlowFinger flex_item changeFlowers bf_links continue_to_next_step">continue to pictures</span>
+<span class="orderFlowFinger flex_item bf_links continue_to_next_step checkIfNameIsFilled">continue to pictures</span>
 </div>
 <div class="narrow_separator"></div>
 
@@ -785,7 +783,7 @@
 </div>
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
 
-<div class="wrap_container_showing_selected_flowers"><img class="container_showing_selected_flowers" src="" alt="" /></div>
+<div class="wrap_container_showing_selected_picture"><img class="container_showing_selected_picture" src="" alt="" /></div>
 
   </div>
   <!-- ////////////////////////// -->
@@ -793,9 +791,9 @@
   <!-- ////////////////////////// -->
 
   <!-- ////////////////////////// -->
-  <!-- BEGIN STEP 3 - FLOWER -->
+  <!-- BEGIN STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->
-  <div class="modal_customize_flowers">
+  <div class="modal_customize_picture">
 
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
@@ -808,9 +806,9 @@
 <div class="narrow_separator_as_bg"></div>
 
 <div class="wrap_themes_options">
-<div class="flex_item bf_links">view biblical</div>
-<div class="flex_item bf_links">view flowers</div>
-<div class="flex_item bf_links">view scenery</div>
+<div id="view-biblical" class="flex_item bf_links">view biblical</div>
+<div id="view-flowers" class="flex_item bf_links">view flowers</div>
+<div id="view-scenery" class="flex_item bf_links">view scenery</div>
 </div>
 
 <div class="narrow_separator_as_bg"></div>
@@ -818,6 +816,7 @@
 <div class="narrow_separator_as_bg"></div>
 
 <div class="placeholder_mug_side"><img class="" width="296" height="296" src="BlankMugFront_296x296.png" alt="" /></div>
+<div class="select_a_category_to_load_gallery">select one of the 3 categories above to load that gallery</div>
 <!-- ////////////////////////// -->
 <!-- BEGIN render mug background image inside the modals-->
 <!-- ////////////////////////// -->
@@ -863,15 +862,77 @@
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item addYourName bf_links">back to YourName</span>
 <!--<span class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to themes</span>-->
-<span class="orderFlowFinger flex_item reviewOrder bf_links continue_to_next_step">review your order</span>
+<span class="orderFlowFinger flex_item checkIfPictureIsSelected bf_links continue_to_next_step">review your order</span>
 </div>
 <div class="narrow_separator"></div>
-<div class="rendered_customerName_in_modalFlowers-table">
-<span class="rendered_customerName_in_modalFlowers" style=""></span>
+<div class="rendered_customerName_in_modalPictures-table">
+<span class="rendered_customerName_in_modalPictures" style=""></span>
 </div>
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
 
   </div>
+  <!-- ////////////////////////// -->
+  <!-- BEGIN swiper overlayed on top on mug -->
+  <!-- ////////////////////////// -->
+  <div class="wrap_swiper_container_biblical">
+  <!-- Swiper BEGIN -->
+      <div class="swiper-container mySwiper_biblical">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-000.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-001.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-002.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-003.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-004.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-005.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-006.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-007.png" alt="" />
+  </div>
+  </div>
+          <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-008.png" alt="" />
+  </div>
+  </div>
+  <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-009.png" alt="" />
+  </div>
+  </div>
+  <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+  <img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\B-010.png" alt="" />
+  </div>
+  </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+  </div>
+  <!-- Swiper RND -->
+  <!-- ////////////////////////// -->
+  <!-- END swiper overlayed on top on mug -->
+  <!-- ////////////////////////// -->
+
 <!-- ////////////////////////// -->
 <!-- BEGIN swiper overlayed on top on mug -->
 <!-- ////////////////////////// -->
@@ -879,44 +940,110 @@
 <!-- Swiper BEGIN -->
     <div class="swiper-container mySwiper_flowers">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-000.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-000.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-001.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-001.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-002.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-002.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-003.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-003.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-004.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-004.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-005.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-005.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-006.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-006.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-007.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-007.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-008.png" alt="" />
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-008.png" alt="" />
 </div>
 </div>
-        <div class="swiper-slide"><div class="wrap_flower_images_inside_modal_customize_flowers">
-<img class="lazyload lazyloaded images_inside_modal_customize_flowers" data-src="bg-flowers\F-009.png" alt="" />
+<div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-009.png" alt="" />
+</div>
+</div>
+<div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\F-010.png" alt="" />
+</div>
+</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+</div>
+<!-- Swiper RND -->
+<!-- ////////////////////////// -->
+<!-- END swiper overlayed on top on mug -->
+<!-- ////////////////////////// -->
+
+<!-- ////////////////////////// -->
+<!-- BEGIN swiper overlayed on top on mug -->
+<!-- ////////////////////////// -->
+<div class="wrap_swiper_container_scenery">
+<!-- Swiper BEGIN -->
+    <div class="swiper-container mySwiper_scenery">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-000.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-001.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-002.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-003.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-004.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-005.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-006.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-007.png" alt="" />
+</div>
+</div>
+        <div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-008.png" alt="" />
+</div>
+</div>
+<div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-009.png" alt="" />
+</div>
+</div>
+<div class="swiper-slide"><div class="wrap_images_inside_modal_customize_picture">
+<img class="lazyload lazyloaded images_inside_modal_customize_picture" data-src="p\S-010.png" alt="" />
 </div>
 </div>
       </div>
@@ -932,12 +1059,11 @@
 
 
 
-
-<div class="popup_ok_this_flower_theme_selected">selected</div>
+<div class="popup_ok_this_picture_selected">selected</div>
 
   </div>
   <!-- ////////////////////////// -->
-  <!-- END STEP 3 - FLOWER -->
+  <!-- END STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->
 
   <!-- ////////////////////////// -->
@@ -970,7 +1096,7 @@
 <div class="narrow_separator"></div>
 
 <div class="wrap_continue_bar">
-<span class="orderFlowFinger flex_item changeFlowers bf_links">back to pictures</span>
+<span class="orderFlowFinger flex_item changePicture bf_links">back to picture</span>
 <span class="orderFlowFinger flex_item reviewOrder bf_links continue_to_next_step">review your order</span>
 </div>
 <div class="narrow_separator"></div>
@@ -979,7 +1105,7 @@
 </div>
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
 
-<div class="wrap_container_showing_selected_flowers"><img class="container_showing_selected_flowers" src="" alt="" /></div>
+<div class="wrap_container_showing_selected_picture"><img class="container_showing_selected_picture" src="" alt="" /></div>
 
 
 <!-- ////////////////////////// -->
@@ -1080,7 +1206,7 @@
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<div class="orderFlowNoFinger">tiny preview may look blurry & not well</div>
+<div class="orderFlowNoFinger">tiny previews may look blurry & not well</div>
 <div class="orderFlowNoFinger">centered but don't worry about a thing</div>
 
 <div class="narrow_separator_as_bg"></div>
@@ -1209,7 +1335,7 @@
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <!--<span class="orderFlowFinger flex_item changeBackground bf_links">back to themes</span>-->
-<span class="orderFlowFinger flex_item changeFlowers bf_links">back to pictures</span>
+<span class="orderFlowFinger flex_item changePicture bf_links">back to picture</span>
 <span class="orderFlowFinger flex_item placeOrder bf_links continue_to_next_step">place your order</span>
 </div>
 <div class="narrow_separator"></div>
@@ -1218,7 +1344,7 @@
 <span class="rendered_customerName_in_modalReviewOrder" style=""></span>
 </div>
 
-<div class="wrap_container_showing_selected_flowers_little_Left"><img class="container_showing_selected_flowers_little_Left" src="" alt="" /></div>
+<div class="wrap_container_showing_selected_picture_little_Left"><img class="container_showing_selected_picture_little_Left" src="" alt="" /></div>
 
 
 <div class="made_with_love_fixed_on_mug_little_Left">made with <span class="heart_fixed_on_mug_little_Left">❤ </span> at BibleFarm.org</div>
@@ -1442,7 +1568,7 @@ function getWelcome() {
         var v = messageObj.v;
   //      $('#hidden_div_verse').html(verse);
   //      $('#hidden_div_ref').html(ref);
-        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_featured"><img class="" width="296" height="444" src="296x444_mug_feature.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">change verse</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changeFlowers flex_item bf_links">change picture</span></div><div class="share bf_links">share</div></div>');
+        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_featured"><img class="" width="296" height="444" src="296x444_mug_feature.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">change verse</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changePicture flex_item bf_links">change picture</span></div><div class="share bf_links">share</div></div>');
         // END / get these things and put them in the hidden divs
       } else {
         console.log("Status error: " + ajaxRequest.status);
@@ -1598,6 +1724,7 @@ $( ".CreateYourOwnDesign" ).on( "click", function() {
 	///////////////////////////////////////////////////
 	/// BEGIN waitingto_load_verse_countdown ///////
 	///////////////////////////////////////////////////
+  /*
 $('.popup_ok_this_verse_selected').show();
 $(".wait_to_load_options").show();
     $('.hidden_1').removeClass('class_hide_show');
@@ -1634,6 +1761,7 @@ $('.popup_ok_this_verse_selected').hide("slow");
     $('.hidden_3').addClass('class_hide_show');
     $('.hidden_4').addClass('class_hide_show');
   }, 3500);
+  */
 	///////////////////////////////////////////////////
 	/// END waitingto_load_verse_countdown ///////
 	///////////////////////////////////////////////////
@@ -1658,9 +1786,9 @@ $('.popup_ok_this_verse_selected').hide("slow");
 		$('.populated_verse_with_ajax').html(
 			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
@@ -1673,9 +1801,9 @@ console.log("The 5 seconds went by, so we should now have it rendered.");
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -1728,9 +1856,9 @@ console.log(".done function is now populating the text of the verse...");
 		$('.populated_verse_with_ajax').html(
 			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
@@ -1743,9 +1871,9 @@ console.log("The 5 seconds went by, so we should now have it rendered.");
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -1788,9 +1916,9 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 		$('.populated_verse_with_ajax').html(
 			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
@@ -1804,9 +1932,9 @@ console.log( "Now things should be still okay, and ready to try again." );
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -1919,9 +2047,9 @@ console.log(".done function is now populating the text of the verse...");
 		$('.populated_verse_with_ajax').html(
 			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
@@ -1934,9 +2062,9 @@ console.log("The 5 seconds went by, so we should now have it rendered.");
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -1980,9 +2108,9 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 		$('.populated_verse_with_ajax').html(
 			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
@@ -1996,9 +2124,9 @@ console.log( "Now things should be still okay, and ready to try again." );
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -2147,9 +2275,9 @@ console.log(".done function is now populating the text of the verse...");
 		$('.populated_verse_with_ajax').html(
 			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
@@ -2162,9 +2290,9 @@ console.log("The 5 seconds went by, so we should now have it rendered.");
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -2207,9 +2335,9 @@ $(".selected_verse").text(newlySelectedBook + '-' + newlySelectedChapter + '-' +
 		$('.populated_verse_with_ajax').html(
 			'<span>' + $('.populated_verse_with_ajax').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalVerse.");
 setTimeout(function() {
@@ -2223,9 +2351,9 @@ console.log( "Now things should be still okay, and ready to try again." );
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -2294,46 +2422,52 @@ $(".selected_verse").text(completeRefNeeded);
 		$('#customize_name').focus();
 });
 // first I need to render it in the rendered_customerName_in_modalName
-//AND ALSO IN rendered_customerName_in_modalFlowers AND ALSO IN rendered_customerName_in_modalBackgrounds AND ALSO IN rendered_customerName_in_modalReviewOrder
+//AND ALSO IN rendered_customerName_in_modalPictures AND ALSO IN rendered_customerName_in_modalBackgrounds AND ALSO IN rendered_customerName_in_modalReviewOrder
 	function renderIn_modalName() {
-		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalFlowers, .rendered_customerName_in_modalBackgrounds, .rendered_customerName_in_modalReviewOrder').html(
+		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures, .rendered_customerName_in_modalBackgrounds, .rendered_customerName_in_modalReviewOrder').html(
 			'<span>' + $('#customize_name').val() + '</span>'
 		);
-		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalFlowers, .rendered_customerName_in_modalBackgrounds, .rendered_customerName_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+//		$('.rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures, .rendered_customerName_in_modalBackgrounds, .rendered_customerName_in_modalReviewOrder').textfill({ maxFontPixels: 200 });
+
+//textFit(document.querySelector(".rendered_customerName_in_modalName")); textFit(document.querySelector(".rendered_customerName_in_modalPictures")); textFit(document.querySelector(".rendered_customerName_in_modalBackgrounds")); textFit(document.querySelector(".rendered_customerName_in_modalReviewOrder"));
+
+$(".rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures,.rendered_customerName_in_modalBackgrounds,.rendered_customerName_in_modalReviewOrder").textfill({maxFontPixels:200});
+
 	}
 	$('#customize_name').keyup(renderIn_modalName);
 	renderIn_modalName();
 
 // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
+
 $( "#customize_name" ).on( "keyup", function() {
 var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style");
-// AND THEN update it in the modals with flowers and backgrounds
+// give it a second to pass along the attr style newFontSize
+// AND THEN update it in the modals with picture and backgrounds
 setTimeout(function(){
-$( ".rendered_customerName_in_modalFlowers > span" ).attr("style",newFontSize);
+$( ".rendered_customerName_in_modalPictures > span" ).attr("style",newFontSize);
 $( ".rendered_customerName_in_modalBackgrounds > span" ).attr("style",newFontSize);
 $( ".rendered_customerName_in_modalReviewOrder > span" ).attr("style",newFontSize);
 }, 3500);
 // AND  it also gets updated in the hidden_name_desired
 $('#hidden_name_desired').text($('#customize_name').val());
 });
+
   <!-- ////////////////////////// -->
   <!-- END STEP 2 - NAME -->
   <!-- ////////////////////////// -->
 
   <!-- ////////////////////////// -->
-  <!-- BEGIN STEP 3 - FLOWER -->
+  <!-- BEGIN STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->
 // when customer arrives here via the menu
-$( ".browseFlowers" ).on( "click", function() {
+$( ".browsePictures" ).on( "click", function() {
 // open the modal
-        $(".modal_customize_flowers").show();
-		$('.wrap_swiper_container_flowers').show();
+        $(".modal_customize_picture").show();
+		$('.select_a_category_to_load_gallery').show();
         $(".opacity_cover").show();
 });
 // when customer arrives here by clicking under a particular sample image
-$( "body" ).on( "click", ".changeFlowers", function(event) {
+$( "body" ).on( "click", ".changePicture", function(event) {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
 var chapterNeeded = $(this).parent().find(".changeVerse").attr('chapter');
 var verseNeeded = $(this).parent().find(".changeVerse").attr('verse');
@@ -2358,19 +2492,53 @@ $(".selected_verse").text(completeRefNeeded);
      $('.lets_choose').hide();
      $('.lets_change').show();
 // open the modal
-        $(".modal_customize_flowers").show();
-		$('.wrap_swiper_container_flowers').show();
+        $(".modal_customize_picture").show();
+		$('.select_a_category_to_load_gallery').show();
         $(".opacity_cover").show();
 });
 // make this clicked flowers image the selected one and show it in the other modals
-$( "img.images_inside_modal_customize_flowers" ).on( "click", function() {
-var selectedFlowers = $(this).attr("src").replace(/bg-flowers\\/, '').replace(/\.png/, '');
-$( "#hidden_flower_desired" ).text(selectedFlowers);
-$('.container_showing_selected_flowers').attr("src", "bg-flowers/" + selectedFlowers + ".png" );
-$('.container_showing_selected_flowers_little_Left').attr("src", "bg-flowers/" + selectedFlowers + ".png" );
+$( "img.images_inside_modal_customize_picture" ).on( "click", function() {
+var selectedPicture = $(this).attr("src").replace(/p\\/, '').replace(/\.png/, '');
+$( "#hidden_picture_desired" ).text(selectedPicture);
+$('.container_showing_selected_picture').attr("src", "p/" + selectedPicture + ".png" );
+$('.container_showing_selected_picture_little_Left').attr("src", "p/" + selectedPicture + ".png" );
 });
+// checkIfNameIsFilled
+$('.checkIfNameIsFilled').on( "click", function(e) {
+    if( $('.customize_name').val().length == 0 ) {
+        $('.checkIfNameIsFilled').text('type name up there').css('color', '#ff5757');
+        $('.customize_name').focus();
+    } else {
+$(this).addClass('changePicture');
+}
+});
+$('.customize_name').on( "keyup", function(e) {
+    if( $('.customize_name').val().length != 0 ) {
+        $('.checkIfNameIsFilled').text('continue to pictures').css('color', '#d5ad6d').addClass('changePicture');
+} else {
+        $('.checkIfNameIsFilled').text('type name up there').css('color', '#ff5757').removeClass('changePicture');
+}
+});
+// adjust position left if characters are problematic
+$( ".customize_name" ).on( "keyup change", function() {
+var myString = $('.customize_name').val();
+var lastChar = myString[myString.length -1];
+console.log(lastChar);
+var arr = ['d', 'h', 'k', 'l', 'b'];
+
+if ( $.inArray(lastChar, arr) > -1 ) {
+$('.rendered_customerName_in_modalName').css('left', '66px');
+$('.rendered_customerName_in_modalPictures').css('left', '66px');
+$('.rendered_customerName_in_modalReviewOrder-table').css('left', '17px');
+} else {
+$('.rendered_customerName_in_modalName').css('left', '72px');
+$('.rendered_customerName_in_modalPictures').css('left', '72px');
+$('.rendered_customerName_in_modalReviewOrder-table').css('left', '22px');
+}
+});
+
   <!-- ////////////////////////// -->
-  <!-- END STEP 3 - FLOWER -->
+  <!-- END STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 4 - BACKGROUND -->
@@ -2425,8 +2593,12 @@ $('.container_showing_selected_background').attr("src", "bg-bleed/" + selectedBa
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 5 - REVIEW THE ORDER -->
   <!-- ////////////////////////// -->
-$( ".reviewOrder" ).on( "click", function() {
-        $(".modal_review_the_order").show();
+$( ".checkIfPictureIsSelected" ).on( "click", function() {
+  if (!$(this).hasClass('reviewOrder')) {
+    $(this).text('select a picture').css('color', '#ff5757');
+  } else {
+  $(".wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery").hide();
+  $(".modal_review_the_order").show();
         $(".opacity_cover").show();
 // grab the hidden text divs and combine them into the complete order details
 $('#description').val('');
@@ -2453,9 +2625,9 @@ $('#description').val(completeDescription);
 		$('.populated_verse_with_ajax_in_modalReviewOrder').html(
 			'<span>' + $('.populated_verse_with_ajax_in_modalReviewOrder').text() + '</span>'
 		);
-		$('.populated_verse_with_ajax_in_modalReviewOrder').textfill({
-			maxFontPixels: 200
-		});
+		$(".populated_verse_with_ajax_in_modalReviewOrder").textfill({maxFontPixels:200});
+
+
 	}
 console.log("We're giving it 5 seconds before we renderIn_modalReviewOrder.");
 setTimeout(function() {
@@ -2464,7 +2636,7 @@ renderIn_modalReviewOrder();
 setTimeout(function() {
 console.log("The 5 seconds went by, so we should now have it rendered.");
 }, 1000);
-
+}
 });
   <!-- ////////////////////////// -->
   <!-- END STEP 5 - REVIEW THE ORDER -->
@@ -2484,14 +2656,14 @@ $( ".placeOrder" ).on( "click", function() {
 
 // hide any and all modals when click outside
 $(".opacity_cover").click(function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order, .help_modal").hide();
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_picture, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order, .help_modal").hide();
 });
 
   <!-- ////////////////////////// -->
   <!-- Begin OrderFlow navigation -->
   <!-- ////////////////////////// -->
-$('.wrap_continue_bar').find('.changeVerse').on( "click", function() {
-$(".menu_modal, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
+$('body').find('.changeVerse').on( "click", function() {
+$(".menu_modal, .modal_customize_name, .modal_customize_picture, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_verse').show();
 // give it time to update in order to prevent messup while is says undefined - undefined - undefined
 $('.selected_verse').hide();
@@ -2499,25 +2671,25 @@ setTimeout(function() {
 $('.selected_verse').show();
 }, 1000);
 });
-$('.wrap_continue_bar').find('.addYourName').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
+$('body').find('.addYourName').on( "click", function() {
+$(".menu_modal, .modal_customize_verse, .modal_customize_picture, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_name').show();
 $('.customize_name').focus();
 });
-$('.wrap_continue_bar').find('.changeFlowers').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
-$('.modal_customize_flowers, .wrap_swiper_container_flowers').show();
+$('body').find('.changePicture').on( "click", function() {
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order, .modal_place_the_order").hide();
+$('.modal_customize_picture').show();
 });
-$('.wrap_continue_bar').find('.changeBackground').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .modal_review_the_order, .modal_place_the_order").hide();
+$('body').find('.changeBackground').on( "click", function() {
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_picture, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery, .modal_review_the_order, .modal_place_the_order").hide();
 $('.modal_customize_backgrounds, .wrap_swiper_container_backgrounds_solids').show();
 });
-$('.wrap_continue_bar').find('.reviewOrder').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_place_the_order").hide();
+$('body').find('.reviewOrder').on( "click", function() {
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_picture, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_place_the_order").hide();
 $('.modal_review_the_order').show();
 });
-$('.wrap_continue_bar').find('.placeOrder').on( "click", function() {
-$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_flowers, .wrap_swiper_container_flowers, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order").hide();
+$('body').find('.placeOrder').on( "click", function() {
+$(".menu_modal, .modal_customize_verse, .modal_customize_name, .modal_customize_picture, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery, .wrap_swiper_container_backgrounds_solids, .wrap_swiper_container_backgrounds_gradients, .wrap_swiper_container_backgrounds_patterns, .modal_customize_backgrounds, .modal_review_the_order").hide();
 $('.modal_place_the_order').show();
 });
   <!-- ////////////////////////// -->
@@ -2573,9 +2745,71 @@ $( ".help_modal" ).show('slow');
     <!-- Initialize Swiper -->
 <script>
 ////////////////////////////////////////////////////
-////BEGIN Swiper Flowers ///////////////////////
+////BEGIN Swiper biblical ///////////////////////
 ////////////////////////////////////////////////////
-$( ".browseFlowers, .changeFlowers" ).on( "click", function() {
+$( "#view-biblical" ).on( "click", function() {
+  $('.select_a_category_to_load_gallery').hide();
+  $('.wrap_swiper_container_flowers').hide();
+  $('.wrap_swiper_container_scenery').hide();
+  $('.wrap_swiper_container_biblical').show();
+setTimeout(function(){
+      var mySwiper_biblical = new Swiper(".mySwiper_biblical", {
+watchActiveIndex: true,
+keyboard: {
+	enabled: true,
+	onlyInViewport: true,
+},
+on: {
+	transitionEnd: function() {
+    var lastActivePictureIndex = $('.swiper-slide-active > div > img').attr('src');
+	  $('#hidden_lastActivePictureIndex').text(this.activeIndex);
+	}
+},
+on: {
+	click: function(){
+	console.log(this.clickedIndex);
+	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
+	}
+},
+navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+},
+});
+
+	//  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
+	//  mySwiper_biblical.slideTo(lastClickedPictureIndex);
+
+    mySwiper_biblical.on('transitionEnd', function() {
+      console.log('*** mySwiper_biblical.realIndex', mySwiper_biblical.realIndex);
+      var hidden_picture_desired = $('.swiper-slide-active > div > img').attr('src').replace(/p\\/, '').replace(/\.png/, '');
+      $('#hidden_picture_desired').text(hidden_picture_desired);
+      $('.container_showing_selected_picture').attr("src", "p/" + hidden_picture_desired + ".png" );
+      $('.container_showing_selected_picture_little_Left').attr("src", "p/" + hidden_picture_desired + ".png" );
+    });
+
+}, 1000);
+// now we know that the user has browsed pictures
+$('.checkIfPictureIsSelected').text('review your order').addClass('reviewOrder').css('color', '#d5ad6d');
+});
+// The selection is recorded in the #hidden_lastClickedPictureIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
+$( ".images_inside_modal_customize_picture" ).on( "click", function() {
+	$('.popup_ok_this_picture_selected').show();
+	setTimeout(function(){
+	$('.popup_ok_this_picture_selected').hide();
+	}, 2000);
+});
+////////////////////////////////////////////////////
+////END Swiper biblical ///////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////BEGIN Swiper flowers ///////////////////////
+////////////////////////////////////////////////////
+$( "#view_flowers" ).on( "click", function() {
+  $('.select_a_category_to_load_gallery').hide();
+  $('.wrap_swiper_container_flowers').show();
+  $('.wrap_swiper_container_scenery').hide();
+  $('.wrap_swiper_container_biblical').hide();
 setTimeout(function(){
       var swiper = new Swiper(".mySwiper_flowers", {
 watchActiveIndex: true,
@@ -2592,7 +2826,7 @@ on: {
 on: {
 	click: function(){
 	console.log(this.clickedIndex);
-	$('#hidden_lastClickedFlowerIndex').text(this.clickedIndex);
+	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
 	}
 },
 navigation: {
@@ -2601,20 +2835,64 @@ navigation: {
 },
 });
 
-	  var lastClickedFlowerIndex = +$('#hidden_lastClickedFlowerIndex').text();
-	  swiper.slideTo(lastClickedFlowerIndex);
+	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
+	  swiper.slideTo(lastClickedPictureIndex);
 
 }, 1000);
 });
 // The selection is recorded in the #hidden_lastClickedFlowerIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
-$( ".images_inside_modal_customize_flowers" ).on( "click", function() {
-	$('.popup_ok_this_flower_theme_selected').show();
+$( ".images_inside_modal_customize_picture" ).on( "click", function() {
+	$('.popup_ok_this_picture_selected').show();
 	setTimeout(function(){
-	$('.popup_ok_this_flower_theme_selected').hide();
+	$('.popup_ok_this_picture_selected').hide();
 	}, 2000);
 });
 ////////////////////////////////////////////////////
-////END Swiper Flowers ///////////////////////
+////END Swiper flowers ///////////////////////
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+////BEGIN Swiper scenery ///////////////////////
+////////////////////////////////////////////////////
+$( "#view_scenery" ).on( "click", function() {
+setTimeout(function(){
+      var swiper = new Swiper(".mySwiper_scenery", {
+watchActiveIndex: true,
+keyboard: {
+	enabled: true,
+	onlyInViewport: true,
+},
+on: {
+	slideChange: function() {
+	console.log(this.realIndex);
+//    $('.real-index').html(this.realIndex);
+	}
+},
+on: {
+	click: function(){
+	console.log(this.clickedIndex);
+	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
+	}
+},
+navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+},
+});
+
+	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
+	  swiper.slideTo(lastClickedPictureIndex);
+
+}, 1000);
+});
+// The selection is recorded in the #hidden_lastClickedFlowerIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
+$( ".images_inside_modal_customize_picture" ).on( "click", function() {
+	$('.popup_ok_this_picture_selected').show();
+	setTimeout(function(){
+	$('.popup_ok_this_picture_selected').hide();
+	}, 2000);
+});
+////////////////////////////////////////////////////
+////END Swiper scenery ///////////////////////
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 ////BEGIN swiper thumnails loop lighter gradients ///////////////////////
@@ -2705,7 +2983,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
     $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
     $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#d5ad6d");
-    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalPictures').attr("style", "").css("color", "#d5ad6d");
     $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#d5ad6d");
     $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
     $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
@@ -2713,7 +2991,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#000000');
     $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#000000');
     $('.rendered_customerName_in_modalName').textStroke(0.7,'#000000');
-    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#000000');
+    $('.rendered_customerName_in_modalPictures').textStroke(0.7,'#000000');
     $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#000000');
     $('.made_with_love_fixed_on_mug').textStroke(0.5,'#000000');
     $('.heart_fixed_on_mug').textStroke(0.5,'#000000');
@@ -2739,7 +3017,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
     $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
     $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#d5ad6d");
-    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#d5ad6d");
+    $('.rendered_customerName_in_modalPictures').attr("style", "").css("color", "#d5ad6d");
     $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#d5ad6d");
     $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#d5ad6d");
     $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
@@ -2747,7 +3025,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#000000');
     $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#000000');
     $('.rendered_customerName_in_modalName').textStroke(0.7,'#000000');
-    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#000000');
+    $('.rendered_customerName_in_modalPictures').textStroke(0.7,'#000000');
     $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#000000');
     $('.made_with_love_fixed_on_mug').textStroke(0.5,'#000000');
     $('.heart_fixed_on_mug').textStroke(0.5,'#000000');
@@ -2773,7 +3051,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#000000");
     $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#000000");
     $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#000000");
-    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalPictures').attr("style", "").css("color", "#000000");
     $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#000000");
     $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#000000");
     $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
@@ -2781,7 +3059,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#d5ad6d');
     $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#d5ad6d');
     $('.rendered_customerName_in_modalName').textStroke(0.7,'#d5ad6d');
-    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#d5ad6d');
+    $('.rendered_customerName_in_modalPictures').textStroke(0.7,'#d5ad6d');
     $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#d5ad6d');
     $('.made_with_love_fixed_on_mug').textStroke(0.5,'#d5ad6d');
     $('.heart_fixed_on_mug').textStroke(0.5,'#d5ad6d');
@@ -2807,7 +3085,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').attr("style", "").css("color", "#000000");
     $('.selected_bible_ref_fixed_on_mug').attr("style", "").css("color", "#000000");
     $('.rendered_customerName_in_modalName').attr("style", "").css("color", "#000000");
-    $('.rendered_customerName_in_modalFlowers').attr("style", "").css("color", "#000000");
+    $('.rendered_customerName_in_modalPictures').attr("style", "").css("color", "#000000");
     $('.rendered_customerName_in_modalBackgrounds').attr("style", "").css("color", "#000000");
     $('.made_with_love_fixed_on_mug').attr("style", "").css("color", "#000000");
     $('.heart_fixed_on_mug').attr("style", "").css("color", "red");
@@ -2815,7 +3093,7 @@ $(function(){
     $('.selected_bible_verse_fixed_on_mug').textStroke(0.7,'#d5ad6d');
     $('.selected_bible_ref_fixed_on_mug').textStroke(0.5,'#d5ad6d');
     $('.rendered_customerName_in_modalName').textStroke(0.7,'#d5ad6d');
-    $('.rendered_customerName_in_modalFlowers').textStroke(0.7,'#d5ad6d');
+    $('.rendered_customerName_in_modalPictures').textStroke(0.7,'#d5ad6d');
     $('.rendered_customerName_in_modalBackgrounds').textStroke(0.7,'#d5ad6d');
     $('.made_with_love_fixed_on_mug').textStroke(0.5,'#d5ad6d');
     $('.heart_fixed_on_mug').textStroke(0.5,'#d5ad6d');
@@ -2827,7 +3105,23 @@ $(function(){
 ////////////////////////////////////////////////////
 ////END swiper thumnails loop lighter gradients ///////////////////////
 ////////////////////////////////////////////////////
-
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+    $('.heart_fixed_on_mug').textStroke(0.1,'#000000');
+});
+// END textStroke
 
 </script>
 
