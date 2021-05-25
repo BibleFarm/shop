@@ -154,10 +154,12 @@
 
 <ul id="" class="wrap_menu_items">
 <li id="" class="CreateYourOwnDesign menu_item bf_links">create your own design</li>
+<!--
 <li id="" class="CreateYourOwnDesign menu_item bf_links">choose your Bible verse</li>
 <li id="" class="addYourName menu_item bf_links">add YourName</li>
 <li id="" class="browsePictures menu_item bf_links">browse & choose a picture</li>
-<!--<li id="" class="browseBackgrounds menu_item bf_links">browse themes</li>-->
+<li id="" class="browseBackgrounds menu_item bf_links">browse themes</li>
+-->
 <li id="" class="menu_item bf_links">about BibleFarm.org</li>
 <li id="info" class="menu_item bf_links open_purechat">contact us</li>
 <li id="" class="menu_item bf_links">social icons</li>
@@ -781,6 +783,7 @@
 <div class="rendered_customerName_in_modalName-table">
 <span class="rendered_customerName_in_modalName"></span>
 </div>
+<div class="sample_name">Your Name</div>
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
 
 <div class="wrap_container_showing_selected_picture"><img class="container_showing_selected_picture" src="" alt="" /></div>
@@ -816,7 +819,6 @@
 <div class="narrow_separator_as_bg"></div>
 
 <div class="placeholder_mug_side"><img class="" width="296" height="296" src="BlankMugFront_296x296.png" alt="" /></div>
-<div class="select_a_category_to_load_gallery">select one of the 3 categories above to load that gallery</div>
 <!-- ////////////////////////// -->
 <!-- BEGIN render mug background image inside the modals-->
 <!-- ////////////////////////// -->
@@ -868,7 +870,15 @@
 <div class="rendered_customerName_in_modalPictures-table">
 <span class="rendered_customerName_in_modalPictures" style=""></span>
 </div>
+<div class="sample_name">Your Name</div>
+
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
+<div class="wrap_container_showing_selected_picture"><img class="container_showing_selected_picture" src="" alt="" /></div>
+<div class="popup_ok_this_picture_selected">selected</div>
+<div class="select_a_category_to_load_gallery">click one of the 3 categories above to view that gallery</div>
+<div class="this_is_your_currently_selected_picture"><div class="orderFlowNoFinger">to change your currently selected picture</div><div class="orderFlowNoFinger">go up there to biblical - flowers - scenery</div></div>
+<div class="be_sure_to_click_the_one_you_like"><div class="orderFlowNoFinger">slide sideways & browse different pictures</div><div class="orderFlowNoFinger">click the one you like in order to select it</div></div>
+
 
   </div>
   <!-- ////////////////////////// -->
@@ -1056,13 +1066,6 @@
 <!-- ////////////////////////// -->
 <!-- END swiper overlayed on top on mug -->
 <!-- ////////////////////////// -->
-
-
-
-<div class="popup_ok_this_picture_selected">selected</div>
-<div class="wrap_container_showing_selected_picture"><img class="container_showing_selected_picture" src="" alt="" /></div>
-
-  </div>
   <!-- ////////////////////////// -->
   <!-- END STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->
@@ -1104,6 +1107,8 @@
 <div class="rendered_customerName_in_modalBackgrounds-table">
 <span class="rendered_customerName_in_modalBackgrounds" style=""></span>
 </div>
+<div class="sample_name">Your Name</div>
+
 <div class="made_with_love_fixed_on_mug">made with <span class="heart_fixed_on_mug">❤ </span> at BibleFarm.org</div>
 
 <div class="wrap_container_showing_selected_picture"><img class="container_showing_selected_picture" src="" alt="" /></div>
@@ -2441,6 +2446,7 @@ $(".rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures,.
 // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
 
 $( "#customize_name" ).on( "keyup change", function() {
+  $('.sample_name').hide();
 var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style");
 // give it a second to pass along the attr style newFontSize
 // AND THEN update it in the modals with picture and backgrounds
@@ -2499,15 +2505,31 @@ $(".selected_verse").text(completeRefNeeded);
 // open the modal
         $(".modal_customize_picture").show();
         $(".opacity_cover").show();
-        // if user had already chosen a picture
+        // when user returns to this modal, just in case they already have a picture selected
+        $('.be_sure_to_click_the_one_you_like').hide();
+
+        // if user had already chosen a picture show them what they got and how to change it
         if ($('#hidden_picture_desired').text() != 'nothing') {
-        $('.select_a_category_to_load_gallery').hide();
-        } else {
-        $('.select_a_category_to_load_gallery').show();
+          $('.select_a_category_to_load_gallery').hide();
+          $('.this_is_your_currently_selected_picture').show();
+          $('.modal_customize_picture > .wrap_container_showing_selected_picture').show();
+        }
+        // if user doesn't have a picture chosen, show them how to choose one
+        else {
+          $('.select_a_category_to_load_gallery').show();
+          $('.this_is_your_currently_selected_picture').hide();
+          $('.modal_customize_picture > .wrap_container_showing_selected_picture').hide();
         }
 });
-// make this clicked flowers image the selected one and show it in the other modals
+// when user has clicked on one of the categories
+$( "#view-biblical, #view-flowers, #view-scenery" ).on( "click", function() {
+  $('.modal_customize_picture > .wrap_container_showing_selected_picture').hide();
+  $('.this_is_your_currently_selected_picture').hide();
+  $('.be_sure_to_click_the_one_you_like').show();
+});
+// make this clicked picture the selected one and show it in the other modals
 $( "img.images_inside_modal_customize_picture" ).on( "click", function() {
+  $('.be_sure_to_click_the_one_you_like').hide();
 var selectedPicture = $(this).attr("src").replace(/p\\/, '').replace(/\.png/, '');
 $( "#hidden_picture_desired" ).text(selectedPicture);
 $('.container_showing_selected_picture').attr("src", "p/" + selectedPicture + ".png" );
@@ -2792,6 +2814,50 @@ navigation: {
 });
 ////////////////////////////////////////////////////
 ////END Swiper biblical ///////////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////BEGIN Swiper flowers ///////////////////////
+////////////////////////////////////////////////////
+$( "#view-flowers" ).on( "click", function() {
+  $('.select_a_category_to_load_gallery').hide();
+  $('.wrap_swiper_container_flowers').show();
+  $('.wrap_swiper_container_scenery').hide();
+  $('.wrap_swiper_container_flowers').hide();
+setTimeout(function(){
+      var mySwiper_flowers = new Swiper(".mySwiper_flowers", {
+watchActiveIndex: true,
+keyboard: {
+	enabled: true,
+	onlyInViewport: true,
+},
+on: {
+	click: function(){
+	console.log(this.clickedIndex);
+	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
+	}
+},
+navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+},
+});
+
+	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
+	  mySwiper_flowers.slideTo(lastClickedPictureIndex);
+
+    mySwiper_flowers.on('click', function() {
+      console.log('*** mySwiper_flowers.realIndex', mySwiper_flowers.realIndex);
+      var hidden_picture_desired = $('.mySwiper_flowers > .swiper-wrapper > .swiper-slide-active > div > img').attr('src').replace(/p\\/, '').replace(/\.png/, '');
+      $('#hidden_picture_desired').text(hidden_picture_desired);
+      $('.container_showing_selected_picture').attr("src", "p/" + hidden_picture_desired + ".png" );
+      $('.container_showing_selected_picture_little_Left').attr("src", "p/" + hidden_picture_desired + ".png" );
+    });
+
+}, 1000);
+});
+////////////////////////////////////////////////////
+////END Swiper flowers ///////////////////////
 ////////////////////////////////////////////////////
 
 

@@ -1222,7 +1222,7 @@ text-align:center;
 .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery {
 position: fixed;
 display: none;
-top: 264px;
+top: 255px;
 left: 56px;
 width: 208px;
 height: 140px;
@@ -1485,18 +1485,18 @@ display: table-cell;
 }
 .popup_ok_this_picture_selected, .popup_ok_this_background_theme_selected {
 display: none;
-position: fixed;
-top: 180px;
-left: 58px;
-width: 200px;
-height: 230px;
-color: #d5ad6d;
-font-size: 40px;
-background: rgb(0,0,0,0.8);
-text-align: center;
-line-height: 200px;
-z-index: 2;
-}
+position: absolute;
+    top: 352px;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    color: #d5ad6d;
+    font-size: 40px;
+    background: black;
+    text-align: center;
+    line-height: 56px;
+    z-index: 1;
+  }
 .popup_ok_this_verse_selected {
 display: none;
 position: absolute;
@@ -1604,3 +1604,32 @@ position: absolute;
     color: #555;
     text-shadow: none;
 }
+.this_is_your_currently_selected_picture {
+  display: none;
+  position: absolute;
+      top: 352px;
+      left: 8;
+      width: 296px;
+      height: 56px;
+      z-index: 1;
+}
+.be_sure_to_click_the_one_you_like {
+  display: none;
+  position: absolute;
+      top: 352px;
+      left: 8;
+      width: 296px;
+      height: 56px;
+      z-index: 1;
+}
+.sample_name {
+  position: absolute;
+      top: 138px;
+      width: 100%;
+      font-family: "Thekingofromance-z8jDX";
+      font-size: 44px;
+      text-align: center;
+      left: 0px;
+      color: black;
+      text-shadow: none;
+    }
