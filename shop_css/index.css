@@ -903,7 +903,7 @@ min-height: 44px;
 .wrap_images_inside_modal_customize_picture {
 position: relative;
 display: block;
-max-width: 208px;
+max-width: 180px;
 max-height: 140px;
 }
 img.images_inside_modal_customize_picture {
@@ -1429,7 +1429,7 @@ display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 208px;
+    max-width: 180px;
     max-height: 140px;
     display: block;
     margin: 0 auto;
@@ -1451,7 +1451,7 @@ display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 104px;
+    max-width: 90px;
     max-height: 70px;
     display: block;
     margin: 0 auto;
