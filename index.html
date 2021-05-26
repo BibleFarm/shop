@@ -664,8 +664,9 @@
 <div id="hidden_verse_desired"></div>
 <div id="hidden_name_desired">Your Name</div>
 <div id="hidden_picture_desired">nothing</div>
-<div id="hidden_lastClickedPictureIndex"></div>
-<div id="hidden_lastActivePictureIndex"></div>
+<div id="hidden_lastClickedPictureIndex_biblical"></div>
+<div id="hidden_lastClickedPictureIndex_flowers"></div>
+<div id="hidden_lastClickedPictureIndex_scenery"></div>
 <div id="hidden_background_desired">L-00</div>
 <div id="hidden_lastClickedBackgroundIndex"></div>
 <!--
@@ -2790,7 +2791,7 @@ keyboard: {
 on: {
 	click: function(){
 	console.log(this.clickedIndex);
-	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
+	$('#hidden_lastClickedPictureIndex_biblical').text(this.clickedIndex);
 	}
 },
 navigation: {
@@ -2799,8 +2800,8 @@ navigation: {
 },
 });
 
-	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
-	  mySwiper_biblical.slideTo(lastClickedPictureIndex);
+	  var hidden_lastClickedPictureIndex_biblical = +$('#hidden_lastClickedPictureIndex_biblical').text();
+	  mySwiper_biblical.slideTo(hidden_lastClickedPictureIndex_biblical);
 
     mySwiper_biblical.on('click', function() {
       console.log('*** mySwiper_biblical.realIndex', mySwiper_biblical.realIndex);
@@ -2821,9 +2822,9 @@ navigation: {
 ////////////////////////////////////////////////////
 $( "#view-flowers" ).on( "click", function() {
   $('.select_a_category_to_load_gallery').hide();
-  $('.wrap_swiper_container_flowers').show();
+  $('.wrap_swiper_container_biblical').hide();
   $('.wrap_swiper_container_scenery').hide();
-  $('.wrap_swiper_container_flowers').hide();
+  $('.wrap_swiper_container_flowers').show();
 setTimeout(function(){
       var mySwiper_flowers = new Swiper(".mySwiper_flowers", {
 watchActiveIndex: true,
@@ -2834,7 +2835,7 @@ keyboard: {
 on: {
 	click: function(){
 	console.log(this.clickedIndex);
-	$('#hidden_lastClickedPictureIndex').text(this.clickedIndex);
+	$('#hidden_lastClickedPictureIndex_flowers').text(this.clickedIndex);
 	}
 },
 navigation: {
@@ -2843,8 +2844,8 @@ navigation: {
 },
 });
 
-	  var lastClickedPictureIndex = +$('#hidden_lastClickedPictureIndex').text();
-	  mySwiper_flowers.slideTo(lastClickedPictureIndex);
+	  var hidden_lastClickedPictureIndex_flowers = +$('#hidden_lastClickedPictureIndex_flowers').text();
+	  mySwiper_flowers.slideTo(hidden_lastClickedPictureIndex_flowers);
 
     mySwiper_flowers.on('click', function() {
       console.log('*** mySwiper_flowers.realIndex', mySwiper_flowers.realIndex);
@@ -2858,6 +2859,50 @@ navigation: {
 });
 ////////////////////////////////////////////////////
 ////END Swiper flowers ///////////////////////
+////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////
+////BEGIN Swiper scenery ///////////////////////
+////////////////////////////////////////////////////
+$( "#view-scenery" ).on( "click", function() {
+  $('.select_a_category_to_load_gallery').hide();
+  $('.wrap_swiper_container_biblical').hide();
+  $('.wrap_swiper_container_scenery').show();
+  $('.wrap_swiper_container_flowers').hide();
+setTimeout(function(){
+      var mySwiper_scenery = new Swiper(".mySwiper_scenery", {
+watchActiveIndex: true,
+keyboard: {
+	enabled: true,
+	onlyInViewport: true,
+},
+on: {
+	click: function(){
+	console.log(this.clickedIndex);
+	$('#hidden_lastClickedPictureIndex_scenery').text(this.clickedIndex);
+	}
+},
+navigation: {
+	nextEl: ".swiper-button-next",
+	prevEl: ".swiper-button-prev",
+},
+});
+
+	  var hidden_lastClickedPictureIndex_scenery = +$('#hidden_lastClickedPictureIndex_scenery').text();
+	  mySwiper_scenery.slideTo(hidden_lastClickedPictureIndex_scenery);
+
+    mySwiper_scenery.on('click', function() {
+      console.log('*** mySwiper_scenery.realIndex', mySwiper_scenery.realIndex);
+      var hidden_picture_desired = $('.mySwiper_scenery > .swiper-wrapper > .swiper-slide-active > div > img').attr('src').replace(/p\\/, '').replace(/\.png/, '');
+      $('#hidden_picture_desired').text(hidden_picture_desired);
+      $('.container_showing_selected_picture').attr("src", "p/" + hidden_picture_desired + ".png" );
+      $('.container_showing_selected_picture_little_Left').attr("src", "p/" + hidden_picture_desired + ".png" );
+    });
+
+}, 1000);
+});
+////////////////////////////////////////////////////
+////END Swiper scenery ///////////////////////
 ////////////////////////////////////////////////////
 
 
