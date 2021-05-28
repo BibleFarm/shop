@@ -900,19 +900,48 @@ display: flex;
 min-height: 44px;
 }
 .continue_to_next_step {background: #222222}
-.wrap_images_inside_modal_customize_picture {
-position: relative;
-display: block;
-max-width: 180px;
-max-height: 140px;
+.wrap_images_inside_modal_customize_picture_biblical {
+  display: table;
+  width: 200px;
+  height: 130px;
 }
-img.images_inside_modal_customize_picture {
+img.images_inside_modal_customize_picture_biblical {
+  display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      max-width: 200px;
+      max-height: 130px;
+      margin: 0 auto;
+      cursor: auto !important;
+      filter: drop-shadow(2px 4px 8px gray);
+}
+.wrap_images_inside_modal_customize_picture_flowers {
+  display: table;
+  width: 200px;
+  height: 130px;
+}
+img.images_inside_modal_customize_picture_flowers {
+  display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      max-width: 200px;
+      max-height: 130px;
+      margin: 0 auto;
+      cursor: auto !important;
+      filter: drop-shadow(2px 4px 8px gray);
+}
+.wrap_images_inside_modal_customize_picture_scenery {
+display: table;
+width: 100%;
+height: auto;
+}
+img.images_inside_modal_customize_picture_scenery {
 display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
-    max-width: 180px;
-    max-height: 140px;
+    width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
     cursor: auto !important;
@@ -1220,36 +1249,36 @@ text-align:center;
     padding: 0px;
 }
 .wrap_swiper_container_biblical {
-position: fixed;
-display: none;
-top: 255px;
-left: 56px;
-width: 208px;
-height: 140px;
-background: none;
-margin: 0 auto;
-padding: 0;
-z-index: 2;
+  position: fixed;
+  display: none;
+  top: 230px;
+    left: 60px;
+    width: 200px;
+    height: 210px;
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 2;
 }
 .wrap_swiper_container_flowers {
-position: fixed;
-display: none;
-top: 255px;
-left: 56px;
-width: 208px;
-height: 140px;
-background: none;
-margin: 0 auto;
-padding: 0;
-z-index: 2;
+  position: fixed;
+  display: none;
+  top: 230px;
+    left: 60px;
+    width: 200px;
+    height: 210px;
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 2;
 }
 .wrap_swiper_container_scenery {
 position: fixed;
 display: none;
-top: 255px;
-left: 56px;
-width: 208px;
-height: 140px;
+top: 230px;
+    left: 35px;
+    width: 250px;
+    height: auto;
 background: none;
 margin: 0 auto;
 padding: 0;
@@ -1295,12 +1324,6 @@ z-index: 2;
         align-items: center;
       }
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
 .wrap_swiper_container_biblical > .mySwiper_biblical > .swiper-wrapper > .swiper-slide,
 .wrap_swiper_container_flowers > .mySwiper_flowers > .swiper-wrapper > .swiper-slide,
 .wrap_swiper_container_scenery > .mySwiper_scenery > .swiper-wrapper > .swiper-slide
@@ -1377,13 +1400,6 @@ z-index: 2;
         align-items: center;
       }
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        /*object-fit: cover;*/
-      }
-
       .swiper-container {
         width: 100%;
         height: 100%;
@@ -1420,12 +1436,6 @@ z-index: 2;
         opacity: 1;
       }
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        /*object-fit: cover;*/
-      }
 /* ************* */
 /* END swiper thumnails loop lighter gradients
 /* ************* */
@@ -1441,48 +1451,75 @@ display: none;
 .still_need_to_select_chapter_and_verse {display:none;}
 
 .wrap_container_showing_selected_picture {
-position: absolute;
-    display: block;
-    width: 208px;
-    height: 140px;
-    top: 216px;
-    left: 52px;
+  position: fixed;
+      display: block;
+      top: 230px;
+      left: 35px;
+      max-width: 250px;
+      height: auto;
 	}
 img.container_showing_selected_picture {
-display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    max-width: 180px;
-    max-height: 140px;
-    display: block;
-    margin: 0 auto;
-    cursor: auto !important;
-    min-width: auto !important;
-    height: auto !important;
-    min-height: auto !important;
+  display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      max-width: 250px;
 }
 .wrap_container_showing_selected_picture_little_Left {
-position: absolute;
-display: block;
-width: 104px;
-height: 70px;
-    top: 234px;
-    left: 48px;
+  position: fixed;
+      display: block;
+      top: 267px;
+      left: 43px;
+      max-width: 120px;
+      height: auto;
 }
 img.container_showing_selected_picture_little_Left {
-display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    max-width: 90px;
-    max-height: 70px;
-    display: block;
-    margin: 0 auto;
-    cursor: auto !important;
-    min-width: auto !important;
-    height: auto !important;
-    min-height: auto !important;
+  display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      max-width: 120px;
+}
+.customCSSforFlowers_table {
+  position: fixed;
+      top: 230px;
+      left: 60px;
+      display: flex;
+      width: 200px;
+      height: 210px;
+      margin: 0 auto;
+      padding: 0;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+}
+.customCSSforFlowers_cell {
+      max-width: 200px !important;
+      max-height: 130px;
+      filter: drop-shadow(2px 4px 8px gray);
+}
+.customCSSforFlowers_table_little_Left {
+      position: fixed;
+      top: 284px;
+        left: 54px;
+        display: table;
+          width: 100px;
+          height: 65px;
+}
+.customCSSforFlowers_cell_little_Left {
+      display: table-cell;
+          text-align: center;
+          vertical-align: middle;
+          max-width: 100px !important;
+          max-height: 65px;
+          margin: 0 auto;
+          filter: drop-shadow(2px 4px 8px gray);
 }
 .wrap_container_showing_selected_background {
 position: absolute;
