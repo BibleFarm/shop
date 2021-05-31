@@ -33,41 +33,20 @@ $('<span>' + getFirstPhrase(str) + '… </span>').appendTo('.top_verse');
 
 setTimeout(function(){
 
-// BEGIN TextFill
-$('.verse').textfill({
-			debug            : false,
-			maxFontPixels    : 1000,
-			innerTag         : 'span',
-			widthOnly        : false,
-			success          : null, // callback when a resizing is done
-			fail             : null, // callback when a resizing is failed
-			complete         : null, // callback when all is done
-			explicitWidth    : 250,
-			explicitHeight   : 280,
-			changeLineHeight : false,
-			truncateOnFail   : false,
-			allowOverflow    : false // If true, text will stay at minFontPixels but overflow container w/out failing 
-});
-// END TextFill
-
-// BEGIN TextFill
-$('.top_verse').textfill({
-	
-			debug            : false,
-			maxFontPixels    : 2000,
-			innerTag         : 'span',
-			widthOnly        : false,
-			success          : null, // callback when a resizing is done
-			fail             : null, // callback when a resizing is failed
-			complete         : null, // callback when all is done
-			explicitWidth    : 1140,
-			explicitHeight   : 200,
-			changeLineHeight : false,
-			truncateOnFail   : false,
-			allowOverflow    : false // If true, text will stay at minFontPixels but overflow container w/out failing 
-			
-});
-// END TextFill
+	function renderIn_modalVerse() {
+		$('.selected_bible_verse_fixed_on_mug').html(
+			'<span>' + $('.selected_bible_verse_fixed_on_mug').text() + '</span>'
+		);
+		$(".selected_bible_verse_fixed_on_mug").textfill({maxFontPixels:200});
+	}
+	function renderIn_modalReviewOrder() {
+		$('.selected_bible_verse_fixed_on_mug_in_modalReviewOrder').html(
+			'<span>' + $('.selected_bible_verse_fixed_on_mug_in_modalReviewOrder').text() + '</span>'
+		);
+		$(".selected_bible_verse_fixed_on_mug_in_modalReviewOrder").textfill({maxFontPixels:200});
+	}
+renderIn_modalVerse();
+renderIn_modalReviewOrder();
 
 }, 1000);
 
@@ -102,18 +81,41 @@ console.log("NOT JUSTIFIED // because // character count is: " + len);
 }
 */
 
-
-
-
-
-
-
-
-
-
-
+// custom CSS for biblical or flowers displayed in other modals
+var IsItBiblical = $('.container_showing_selected_picture_little_Left').attr('src');
+ if (IsItBiblical.indexOf("B") > -1) {
+      console.log("it's biblical or flower. Adding custom classes for flowers");
+$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_table');
+$('img.container_showing_selected_picture').addClass('customCSSforFlowers_cell');
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_item_little_Left');
+      console.log("it's biblical or flower. Removing custom classes for scenery");
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_item_little_Left');
+ }
+var IsItFlowers = $('.container_showing_selected_picture_little_Left').attr('src');
+ if (IsItFlowers.indexOf("F") > -1) {
+      console.log("it's biblical or flower. Adding custom classes for flowers");
+$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_table');
+$('img.container_showing_selected_picture').addClass('customCSSforFlowers_cell');
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_item_little_Left');
+      console.log("it's biblical or flower. Removing custom classes for scenery");
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_item_little_Left');
+ }
+var IsItScenery = $('.container_showing_selected_picture_little_Left').attr('src');
+ if (IsItScenery.indexOf("S") > -1) {
+      console.log("it's not a flower. Removing custom classes for flowers");
+$('.wrap_container_showing_selected_picture').removeClass('customCSSforFlowers_table');
+$('img.container_showing_selected_picture').removeClass('customCSSforFlowers_cell');
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_item_little_Left');
+      console.log("it's not a flower. Adding custom classes for scenery");
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforScenery_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforScenery_item_little_Left');
+ }
 
 
 
 });
-
