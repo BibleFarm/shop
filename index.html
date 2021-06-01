@@ -1963,7 +1963,7 @@ function getWelcome() {
         var v = messageObj.v;
   //      $('#hidden_div_verse').html(verse);
   //      $('#hidden_div_ref').html(ref);
-        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_featured"><img class="" width="296" height="444" src="296x444_mug_feature.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">change verse</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changePicture flex_item bf_links">change picture</span></div><div class="share bf_links">share</div></div>');
+        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_featured"><img class="" width="296" height="444" src="m/' + b + '-' + c + '-' + v + '.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">change verse</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changePicture flex_item bf_links">change picture</span></div><div class="share bf_links">share</div></div>');
         // END / get these things and put them in the hidden divs
       } else {
         console.log("Status error: " + ajaxRequest.status);
