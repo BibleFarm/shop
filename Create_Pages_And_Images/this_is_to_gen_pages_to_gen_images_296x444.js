@@ -1,5 +1,5 @@
 $(document).ready(function (){
-	
+
 /*
 //Get first five words of of the verse
 function getWords(string){
@@ -13,7 +13,7 @@ var str = $('.top_verse').text();
 $('.top_verse').text('');
 //now write just the first 5 words back to the DOM
 $('<span>' + getWords(str) + '...' + '</span>').appendTo('.top_verse');
-*/	
+*/
 
 // get the first phrase up to any of these: , ; : . ? ! ( )
 
@@ -71,7 +71,7 @@ $(function(){
 
 
 /*
-    var len = $('span').text().length;    
+    var len = $('span').text().length;
     if(len > 60){
         $('.verse').addClass("justify");
 console.log("JUSTIFIED // because // character count is: " + len);

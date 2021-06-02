@@ -1973,20 +1973,52 @@ function getWelcome() {
         var putTogetherSrcUrl = ('p/' + neededPictureForThisClick + '.png');
         $('.container_showing_selected_picture').attr('src', putTogetherSrcUrl);
         $('.container_showing_selected_picture_little_Left').attr('src', putTogetherSrcUrl);
-if (neededPictureForThisClick.indexOf('F') > -1)
-{
-      console.log("it's a flower. Adding custom classes for flowers");
-$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_table');
-$('img.container_showing_selected_picture').addClass('customCSSforFlowers_cell');
-$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_table_little_Left');
-$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_cell_little_Left');
-} else {
-      console.log("it's not a flower. Removing custom classes for flowers");
-$('.wrap_container_showing_selected_picture').removeClass('customCSSforFlowers_table');
-$('img.container_showing_selected_picture').removeClass('customCSSforFlowers_cell');
-$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_table_little_Left');
-$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_cell_little_Left');
-}
+
+
+
+// custom CSS for biblical or flowers displayed in other modals
+var IsItBiblical = neededPictureForThisClick;
+ if (IsItBiblical.indexOf("B") > -1) {
+      console.log("it's biblical or flower. Adding custom classes for flowers");
+$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_flex');
+$('img.container_showing_selected_picture').addClass('customCSSforFlowers_item');
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_item_little_Left');
+console.log("it's biblical or flower. Removing custom classes for scenery");
+$('.wrap_container_showing_selected_picture').removeClass('customCSSforScenery_flex');
+$('img.container_showing_selected_picture').removeClass('customCSSforScenery_item');
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_item_little_Left');
+ }
+var IsItFlowers = neededPictureForThisClick;
+ if (IsItFlowers.indexOf("F") > -1) {
+      console.log("it's biblical or flower. Adding custom classes for flowers");
+$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_flex');
+$('img.container_showing_selected_picture').addClass('customCSSforFlowers_item');
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_item_little_Left');
+console.log("it's biblical or flower. Removing custom classes for scenery");
+$('.wrap_container_showing_selected_picture').removeClass('customCSSforScenery_flex');
+$('img.container_showing_selected_picture').removeClass('customCSSforScenery_item');
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_item_little_Left');
+ }
+var IsItScenery = neededPictureForThisClick;
+ if (IsItScenery.indexOf("S") > -1) {
+      console.log("it's not biblical or flower. Removing custom classes for flowers");
+$('.wrap_container_showing_selected_picture').removeClass('customCSSforFlowers_flex');
+$('img.container_showing_selected_picture').removeClass('customCSSforFlowers_item');
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_item_little_Left');
+      console.log("it's not biblical or flower. Adding custom classes for scenery");
+$('.wrap_container_showing_selected_picture').addClass('customCSSforScenery_flex');
+$('img.container_showing_selected_picture').addClass('customCSSforScenery_item');
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforScenery_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforScenery_item_little_Left');
+ }
+
+
+
         });
 
 
@@ -2971,7 +3003,7 @@ var myString = $('.customize_name').val();
 var lastChar = myString[myString.length -1];
 console.log(lastChar);
 var arr = ['d', 'h', 'k', 'l', 'b'];
-
+/*
 if ( $.inArray(lastChar, arr) > -1 ) {
 $('.rendered_customerName_in_modalName').css('left', '66px');
 $('.rendered_customerName_in_modalPictures').css('left', '66px');
@@ -2981,22 +3013,39 @@ $('.rendered_customerName_in_modalName').css('left', '72px');
 $('.rendered_customerName_in_modalPictures').css('left', '72px');
 $('.rendered_customerName_in_modalReviewOrder-table').css('left', '22px');
 }
+*/
 });
 // custom CSS for biblical or flowers displayed in other modals
 $('.images_inside_modal_customize_picture_biblical, .images_inside_modal_customize_picture_flowers').on("click", function() {
-      console.log("it's a flower. Adding custom classes for flowers");
-$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_table');
-$('img.container_showing_selected_picture').addClass('customCSSforFlowers_cell');
-$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_table_little_Left');
-$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_cell_little_Left');
+  console.log("it's biblical or flower. Adding custom classes for flowers");
+$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_flex');
+$('img.container_showing_selected_picture').addClass('customCSSforFlowers_item');
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_item_little_Left');
+  console.log("it's biblical or flower. Removing custom classes for scenery");
+  $('.wrap_container_showing_selected_picture').removeClass('customCSSforScenery_flex');
+  $('img.container_showing_selected_picture').removeClass('customCSSforScenery_item');
+  $('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_flex_little_Left');
+  $('img.container_showing_selected_picture_little_Left').removeClass('customCSSforScenery_item_little_Left');
 });
 $('.images_inside_modal_customize_picture_scenery').on("click", function() {
-      console.log("it's not a flower. Removing custom classes for flowers");
-$('.wrap_container_showing_selected_picture').removeClass('customCSSforFlowers_table');
-$('img.container_showing_selected_picture').removeClass('customCSSforFlowers_cell');
-$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_table_little_Left');
-$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_cell_little_Left');
+  console.log("it's not biblical or flower. Removing custom classes for flowers");
+$('.wrap_container_showing_selected_picture').removeClass('customCSSforFlowers_flex');
+$('img.container_showing_selected_picture').removeClass('customCSSforFlowers_item');
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_flex_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_item_little_Left');
+  console.log("it's not biblical or flower. Adding custom classes for scenery");
+  $('.wrap_container_showing_selected_picture').addClass('customCSSforScenery_flex');
+  $('img.container_showing_selected_picture').addClass('customCSSforScenery_item');
+  $('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforScenery_flex_little_Left');
+  $('img.container_showing_selected_picture_little_Left').addClass('customCSSforScenery_item_little_Left');
 });
+
+
+
+
+
+
   <!-- ////////////////////////// -->
   <!-- END STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->

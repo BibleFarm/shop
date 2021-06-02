@@ -789,7 +789,7 @@ position: fixed;
 .rendered_customerName_in_modalName-table {
 position: fixed;
 display: table;
-top: 176px;
+top: 174px;
 left: 72px;
 width: 160px;
 height: 80px;
@@ -798,14 +798,14 @@ height: 80px;
 .rendered_customerName_in_modalName {
 position: fixed;
 display: table-cell;
-top: 176px;
+top: 174px;
 left: 72px;
 width: 160px;
 height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
-font-family: "Thekingofromance-z8jDX";
+font-family: "LoversQuarrel-Regular";
 text-shadow: none;
 color: #000000;
 white-space: nowrap;
@@ -816,7 +816,7 @@ white-space: nowrap;
 .rendered_customerName_in_modalPictures-table {
 position: fixed;
 display: table;
-top: 176px;
+top: 174px;
 left: 72px;
 width: 160px;
 height: 80px;
@@ -825,14 +825,14 @@ height: 80px;
 .rendered_customerName_in_modalPictures {
 position: fixed;
 display: table-cell;
-top: 176px;
+top: 174px;
 left: 72px;
 width: 160px;
 height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
-font-family: "Thekingofromance-z8jDX";
+font-family: "LoversQuarrel-Regular";
 text-shadow: none;
 color: #000000;
 white-space: nowrap;
@@ -843,7 +843,7 @@ white-space: nowrap;
 .rendered_customerName_in_modalBackgrounds-table {
 position: fixed;
 display: table;
-top: 176px;
+top: 174px;
 left: 72px;
 width: 160px;
 height: 80px;
@@ -852,14 +852,14 @@ height: 80px;
 .rendered_customerName_in_modalBackgrounds {
 position: fixed;
 display: table-cell;
-top: 176px;
+top: 174px;
 left: 72px;
 width: 160px;
 height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
-font-family: "Thekingofromance-z8jDX";
+font-family: "LoversQuarrel-Regular";
 text-shadow: none;
 color: #000000;
 white-space: nowrap;
@@ -887,7 +887,7 @@ height: 80px;
     background: ;
 	text-align: center;
 vertical-align: middle;
-font-family: "Thekingofromance-z8jDX";
+font-family: "LoversQuarrel-Regular";
 text-shadow: none;
 color: #000000;
 white-space: nowrap;
@@ -900,52 +900,74 @@ display: flex;
 min-height: 44px;
 }
 .continue_to_next_step {background: #222222}
+
 .wrap_images_inside_modal_customize_picture_biblical {
-  display: table;
-  width: 200px;
-  height: 130px;
+  position: fixed;
+      display: flex;
+      width: 180px;
+      height: 130px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 2;
 }
 img.images_inside_modal_customize_picture_biblical {
-  display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-      max-width: 200px;
-      max-height: 130px;
-      margin: 0 auto;
-      cursor: auto !important;
-      filter: drop-shadow(2px 4px 8px gray);
+  max-width: 180px;
+  max-height: 130px;
 }
+
 .wrap_images_inside_modal_customize_picture_flowers {
-  display: table;
-  width: 200px;
-  height: 130px;
+  position: fixed;
+      display: flex;
+      width: 180px;
+      height: 130px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 2;
 }
 img.images_inside_modal_customize_picture_flowers {
-  display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-      max-width: 200px;
-      max-height: 130px;
-      margin: 0 auto;
-      cursor: auto !important;
-      filter: drop-shadow(2px 4px 8px gray);
+  max-width: 180px;
+  max-height: 130px;
 }
+
 .wrap_images_inside_modal_customize_picture_scenery {
-display: table;
-width: 100%;
-height: auto;
+  position: fixed;
+      display: flex;
+      width: 180px;
+      height: 130px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 2;
 }
 img.images_inside_modal_customize_picture_scenery {
-display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    cursor: auto !important;
+  max-width: 180px;
+  max-height: 130px;
 }
+
+
+
+
+
+
+
+
 .wrap_background_images_inside_modal_customize_backgrounds {
 position: relative;
 display: block;
@@ -1259,6 +1281,7 @@ text-align:center;
     margin: 0 auto;
     padding: 0;
     z-index: 2;
+    filter: drop-shadow(2px 4px 8px gray);
 }
 .wrap_swiper_container_flowers {
   position: fixed;
@@ -1271,18 +1294,20 @@ text-align:center;
     margin: 0 auto;
     padding: 0;
     z-index: 2;
+    filter: drop-shadow(2px 4px 8px gray);
 }
 .wrap_swiper_container_scenery {
 position: fixed;
 display: none;
-top: 264px;
+top: 270px;
     left: 70px;
     width: 180px;
-    height: auto;
+    height: 130px;
 background: none;
 margin: 0 auto;
 padding: 0;
 z-index: 2;
+filter: drop-shadow(0px 0px 4px #444444);
 }
 .wrap_swiper_container_backgrounds {
 position: fixed;
@@ -1451,75 +1476,84 @@ display: none;
 .still_need_to_select_chapter_and_verse {display:none;}
 
 .wrap_container_showing_selected_picture {
-  position: fixed;
-      display: block;
-      top: 264px;
-      left: 70px;
-      max-width: 180px;
-      height: auto;
 	}
 img.container_showing_selected_picture {
-  display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-      position: relative;
-      display: block;
-      margin: 0 auto;
-      max-width: 180px;
 }
+.customCSSforScenery_flex {
+position: fixed;
+    display: flex;
+    top: 270px;
+    left: 70px;
+    width: 180px;
+    height: 130px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 0px 4px #444444);
+}
+.customCSSforScenery_item {
+  max-width: 180px;
+  max-height: 130px;
+}
+.customCSSforFlowers_flex {
+position: fixed;
+    display: flex;
+    top: 270px;
+    left: 70px;
+    width: 180px;
+    height: 130px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(2px 4px 8px gray);
+}
+.customCSSforFlowers_item {
+    max-width: 180px;
+    max-height: 130px;
+}
+
 .wrap_container_showing_selected_picture_little_Left {
-  position: fixed;
-      display: block;
-      top: 284px;
-      left: 60px;
-      max-width: 86px;
-      height: auto;
 }
 img.container_showing_selected_picture_little_Left {
-  display: table-cell;
-      text-align: center;
-      vertical-align: middle;
-      position: relative;
-      display: block;
-      margin: 0 auto;
-      max-width: 86px;
 }
-.customCSSforFlowers_table {
-  position: fixed;
-      top: 230px;
-      left: 70px;
-      display: flex;
-      width: 200px;
-      height: 210px;
-      margin: 0 auto;
-      padding: 0;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: center;
-      align-items: center;
+.customCSSforScenery_flex_little_Left {
+position: fixed;
+    display: flex;
+    top: 352px;
+    left: 50px;
+    max-width: 84px;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 0px 4px #444444);
 }
-.customCSSforFlowers_cell {
-      max-width: 200px !important;
-      max-height: 130px;
-      filter: drop-shadow(2px 4px 8px gray);
+.customCSSforScenery_item_little_Left {
+      max-width: 84px;
 }
-.customCSSforFlowers_table_little_Left {
-      position: fixed;
-      top: 284px;
-        left: 54px;
-        display: table;
-          width: 100px;
-          height: 65px;
+.customCSSforFlowers_flex_little_Left {
+position: fixed;
+    display: flex;
+    top: 286px;
+    left: 55px;
+    width: 96px;
+    height: 64px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(2px 4px 8px gray);
 }
-.customCSSforFlowers_cell_little_Left {
-      display: table-cell;
-          text-align: center;
-          vertical-align: middle;
-          max-width: 100px !important;
-          max-height: 65px;
-          margin: 0 auto;
-          filter: drop-shadow(2px 4px 8px gray);
+.customCSSforFlowers_item_little_Left {
+    max-width: 96px;
+    max-height: 64px;
 }
 .wrap_container_showing_selected_background {
 position: absolute;
@@ -1687,7 +1721,7 @@ position: absolute;
   position: absolute;
       top: 138px;
       width: 100%;
-      font-family: "Thekingofromance-z8jDX";
+      font-family: "LoversQuarrel-Regular";
       font-size: 44px;
       text-align: center;
       left: 0px;
