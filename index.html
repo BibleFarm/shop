@@ -865,7 +865,7 @@
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item addYourName bf_links">back to YourName</span>
 <!--<span class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to themes</span>-->
-<span class="orderFlowFinger flex_item checkIfPictureIsSelected bf_links continue_to_next_step">review your order</span>
+<span class="orderFlowFinger flex_item checkIfPictureIsSelected checkIfNameIsEdited bf_links continue_to_next_step">review your order</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalPictures-table">
@@ -2966,6 +2966,12 @@ $(".selected_verse").text(completeRefNeeded);
           $('.this_is_your_currently_selected_picture').hide();
           $('.modal_customize_picture > .wrap_container_showing_selected_picture').hide();
         }
+        // checkIfNameIsFilled to enable reviewOrder
+        if ($('#hidden_name_desired').text() != 'Your Name') {
+        $('.modal_customize_picture').find('.continue_to_next_step').addClass('reviewOrder');
+      } else {
+
+      }
 });
 // when user has clicked on one of the categories
 $( "#view-biblical, #view-flowers, #view-scenery" ).on( "click", function() {
@@ -3416,11 +3422,9 @@ if ( ($('#hidden_picture_desired').text() != 'nothing') && ($('#hidden_name_desi
   console.log('gota a picture but still need a name');
   $('.checkIfNameIsEdited').html("let's add YourName").css('color','#ff5757').addClass('stillNeedToaddYourName');
   setTimeout(function(){
-  $('.addYourName').trigger({
-  			type: "click",
-  			which: 1
-  		});
-  }, 2000);
+    $('.modal_customize_picture').hide();
+    $('.modal_customize_name').show('slow');
+  }, 5000);
 }
 });
 ////////////////////////////////////////////////////

@@ -63,7 +63,7 @@
         $(".opacity_cover").show();
       });
       // hide when click outside
-      $(".opacity_cover").click(function() {
+      $(".opacity_cover, .wrap_gofundme_modal_bar").click(function() {
         // hide it
         $("#PureChatWidget").attr("style", "z-index: -1 !important");
         // bring back to normal
