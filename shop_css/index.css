@@ -1275,9 +1275,9 @@ text-align:center;
 .wrap_swiper_container_scenery {
 position: fixed;
 display: none;
-top: 230px;
-    left: 35px;
-    width: 250px;
+top: 264px;
+    left: 70px;
+    width: 180px;
     height: auto;
 background: none;
 margin: 0 auto;
@@ -1453,9 +1453,9 @@ display: none;
 .wrap_container_showing_selected_picture {
   position: fixed;
       display: block;
-      top: 230px;
-      left: 35px;
-      max-width: 250px;
+      top: 264px;
+      left: 70px;
+      max-width: 180px;
       height: auto;
 	}
 img.container_showing_selected_picture {
@@ -1465,14 +1465,14 @@ img.container_showing_selected_picture {
       position: relative;
       display: block;
       margin: 0 auto;
-      max-width: 250px;
+      max-width: 180px;
 }
 .wrap_container_showing_selected_picture_little_Left {
   position: fixed;
       display: block;
-      top: 267px;
-      left: 43px;
-      max-width: 120px;
+      top: 284px;
+      left: 60px;
+      max-width: 86px;
       height: auto;
 }
 img.container_showing_selected_picture_little_Left {
@@ -1482,12 +1482,12 @@ img.container_showing_selected_picture_little_Left {
       position: relative;
       display: block;
       margin: 0 auto;
-      max-width: 120px;
+      max-width: 86px;
 }
 .customCSSforFlowers_table {
   position: fixed;
       top: 230px;
-      left: 60px;
+      left: 70px;
       display: flex;
       width: 200px;
       height: 210px;

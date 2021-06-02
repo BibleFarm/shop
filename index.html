@@ -1961,10 +1961,35 @@ function getWelcome() {
         var b = messageObj.b;
         var c = messageObj.c;
         var v = messageObj.v;
+        var p = messageObj.p;
   //      $('#hidden_div_verse').html(verse);
   //      $('#hidden_div_ref').html(ref);
-        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_featured"><img class="" width="296" height="444" src="m/' + b + '-' + c + '-' + v + '.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '">change verse</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changePicture flex_item bf_links">change picture</span></div><div class="share bf_links">share</div></div>');
-        // END / get these things and put them in the hidden divs
+        $('.gofundme_flex-container').append('<div class="wrap_featured_item"><div class="placeholder_mug_featured"><img class="" width="296" height="444" src="m/' + b + '-' + c + '-' + v + '.png" alt="" /></div><div class="sharing_sub_panel"><span class="changeVerse flex_item bf_links" book="' + b + '" chapter="' + c + '" verse="' + v + '" picture="' + p + '">change verse</span><span class="addYourName flex_item bf_links">add YourName</span><span class="changePicture flex_item bf_links">change picture</span></div><div class="share bf_links">share</div></div>');
+
+        $( ".gofundme_flex-container" ).on( "click", ".changeVerse, .addYourName, .changePicture", function(event) {
+          // make sure when user clicks on a featured item, they have that picture in the modals
+        var neededPictureForThisClick = $(this).parent().find(".changeVerse").attr("picture");
+        $('#hidden_picture_desired').html(neededPictureForThisClick);
+        var putTogetherSrcUrl = ('p/' + neededPictureForThisClick + '.png');
+        $('.container_showing_selected_picture').attr('src', putTogetherSrcUrl);
+        $('.container_showing_selected_picture_little_Left').attr('src', putTogetherSrcUrl);
+if (neededPictureForThisClick.indexOf('F') > -1)
+{
+      console.log("it's a flower. Adding custom classes for flowers");
+$('.wrap_container_showing_selected_picture').addClass('customCSSforFlowers_table');
+$('img.container_showing_selected_picture').addClass('customCSSforFlowers_cell');
+$('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_table_little_Left');
+$('img.container_showing_selected_picture_little_Left').addClass('customCSSforFlowers_cell_little_Left');
+} else {
+      console.log("it's not a flower. Removing custom classes for flowers");
+$('.wrap_container_showing_selected_picture').removeClass('customCSSforFlowers_table');
+$('img.container_showing_selected_picture').removeClass('customCSSforFlowers_cell');
+$('.wrap_container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_table_little_Left');
+$('img.container_showing_selected_picture_little_Left').removeClass('customCSSforFlowers_cell_little_Left');
+}
+        });
+
+
       } else {
         console.log("Status error: " + ajaxRequest.status);
       }
@@ -1974,7 +1999,7 @@ function getWelcome() {
   };
   ajaxRequest.open(
     "GET",
-    "data_files/2053_b_c_v.json"
+    "data_files/2053_b_c_v_p.json"
   );
   ajaxRequest.send();
 }
@@ -2232,7 +2257,7 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 })
   .done(function(result) {
 var html = jQuery('<div>').html(result);
-var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '').replace(/\(/ , '').replace(/\)/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
 $('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
@@ -2423,7 +2448,7 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 })
   .done(function(result) {
 var html = jQuery('<div>').html(result);
-var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '').replace(/\(/ , '').replace(/\)/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
 $('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
@@ -2649,7 +2674,7 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 })
   .done(function(result) {
 var html = jQuery('<div>').html(result);
-var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '').replace(/\(/ , '').replace(/\)/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
 $('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
