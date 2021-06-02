@@ -1731,3 +1731,6 @@ position: absolute;
       color: black;
       text-shadow: none;
     }
+.hidden_submit_name {
+  display: none;
+}

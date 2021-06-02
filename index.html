@@ -727,7 +727,10 @@
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<input class="customize_name" name="" type="text" id="customize_name" value="" placeholder="type it here" width="" height="">
+<form class="name_input">
+  <input class="customize_name" name="name_input" type="text" id="customize_name" value="" placeholder="type it here" width="" height="">
+  <input class="hidden_submit_name name_input" type="submit" style="opacity:0;" />
+</form>
 
 <div class="narrow_separator_as_bg"></div>
 <div class="narrow_separator"></div>
@@ -3670,6 +3673,13 @@ $(function(){
     $('.heart_fixed_on_mug').textStroke(0.1,'#000000');
 });
 // END textStroke
+
+// make use of the GO buttons on cellphones when user finished typing name
+$("form.name_input").submit(function(e) {
+e.preventDefault();
+    $('.modal_customize_name').hide();
+    $('.modal_customize_picture').show('slow');
+});
 
 </script>
 
