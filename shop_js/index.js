@@ -9,8 +9,6 @@
       ////////////////////////////////////////////////////
       // BEGIN PureChat hack
       ////////////////////////////////////////////////////
-      // append gui
-      $('body').append('<div id="menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#d5ad6d"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>');
       // initial hide
       var stopWaitingForPurechat = setInterval(function() {
         if ($("body").find('.purechat-widget-title-link:contains("Contact us")').length > 0) {
@@ -84,10 +82,22 @@
       ////////////////////////////////////////////////////
       // BEGIN simple menu
       ////////////////////////////////////////////////////
-      $("#menu").on("click", function() {
-        $(".menu_modal").toggle("slow");
-        $(".opacity_cover").show();
-      });
+$("#menu").on("click", function() {
+        setTimeout(function() {
+        if($('.menu_modal').is(':visible'))
+ {
+        $(".opacity_cover").hide();
+        $(".menu_modal").hide("slow");
+}
+}, 100);
+    setTimeout(function() {
+      if(!$('.menu_modal').is(':visible'))
+ {
+    $(".opacity_cover").show();
+    $(".menu_modal").show("slow");
+}
+}, 100);
+});
       ////////////////////////////////////////////////////
       // END simple menu
       ////////////////////////////////////////////////////
@@ -138,7 +148,7 @@
 /* *************************** */
 $(function () {
   count = 0;
-  wordsArray = ['<span class="customize_title bf_links">customize for $10 shipping included</span>', '<span class="made_title bf_links">made with <span class="red_heart">❤</span> at BibleFarm.org</span>'];
+  wordsArray = ['<span class="customize_title">customize for $10 shipping included</span>', '<span class="made_title">made with <span class="red_heart">❤</span> at BibleFarm.org</span>'];
   setInterval(function () {
     count++;
     $("#site_title").fadeOut(400, function () {
