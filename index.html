@@ -727,7 +727,7 @@
 <div class="narrow_separator"></div>
 <div class="narrow_separator_as_bg"></div>
 
-<form class="name_input">
+<form class="name_input" onsubmit="return false;">
   <input class="customize_name" name="name_input" type="text" id="customize_name" value="" placeholder="type it here" width="" height="">
   <input class="hidden_submit_name name_input" type="submit" style="opacity:0;" />
 </form>
@@ -780,7 +780,7 @@
 <div class="narrow_separator"></div>
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item changeVerse bf_links">back to change verse</span>
-<span class="orderFlowFinger flex_item bf_links continue_to_next_step checkIfNameIsFilled">continue to pictures</span>
+<span class="orderFlowFinger flex_item bf_links continue_to_next_step continueToPictures checkIfNameIsEdited">continue to pictures</span>
 </div>
 <div class="narrow_separator"></div>
 
@@ -868,7 +868,7 @@
 <div class="wrap_continue_bar">
 <span class="orderFlowFinger flex_item addYourName bf_links">back to YourName</span>
 <!--<span class="orderFlowFinger flex_item changeBackground bf_links continue_to_next_step">continue to themes</span>-->
-<span class="orderFlowFinger flex_item checkIfPictureIsSelected checkIfNameIsEdited bf_links continue_to_next_step">review your order</span>
+<span class="orderFlowFinger flex_item reviewOrderCheck checkIfPictureIsSelected checkIfNameIsEdited bf_links continue_to_next_step">review your order</span>
 </div>
 <div class="narrow_separator"></div>
 <div class="rendered_customerName_in_modalPictures-table">
@@ -2894,8 +2894,7 @@ $(".rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures,.
 
 // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
 
-$( "#customize_name, form.name_input" ).on( "keyup change submit", function(e) {
-  e.preventDefault();
+$( "#customize_name" ).on( "keyup change", function(e) {
   renderIn_modalName();
   // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
   $('.sample_name').hide();
@@ -2909,24 +2908,77 @@ $( ".rendered_customerName_in_modalReviewOrder > span" ).attr("style",newFontSiz
 }, 3500);
 // AND  it also gets updated in the hidden_name_desired
 $('#hidden_name_desired').text($('#customize_name').val());
-// restore the review your order button to normal just in case
-$('.checkIfNameIsEdited').text('review your order').removeClass('checkIfNameIsEdited').addClass('NameHasBeenEdited').css('color', '#d5ad6d');
-if ($('#hidden_picture_desired').text() != 'nothing') {
-  $('body').find('.NameHasBeenEdited').removeClass("stillNeedToaddYourName").removeClass('NameHasBeenEdited').addClass('reviewOrder');
+// continueToPictures
+if (($('#hidden_name_desired').text() != 'Your Name') && ($('#hidden_name_desired').text() != '') && ($('#hidden_name_desired').text() != ' ')) {
+  console.log ('Name is no longer "Your Name" nor "" nor " ". Removed class: checkIfNameIsEdited. Added class: nameHasBeenEdited');
+$('.continueToPictures').text('continue to pictures').removeClass('checkIfNameIsEdited').addClass('nameHasBeenEdited').css('color', '#d5ad6d');
+console.log ('Name is no longer "Your Name" nor "" nor " ". Removed class: checkIfNameIsEdited. Added class: nameHasBeenEdited also to reviewOrderCkeck');
+$('body').find('.reviewOrderCheck').removeClass('checkIfNameIsEdited').addClass('nameHasBeenEdited').text('review your order').css('color', '#d5ad6d');
+} else {
+$('.continueToPictures').text('type name up there').removeClass('nameHasBeenEdited').addClass('checkIfNameIsEdited').css('color', '#ff5757');
+console.log('Added class: checkIfNameIsEdited. Removed class: nameHasBeenEdited also to reviewOrderCkeck');
+$('body').find('.reviewOrderCheck').addClass('checkIfNameIsEdited').removeClass('nameHasBeenEdited').removeClass('reviewOrder').text('review your order').css('color', '#d5ad6d');
 }
-// get focus back
-setTimeout(function() {
-$("input.customize_name").get(0).focus();
-}, 1000);
 });
-// stay focused
-$('#customize_name').on( "focusout", function() {
-setTimeout(function() {
-$('#customize_name').focus();
-}, 1000);
+// when click on continue to pictures
+$( ".continueToPictures" ).on( "click", function(e) {
+  // checkIfNameIsEdited to enable continue to pictures
+  if (($('#hidden_name_desired').text() != 'Your Name') && ($('#hidden_name_desired').text() != '') && ($('#hidden_name_desired').text() != ' ')) {
+    console.log ('Name is no longer "Your Name" nor "" nor " ". Removed class: checkIfNameIsEdited. Added class: nameHasBeenEdited. Continuing to pictures.');
+  $('.reviewOrderCheck').text('review your order').removeClass('checkIfNameIsEdited').addClass('nameHasBeenEdited').css('color', '#d5ad6d');
+  $('.modal_customize_name').hide();
+  $('.modal_customize_picture').show('slow');
+  } else {
+    // prevent the click or enter key
+    e.preventDefault();
+    $('.checkIfNameIsEdited').text('type name up there').css('color', '#ff5757');
+    $('.customize_name').focus();
+  }
 });
 
+/*
 
+// when enter key to continue to pictures
+$( "form.name_input" ).on( "keypress", function(e) {
+  // checkIfNameIsEdited to enable continue to pictures
+  if (($('#hidden_name_desired').text() != 'Your Name') && ($('#hidden_name_desired').text() != '') && ($('#hidden_name_desired').text() != ' ')) {
+    console.log ('Name is no longer "Your Name" nor "" nor " ". Removed class: checkIfNameIsEdited. Added class: nameHasBeenEdited. Continuing to pictures.');
+  $('.reviewOrderCheck').text('review your order').removeClass('checkIfNameIsEdited').addClass('nameHasBeenEdited').css('color', '#d5ad6d');
+  $('.modal_customize_name').hide();
+  $('.modal_customize_picture').show('slow');
+  } else {
+    // prevent the enter key
+//    if (e.which == 13) {
+      return false;
+      e.preventDefault();
+//}
+// tell user to type his name
+    $('.checkIfNameIsEdited').text('type name up there').css('color', '#ff5757');
+    $('.customize_name').focus();
+  }
+});
+
+*/
+
+// adjust position left if characters are problematic
+/*
+$( ".customize_name form.name_input" ).on( "keyup change submit", function(e) {
+var myString = $('.customize_name').val();
+var lastChar = myString[myString.length -1];
+console.log(lastChar);
+var arr = ['d', 'h', 'k', 'l', 'b'];
+
+if ( $.inArray(lastChar, arr) > -1 ) {
+$('.rendered_customerName_in_modalName').css('left', '66px');
+$('.rendered_customerName_in_modalPictures').css('left', '66px');
+$('.rendered_customerName_in_modalReviewOrder-table').css('left', '17px');
+} else {
+$('.rendered_customerName_in_modalName').css('left', '72px');
+$('.rendered_customerName_in_modalPictures').css('left', '72px');
+$('.rendered_customerName_in_modalReviewOrder-table').css('left', '22px');
+}
+});
+*/
   <!-- ////////////////////////// -->
   <!-- END STEP 2 - NAME -->
   <!-- ////////////////////////// -->
@@ -2934,12 +2986,6 @@ $('#customize_name').focus();
   <!-- ////////////////////////// -->
   <!-- BEGIN STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->
-// when customer arrives here via the menu
-$( ".browsePictures" ).on( "click", function() {
-// open the modal
-        $(".modal_customize_picture").show();
-        $(".opacity_cover").show();
-});
 // when customer arrives here by clicking under a particular sample image
 $( "body" ).on( "click", ".changePicture", function(event) {
 var bookNeeded = $(this).parent().find(".changeVerse").attr('book');
@@ -2976,6 +3022,7 @@ $(".selected_verse").text(completeRefNeeded);
           $('.select_a_category_to_load_gallery').hide();
           $('.this_is_your_currently_selected_picture').show();
           $('.modal_customize_picture > .wrap_container_showing_selected_picture').show();
+          $('.reviewOrderCheck').removeClass('checkIfPictureIsSelected').addClass('pictureHasBeenSelected');
         }
         // if user doesn't have a picture chosen, show them how to choose one
         else {
@@ -2983,12 +3030,6 @@ $(".selected_verse").text(completeRefNeeded);
           $('.this_is_your_currently_selected_picture').hide();
           $('.modal_customize_picture > .wrap_container_showing_selected_picture').hide();
         }
-        // checkIfNameIsFilled to enable reviewOrder
-        if ($('#hidden_name_desired').text() != 'Your Name') {
-        $('.modal_customize_picture').find('.continue_to_next_step').addClass('reviewOrder');
-      } else {
-
-      }
 });
 // when user has clicked on one of the categories
 $( "#view-biblical, #view-flowers, #view-scenery" ).on( "click", function() {
@@ -3003,42 +3044,12 @@ var selectedPicture = $(this).attr("src").replace(/p\\/, '').replace(/\.png/, ''
 $( "#hidden_picture_desired" ).text(selectedPicture);
 $('.container_showing_selected_picture').attr("src", "p/" + selectedPicture + ".png" );
 $('.container_showing_selected_picture_little_Left').attr("src", "p/" + selectedPicture + ".png" );
-});
-// checkIfNameIsFilled
-$('.checkIfNameIsFilled').on( "click", function(e) {
-    if( $('.customize_name').val().length == 0 ) {
-        $('.checkIfNameIsFilled').text('type name up there').css('color', '#ff5757');
-        $('.customize_name').focus();
-    } else {
-$(this).addClass('changePicture');
+console.log('Picture has been selected. Removed class "checkIfPictureIsSelected". Added class: "pictureHasBeenSelected"');
+$('.reviewOrderCheck').removeClass('checkIfPictureIsSelected').addClass('pictureHasBeenSelected');
+// enable reviewOrder as long as we already have a name
+if ($('.reviewOrderCheck').hasClass('nameHasBeenEdited')) {
+$('.reviewOrderCheck').addClass('reviewOrder');
 }
-});
-$('.customize_name form.name_input').on( "keyup change submit", function(e) {
-  e.preventDefault();
-    if( $('.customize_name').val().length != 0 ) {
-        $('.checkIfNameIsFilled').text('continue to pictures').css('color', '#d5ad6d').addClass('changePicture');
-} else {
-        $('.checkIfNameIsFilled').text('type name up there').css('color', '#ff5757').removeClass('changePicture');
-}
-});
-// adjust position left if characters are problematic
-$( ".customize_name form.name_input" ).on( "keyup change submit", function(e) {
-  e.preventDefault();
-var myString = $('.customize_name').val();
-var lastChar = myString[myString.length -1];
-console.log(lastChar);
-var arr = ['d', 'h', 'k', 'l', 'b'];
-/*
-if ( $.inArray(lastChar, arr) > -1 ) {
-$('.rendered_customerName_in_modalName').css('left', '66px');
-$('.rendered_customerName_in_modalPictures').css('left', '66px');
-$('.rendered_customerName_in_modalReviewOrder-table').css('left', '17px');
-} else {
-$('.rendered_customerName_in_modalName').css('left', '72px');
-$('.rendered_customerName_in_modalPictures').css('left', '72px');
-$('.rendered_customerName_in_modalReviewOrder-table').css('left', '22px');
-}
-*/
 });
 // custom CSS for biblical or flowers displayed in other modals
 $('.images_inside_modal_customize_picture_biblical, .images_inside_modal_customize_picture_flowers').on("click", function() {
@@ -3065,7 +3076,31 @@ $('img.container_showing_selected_picture_little_Left').removeClass('customCSSfo
   $('.wrap_container_showing_selected_picture_little_Left').addClass('customCSSforScenery_flex_little_Left');
   $('img.container_showing_selected_picture_little_Left').addClass('customCSSforScenery_item_little_Left');
 });
-
+// enable reviewOrder as long as we already have a name
+$('.reviewOrderCheck').on( "click", function(e) {
+  // got everything
+    if (($('.reviewOrderCheck').hasClass('nameHasBeenEdited')) && ($('.reviewOrderCheck').hasClass('pictureHasBeenSelected'))) {
+      $('.reviewOrderCheck').addClass('reviewOrder');
+      console.log('nameHasBeenEdited and pictureHasBeenSelected, so Added class: reviewOrder');
+    }
+    // still need name
+if ((!$('.reviewOrderCheck').hasClass('nameHasBeenEdited')) && ($('.reviewOrderCheck').hasClass('pictureHasBeenSelected'))) {
+        console.log('gotta a picture but still need a name');
+      $('.reviewOrderCheck').html("let's add YourName").css('color','#ff5757').addClass('stillNeedToaddYourName');
+      setTimeout(function(){
+        console.log('automatically going back to customize name modal');
+        $('.modal_customize_picture').hide();
+        $('.modal_customize_name').show('slow');
+        setTimeout(function(){
+        $('body').find('#customize_name').focus();
+      }, 100);
+    }, 3000);
+}
+// still need a picture
+if (($('.reviewOrderCheck').hasClass('nameHasBeenEdited')) && (!$('.reviewOrderCheck').hasClass('pictureHasBeenSelected'))) {
+}
+});
+/*
 $('.modal_customize_picture').find('.addYourName').on("click", function() {
   console.log('going back to addYourName');
 // if user click back to YourName, re-render textfill
@@ -3081,10 +3116,15 @@ $('#customize_name').on( "focusout", function() {
 $('#customize_name').focus();
 });
 });
-
-
-
-
+*/
+// in case user has already been browsing, so he already has a picture selected
+$( "body" ).on( "click", ".CreateYourOwnDesign, .changeVerse, .addYourName, .continueToPictures", function() {
+  setTimeout(function() {
+    if ($('#hidden_picture_desired').text() != 'nothing') {
+      $('.reviewOrderCheck').removeClass('checkIfPictureIsSelected').addClass('pictureHasBeenSelected');
+    }
+  }, 1000);
+});
   <!-- ////////////////////////// -->
   <!-- END STEP 3 - PICTURE -->
   <!-- ////////////////////////// -->
@@ -3425,44 +3465,6 @@ navigation: {
 ////////////////////////////////////////////////////
 
 
-////////////////////////////////////////////////////
-////BEGIN Validations to continue to revieOrder, we check if 1. verse 2. name 3 picture // if they're selected ///////////////////////
-////////////////////////////////////////////////////
-// The selection is recorded in the #hidden_lastClickedPictureIndex when the swiper-slide is clicked, due to the on click function within the new swiper rendering, but we have to do this popup here (outside the swiper rendering)
-$( "img.images_inside_modal_customize_picture_biblical, img.images_inside_modal_customize_picture_flowers, img.images_inside_modal_customize_picture_scenery" ).on( "click", function() {
-  $('.checkIfPictureIsSelected').text('review your order').removeClass('checkIfPictureIsSelected').addClass('checkIfNameIsEdited').css('color', '#d5ad6d');
-	$('.popup_ok_this_picture_selected').show();
-	setTimeout(function(){
-	$('.popup_ok_this_picture_selected').hide();
-	}, 2000);
-  // check if we got a everything in order to turn on reviewOrder
-  if ( ($('#hidden_name_desired').text() != 'Your Name') && ($('#hidden_picture_desired').text() != 'nothing') ) {
-  console.log('all things have boeen completed');
-  // now that we know that the user has completed all the steps
-  $('body').find('.checkIfNameIsEdited').text('review your order').removeClass('stillNeedToaddYourName').removeClass('checkIfNameIsEdited').addClass('reviewOrder').css('color', '#d5ad6d');
-  }
-});
-// check if we got a picture
-$( ".checkIfPictureIsSelected" ).on( "click", function() {
-if ($('#hidden_picture_desired').text() == 'nothing') {
-  console.log('no picture yet selected');
-  $(this).html("select a picture").css('color','#ff5757');
-} else {
-  $(this).removeClass("checkIfPictureIsSelected");
-}
-// check if we got a name
-if ( ($('#hidden_picture_desired').text() != 'nothing') && ($('#hidden_name_desired').text() == 'Your Name') ) {
-  console.log('gota a picture but still need a name');
-  $('.checkIfNameIsEdited').html("let's add YourName").css('color','#ff5757').addClass('stillNeedToaddYourName');
-  setTimeout(function(){
-    $('.modal_customize_picture').hide();
-    $('.modal_customize_name').show('slow');
-  }, 5000);
-}
-});
-////////////////////////////////////////////////////
-////END Validations to continue to revieOrder, we check if 1. verse 2. name 3 picture // if they're selected ///////////////////////
-////////////////////////////////////////////////////
 
 
 
@@ -3706,7 +3708,6 @@ $(function(){
 
 // make use of the GO buttons on cellphones when user finished typing name
 $("form.name_input").submit(function(e) {
-e.preventDefault();
     $('.modal_customize_name').hide();
     $('.modal_customize_picture').show('slow');
 });
