@@ -2894,7 +2894,10 @@ $(".rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures,.
 
 // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
 
-$( "#customize_name" ).on( "keyup change", function() {
+$( "#customize_name, form.name_input" ).on( "keyup change submit", function(e) {
+  e.preventDefault();
+  renderIn_modalName();
+  // THEN grab the font-size of .rendered_customerName_in_modalName every time it changes
   $('.sample_name').hide();
 var newFontSize = $( ".rendered_customerName_in_modalName > span" ).attr("style");
 // give it a second to pass along the attr style newFontSize
@@ -2911,7 +2914,18 @@ $('.checkIfNameIsEdited').text('review your order').removeClass('checkIfNameIsEd
 if ($('#hidden_picture_desired').text() != 'nothing') {
   $('body').find('.NameHasBeenEdited').removeClass("stillNeedToaddYourName").removeClass('NameHasBeenEdited').addClass('reviewOrder');
 }
+// get focus back
+setTimeout(function() {
+$("input.customize_name").get(0).focus();
+}, 1000);
 });
+// stay focused
+$('#customize_name').on( "focusout", function() {
+setTimeout(function() {
+$('#customize_name').focus();
+}, 1000);
+});
+
 
   <!-- ////////////////////////// -->
   <!-- END STEP 2 - NAME -->
@@ -2999,7 +3013,8 @@ $('.checkIfNameIsFilled').on( "click", function(e) {
 $(this).addClass('changePicture');
 }
 });
-$('.customize_name').on( "keyup", function(e) {
+$('.customize_name form.name_input').on( "keyup change submit", function(e) {
+  e.preventDefault();
     if( $('.customize_name').val().length != 0 ) {
         $('.checkIfNameIsFilled').text('continue to pictures').css('color', '#d5ad6d').addClass('changePicture');
 } else {
@@ -3007,7 +3022,8 @@ $('.customize_name').on( "keyup", function(e) {
 }
 });
 // adjust position left if characters are problematic
-$( ".customize_name" ).on( "keyup change", function() {
+$( ".customize_name form.name_input" ).on( "keyup change submit", function(e) {
+  e.preventDefault();
 var myString = $('.customize_name').val();
 var lastChar = myString[myString.length -1];
 console.log(lastChar);
@@ -3050,7 +3066,21 @@ $('img.container_showing_selected_picture_little_Left').removeClass('customCSSfo
   $('img.container_showing_selected_picture_little_Left').addClass('customCSSforScenery_item_little_Left');
 });
 
-
+$('.modal_customize_picture').find('.addYourName').on("click", function() {
+  console.log('going back to addYourName');
+// if user click back to YourName, re-render textfill
+setTimeout(function() {
+$(".rendered_customerName_in_modalName,.rendered_customerName_in_modalPictures,.rendered_customerName_in_modalBackgrounds,.rendered_customerName_in_modalReviewOrder").textfill({maxFontPixels:200});
+// get focus back
+setTimeout(function() {
+$("input.customize_name").get(0).focus();
+}, 1000);
+}, 500);
+// stay focused
+$('#customize_name').on( "focusout", function() {
+$('#customize_name').focus();
+});
+});
 
 
 
