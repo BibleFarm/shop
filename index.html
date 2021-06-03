@@ -2928,6 +2928,23 @@ $( ".continueToPictures" ).on( "click", function(e) {
   $('.reviewOrderCheck').text('review your order').removeClass('checkIfNameIsEdited').addClass('nameHasBeenEdited').css('color', '#d5ad6d');
   $('.modal_customize_name').hide();
   $('.modal_customize_picture').show('slow');
+  // when user returns to this modal, just in case they already have a picture selected
+  $('.be_sure_to_click_the_one_you_like').hide();
+
+  // if user had already chosen a picture show them what they got and how to change it
+  if ($('#hidden_picture_desired').text() != 'nothing') {
+    $('.select_a_category_to_load_gallery').hide();
+    $('.this_is_your_currently_selected_picture').show();
+    $('.modal_customize_picture > .wrap_container_showing_selected_picture').show();
+    $('.reviewOrderCheck').removeClass('checkIfPictureIsSelected').addClass('pictureHasBeenSelected');
+  }
+  // if user doesn't have a picture chosen, show them how to choose one
+  else {
+    $('.select_a_category_to_load_gallery').show();
+    $('.this_is_your_currently_selected_picture').hide();
+    $('.modal_customize_picture > .wrap_container_showing_selected_picture').hide();
+  }
+
   } else {
     // prevent the click or enter key
     e.preventDefault();
@@ -2936,29 +2953,40 @@ $( ".continueToPictures" ).on( "click", function(e) {
   }
 });
 
-/*
 
-// when enter key to continue to pictures
-$( "form.name_input" ).on( "keypress", function(e) {
-  // checkIfNameIsEdited to enable continue to pictures
+
+// make use of the enter key on computers, or the GO buttons on cellphones when user finished typing name
+$("form.name_input").submit(function(e) {
+
   if (($('#hidden_name_desired').text() != 'Your Name') && ($('#hidden_name_desired').text() != '') && ($('#hidden_name_desired').text() != ' ')) {
     console.log ('Name is no longer "Your Name" nor "" nor " ". Removed class: checkIfNameIsEdited. Added class: nameHasBeenEdited. Continuing to pictures.');
   $('.reviewOrderCheck').text('review your order').removeClass('checkIfNameIsEdited').addClass('nameHasBeenEdited').css('color', '#d5ad6d');
   $('.modal_customize_name').hide();
   $('.modal_customize_picture').show('slow');
-  } else {
-    // prevent the enter key
-//    if (e.which == 13) {
-      return false;
-      e.preventDefault();
-//}
-// tell user to type his name
-    $('.checkIfNameIsEdited').text('type name up there').css('color', '#ff5757');
-    $('.customize_name').focus();
+  // when user returns to this modal, just in case they already have a picture selected
+  $('.be_sure_to_click_the_one_you_like').hide();
+
+  // if user had already chosen a picture show them what they got and how to change it
+  if ($('#hidden_picture_desired').text() != 'nothing') {
+    $('.select_a_category_to_load_gallery').hide();
+    $('.this_is_your_currently_selected_picture').show();
+    $('.modal_customize_picture > .wrap_container_showing_selected_picture').show();
+    $('.reviewOrderCheck').removeClass('checkIfPictureIsSelected').addClass('pictureHasBeenSelected');
   }
+  // if user doesn't have a picture chosen, show them how to choose one
+  else {
+    $('.select_a_category_to_load_gallery').show();
+    $('.this_is_your_currently_selected_picture').hide();
+    $('.modal_customize_picture > .wrap_container_showing_selected_picture').hide();
+  }
+
+  } else {
+}
+
 });
 
-*/
+
+
 
 // adjust position left if characters are problematic
 /*
@@ -3039,6 +3067,11 @@ $( "#view-biblical, #view-flowers, #view-scenery" ).on( "click", function() {
 });
 // make this clicked picture the selected one and show it in the other modals
 $( "img.images_inside_modal_customize_picture_biblical, img.images_inside_modal_customize_picture_flowers, img.images_inside_modal_customize_picture_scenery" ).on( "click", function() {
+  $('.popup_ok_this_picture_selected').show('slow');
+  setTimeout(function() {
+    $('.popup_ok_this_picture_selected').hide();
+}, 2000);
+
   $('.be_sure_to_click_the_one_you_like').hide();
 var selectedPicture = $(this).attr("src").replace(/p\\/, '').replace(/\.png/, '');
 $( "#hidden_picture_desired" ).text(selectedPicture);
@@ -3089,7 +3122,7 @@ if ((!$('.reviewOrderCheck').hasClass('nameHasBeenEdited')) && ($('.reviewOrderC
       $('.reviewOrderCheck').html("let's add YourName").css('color','#ff5757').addClass('stillNeedToaddYourName');
       setTimeout(function(){
         console.log('automatically going back to customize name modal');
-        $('.modal_customize_picture').hide();
+        $('.modal_customize_picture, .wrap_swiper_container_biblical, .wrap_swiper_container_flowers, .wrap_swiper_container_scenery').hide();
         $('.modal_customize_name').show('slow');
         setTimeout(function(){
         $('body').find('#customize_name').focus();
@@ -3706,11 +3739,6 @@ $(function(){
 });
 // END textStroke
 
-// make use of the GO buttons on cellphones when user finished typing name
-$("form.name_input").submit(function(e) {
-    $('.modal_customize_name').hide();
-    $('.modal_customize_picture').show('slow');
-});
 
 </script>
 
