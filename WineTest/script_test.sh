@@ -2,11 +2,17 @@
 # h2t, convert all htm and html files of a directory to text 
 
 
-for file in `ls *.html`
-do
-new=`basename $file html`
-/usr/lib/chromium/chromium --headless --disable-gpu --virtual-time-budget=5000 --window-size=296,444 --screenshot=${new}png $file html
-done 
+# for file in `ls *.html`
+# do
+# new=`basename $file html`
+/usr/lib/chromium/chromium --headless --disable-gpu --virtual-time-budget=5000 --window-size=296,444 --screenshot=test-10.png Revelation-22-10.html
+
+/usr/lib/chromium/chromium --headless --disable-gpu --virtual-time-budget=5000 --window-size=296,444 --screenshot=test-11.png Revelation-22-11.html
+
+/usr/lib/chromium/chromium --headless --disable-gpu --virtual-time-budget=5000 --window-size=296,444 --screenshot=test-12.png Revelation-22-12.html
+
+/usr/lib/chromium/chromium --headless --disable-gpu --virtual-time-budget=5000 --window-size=296,444 --screenshot=test-13.png Revelation-22-13.html
+# done 
 
 # --screenshot=[$file > ${new}png]
 
@@ -16,6 +22,7 @@ done
 # chmod +x script_test.sh
 # bash script_test.sh
 
-firefox -P my-profile --screenshot test.jpg  https://developer.mozilla.org --window-size=800,1000
+# firefox -P my-profile --screenshot test.jpg  https://developer.mozilla.org --window-size=800,1000
 
 
+# /usr/bin/chromium
