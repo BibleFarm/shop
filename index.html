@@ -2292,7 +2292,7 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 })
   .done(function(result) {
 var html = jQuery('<div>').html(result);
-var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '').replace(/\(/ , '').replace(/\)/ , '');
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\[.*?\]/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
 $('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
@@ -2483,7 +2483,7 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 })
   .done(function(result) {
 var html = jQuery('<div>').html(result);
-var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '').replace(/\(/ , '').replace(/\)/ , '');
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\[.*?\]/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
 $('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
@@ -2709,7 +2709,7 @@ var jqxhr = $.get( completeVerseURLtoGrab, function() {
 })
   .done(function(result) {
 var html = jQuery('<div>').html(result);
-var removedItalicsAndRef = $(html).find('.v').html().replace(/\(.*?\)/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '').replace(/\(/ , '').replace(/\)/ , '');
+var removedItalicsAndRef = $(html).find('.v').html().replace(/\[.*?\]/g , '').replace(/<i>/ , '').replace(/<\/i>/ , '');
 console.log("Removed the italics and ref like this: " + removedItalicsAndRef);
 $('.populated_ref_with_ajax').html(willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
   console.log( 'Now populating the ref like this: ' + willGrabBook + ' ' + willGrabChapter + ' : ' + willGrabVerse);
