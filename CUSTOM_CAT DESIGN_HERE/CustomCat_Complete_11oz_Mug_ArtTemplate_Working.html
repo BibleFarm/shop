@@ -247,7 +247,7 @@ height: 1146px;
 <body>
 <div id="capture">
 <div class="CustomCat11ozMugTemplate">
-<img class="" width="2717" height="1146" src="11oz_Mug_ArtTemplate.png" alt="" />
+<img id="guidelines" class="" width="2717" height="1146" src="11oz_Mug_ArtTemplate.png" alt="" />
 </div>
 
 <div class="CUSTOMER_BACKGROUND">
@@ -307,7 +307,9 @@ Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como la
 <br>
 <input class="DesignCustomerOrdersUI_imput_BG" name="" type="text" id="customize_bg" value="" placeholder="Background" width="" height="">
 <br>
-<button class="DesignCustomerOrdersUI_button" type="button">Done. I got 5 secs to browser 100%</button>
+<button class="DesignCustomerOrdersUI_button" id="removeGudelines" type="button">Remove Guidelines</button>
+<br>
+<button class="DesignCustomerOrdersUI_button" id="printToPngFile" type="button">Done. I got 5 secs to browser 100%</button>
 
 </div>
   <!-- END Design Customer Orders UI -->
@@ -352,7 +354,7 @@ $( "#customize_name" ).on( "focus click", function() {
 $( "#customize_flower" ).on( "focus click", function() {
 	function renderIn_modalFlower() {
 		$('.CUSTOMER_FLOWER_table-cell').html(
-			'<img class="CUSTOMER_FLOWER_img" width="" height="" src="../bg-flowers/' + $('#customize_flower').val() + '.png" alt="" />'
+			'<img class="CUSTOMER_FLOWER_img" width="" height="" src="../p/' + $('#customize_flower').val() + '.png" alt="" />'
 		);
 	}
 	$('#customize_flower').keyup(renderIn_modalFlower);
@@ -390,9 +392,15 @@ $( "#customize_ref" ).on( "focus click", function() {
 // BEGIN Render the CUSTOMER_BACKGROUND
 $( "#customize_bg" ).on( "focus click", function() {
 	function renderTheBackground() {
+	/*
+	// commented out until I decide to use backgrounds
+	
 		$('.CUSTOMER_BACKGROUND').html(
 			'<img id="bg" class="" width="2717" height="1146" src="../bg-bleed/' + $('#customize_bg').val() + '.png" alt="" />'
 		);
+	*/
+	// in the meantime, we do backgroung transparent like this
+	$( "#bg" ).attr('src', '');
 	}
 	$('#customize_bg').keyup(renderTheBackground);
 	renderTheBackground();
@@ -520,9 +528,14 @@ $('body').css("background", "tan");
 });
 	// END and change font colors & shadows accordingly
 
+// BEGIN button to remove guidelines
+$( "#removeGuidelines" ).on( "click", function() {
+	$( "#guidelines" ).attr('src', '');
+});
+// BEGIN button to remove guidelines
 
 // BEGIN button to render the html2canvas
-$( ".DesignCustomerOrdersUI_button" ).on( "click", function() {
+$( "#printToPngFile" ).on( "click", function() {
 setTimeout(function(){
 $(".wrap_downloadable_image").show("slow");
 html2canvas(document.querySelector("#capture")).then(canvas => {
