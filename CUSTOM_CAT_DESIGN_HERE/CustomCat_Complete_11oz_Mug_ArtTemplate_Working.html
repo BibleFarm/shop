@@ -18,8 +18,8 @@
   src: url(../shop_fonts/Audiowide-en4g.ttf) format("truetype");
 }
 @font-face {
-  font-family: "Capsuularegular-Onm3";
-  src: url(../shop_fonts/Capsuularegular-Onm3.ttf) format("truetype");
+  font-family: "LoversQuarrel-Regular";
+  src: url(../shop_fonts/LoversQuarrel-Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: "Thekingofromance-z8jDX";
@@ -27,11 +27,15 @@
 }
 @font-face {
   font-family: "NeogreyRegular";
-  src: url(../shop_fonts/NeogreyRegular.otf) format("truetype");
+  src: url(../shop_fonts/NeogreyRegular.otf) format("opentype");
 }
 @font-face {
   font-family: "NeogreyMedium";
-  src: url(../shop_fonts/NeogreyMedium.otf) format("truetype");
+  src: url(../shop_fonts/NeogreyMedium.otf) format("opentype");
+}
+@font-face {
+  font-family: "OpenSansCondensed-Light";
+  src: url(../shop_fonts/OpenSansCondensed-Light.ttf) format("truetype");
 }
 
 
@@ -74,21 +78,21 @@ width: 1225px;
 .CUSTOMER_NAME_table {
 position: fixed;
 display: table;
-top: 24px;
+top: 26px;
 left: 168px;
 width: 1060px;
-height: 470px;
-background: ;
+height: 450px;
+color: black;
+    filter: drop-shadow(0px 0px 50px #999);
 }
 .CUSTOMER_NAME_table-cell {
 display: table-cell;
 width: 1060px;
-height: 470px;
+height: 450px;
 text-align: center;
 vertical-align: middle;
-font-family: "Thekingofromance-z8jDX";
+font-family: "LoversQuarrel-Regular";
 text-shadow: none;
-color: #d5ad6d;
 white-space: nowrap;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -96,11 +100,12 @@ white-space: nowrap;
 .CUSTOMER_FLOWER_table {
 position: fixed;
 display: table;
-top: 450px;
+top: 480px;
 left: 168px;
 width: 1060px;
-height: 520px;
-background: ;
+height: 508px;
+color: black;
+    filter: drop-shadow(0px 0px 50px #999);
 }
 .CUSTOMER_FLOWER_table-cell {
 display: table-cell;
@@ -112,7 +117,7 @@ vertical-align: middle;
 .CUSTOMER_FLOWER_img {
 display: inline;
 max-width: 1040px;
-max-height: 520px;
+max-height: 508px;
 text-align: center;
 vertical-align: middle;
 }
@@ -126,18 +131,19 @@ height: 84px;
 background: ;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+color: black;
+    filter: drop-shadow(0px 0px 50px #999);
 }
 .MADE_WITH_LOVE_table-cell {
 display: table-cell;
 text-align: center;
 vertical-align: middle;
-font-family: "NeogreyMedium";
-font-size: 63px;
+font-family: "Jura-Regular";
+font-size: 80px;
 line-height: 84px;
-color: #d5ad6d;
 }
 .heart {
-font-size: 70px;
+font-size: 68px;
 color: red;
 }
 .CUSTOMER_VERSE_table {
@@ -147,7 +153,8 @@ top: 74px;
 left: 1489px;
 width: 1060px;
 height: 894px;
-background: ;
+color: black;
+    filter: drop-shadow(0px 0px 50px #999);
 }
 .CUSTOMER_VERSE_table-cell {
 display: table-cell;
@@ -155,10 +162,9 @@ width: 1060px;
 height: 894px;
 text-align: center;
 vertical-align: middle;
-font-family: "Capsuularegular-Onm3";
-font-weight: bold;
+font-family: "OpenSansCondensed-Light";
+font-weight: ;
 text-shadow: none;
-color: #d5ad6d;
 -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -175,10 +181,11 @@ background: ;
 display: table-cell;
 text-align: center;
 vertical-align: middle;
-font-family: "NeogreyMedium";
-font-size: 63px;
+font-family: "Jura-Regular";
+font-size: 80px;
 line-height: 84px;
-color: #d5ad6d;
+color: black;
+    filter: drop-shadow(0px 0px 50px #999);
 }
 .DesignCustomerOrdersUI {
 position: fixed;
@@ -190,6 +197,12 @@ min-height 400px;
 font-size: 100px;
 background: ;
 }
+.DesignCustomerOrdersUI_imput_ORDER {
+min-width: 1000px;
+min-height 400px;
+line-height: 100px;
+font-size: 100px;
+}
 .DesignCustomerOrdersUI_imput_NAME {
 min-width: 1000px;
 min-height 400px;
@@ -197,6 +210,12 @@ line-height: 100px;
 font-size: 100px;
 }
 .DesignCustomerOrdersUI_imput_FLOWER {
+min-width: 1000px;
+min-height 400px;
+line-height: 100px;
+font-size: 100px;
+}
+.DesignCustomerOrdersUI_select_moveFlowerUpDown {
 min-width: 1000px;
 min-height 400px;
 line-height: 100px;
@@ -214,6 +233,9 @@ min-height 400px;
 line-height: 100px;
 font-size: 100px;
 }
+.char1 {
+font-size: 95%;
+}
 .DesignCustomerOrdersUI_imput_BG {
 min-width: 1000px;
 min-height 400px;
@@ -221,6 +243,24 @@ line-height: 100px;
 font-size: 100px;
 }
 .DesignCustomerOrdersUI_button {
+min-width: 1000px;
+min-height 400px;
+line-height: 100px;
+font-size: 100px;
+}
+.DesignCustomerOrdersUI_imput_JS_file_name {
+min-width: 1000px;
+min-height 400px;
+line-height: 100px;
+font-size: 100px;
+}
+.DesignCustomerOrdersUI_textarea_JS_file_content {
+min-width: 1000px;
+min-height 400px;
+line-height: 100px;
+font-size: 100px;
+}
+button#create {
 min-width: 1000px;
 min-height 400px;
 line-height: 100px;
@@ -276,7 +316,7 @@ Aligsa
 
 <div class="MADE_WITH_LOVE_table">
 <span class="MADE_WITH_LOVE_table-cell">
-made with <span class="heart">♥</span> at BibleFarm.org
+made with <span class="heart">❤</span> at BibleFarm.org
 </span>
 </div>
 
@@ -296,21 +336,51 @@ Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como la
 
   <!-- BEGIN DesignCustomerOrdersUI -->
 <div class="DesignCustomerOrdersUI">
-
+<input class="DesignCustomerOrdersUI_imput_ORDER" name="" type="text" id="order_id" value="" placeholder="Order ID" width="" height="">
+<span id="show_order_id"></span>
+<br>
 <input class="DesignCustomerOrdersUI_imput_NAME" name="" type="text" id="customize_name" value="" placeholder="Name" width="" height="">
+<span id="show_name"></span>
 <br>
 <input class="DesignCustomerOrdersUI_imput_FLOWER" name="" type="text" id="customize_flower" value="" placeholder="Flower" width="" height="">
+<span id="show_flower"></span>
+<br>
+<select class="DesignCustomerOrdersUI_select_moveFlowerUpDown" name="moveFlowerUpDown" id="moveFlowerUpDown">
+  <option value="400">400</option>
+  <option value="410">410</option>
+  <option value="420">420</option>
+  <option value="430">430</option>
+  <option value="440">440</option>
+  <option value="450">450</option>
+  <option value="460">460</option>
+  <option value="470">470</option>
+  <option value="480" selected="selected">480</option>
+</select>
 <br>
 <input class="DesignCustomerOrdersUI_imput_VERSE" name="" type="text" id="customize_verse" value="" placeholder="Verse" width="" height="">
+<span id="show_verse"></span>
 <br>
 <input class="DesignCustomerOrdersUI_imput_REF" name="" type="text" id="customize_ref" value="" placeholder="Ref" width="" height="">
+<span id="show_ref"></span>
 <br>
 <input class="DesignCustomerOrdersUI_imput_BG" name="" type="text" id="customize_bg" value="" placeholder="Background" width="" height="">
+<span id="show_background"></span>
 <br>
-<button class="DesignCustomerOrdersUI_button" id="removeGudelines" type="button">Remove Guidelines</button>
+<button class="DesignCustomerOrdersUI_button" id="removeGuidelines" type="button">Remove Guidelines</button>
 <br>
-<button class="DesignCustomerOrdersUI_button" id="printToPngFile" type="button">Done. I got 5 secs to browser 100%</button>
+<button class="DesignCustomerOrdersUI_button" id="SaveHTMLpage">save HTML page</button>
+<div>
+   <label for="fname">JS file name (without .js):</label>
+   <br>
+   <input class="DesignCustomerOrdersUI_imput_JS_file_name" type="text" id="fname" name="fname"><br><br>
+   <label for="fcontent">File Content:</label>
+   <br>
+   <input class="DesignCustomerOrdersUI_textarea_JS_file_content" type="text" id="fcontent" name="w3review"><br>
 
+   <br>
+   <button id="create">Create File</button>
+   <a download="info.js" id="downloadlink" style="display: none">Download Here</a>
+</div>
 </div>
   <!-- END Design Customer Orders UI -->
 
@@ -335,6 +405,12 @@ Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como la
 
 <script>
 $(document).ready(function (){
+// BEGIN Order ID
+$('#order_id').on('keyup', function() {
+var idNeeded = $(this).val();
+$('#show_order_id').text(idNeeded);
+$('#fname').val(idNeeded);
+});
 // BEGIN Render the CUSTOMER_NAME_table-cell
 $( "#customize_name" ).on( "focus click", function() {
 	function renderIn_modalName() {
@@ -342,7 +418,7 @@ $( "#customize_name" ).on( "focus click", function() {
 			'<span>' + $('#customize_name').val() + '</span>'
 		);
 		$('.CUSTOMER_NAME_table-cell').textfill({
-			maxFontPixels: 250
+			maxFontPixels: 2500
 		});
 	}
 	$('#customize_name').keyup(renderIn_modalName);
@@ -354,7 +430,7 @@ $( "#customize_name" ).on( "focus click", function() {
 $( "#customize_flower" ).on( "focus click", function() {
 	function renderIn_modalFlower() {
 		$('.CUSTOMER_FLOWER_table-cell').html(
-			'<img class="CUSTOMER_FLOWER_img" width="" height="" src="../p/' + $('#customize_flower').val() + '.png" alt="" />'
+			'<img class="CUSTOMER_FLOWER_img" width="" height="" src="../p-original-size/' + $('#customize_flower').val() + '.png" alt="" />'
 		);
 	}
 	$('#customize_flower').keyup(renderIn_modalFlower);
@@ -378,7 +454,7 @@ $( "#customize_verse" ).on( "focus click", function() {
 // END Render the CUSTOMER_VERSE_table-cell
 
 // BEGIN Render the CUSTOMER_REF_table-cell
-$( "#customize_ref" ).on( "focus click", function() {
+$( "#customize_ref" ).on( "keyup change", function() {
 	function renderIn_modalRef() {
 		$('.CUSTOMER_REF_table-cell').html(
 			'<span>' + $('#customize_ref').val() + '</span>'
@@ -386,6 +462,13 @@ $( "#customize_ref" ).on( "focus click", function() {
 	}
 	$('#customize_ref').keyup(renderIn_modalRef);
 	renderIn_modalRef();
+	// make char 1 smaller
+	setTimeout(function(){
+$('.CUSTOMER_REF_table-cell').html(function(i,el) {
+    return el.replace(/1/g, '<span class="char1">1</span>');
+});
+}, 1000);
+
 });
 // END Render the CUSTOMER_REF_table-cell
 
@@ -399,14 +482,44 @@ $( "#customize_bg" ).on( "focus click", function() {
 			'<img id="bg" class="" width="2717" height="1146" src="../bg-bleed/' + $('#customize_bg').val() + '.png" alt="" />'
 		);
 	*/
-	// in the meantime, we do backgroung transparent like this
-	$( "#bg" ).attr('src', '');
 	}
 	$('#customize_bg').keyup(renderTheBackground);
 	renderTheBackground();
 });
+	// in the meantime, we do not have a background 
+	$( "#bg" ).css('display', 'none');
+
 // END Render the CUSTOMER_BACKGROUND
 
+// BEGIN red heart stroke
+// BEGIN textStroke. text stroke made by http://jsfiddle.net/KjyYV/ hack, thanks to http://readysetdinosaurs.blogspot.com.ar/2013/05/adding-text-strokes-with-jquery-and-css.html https://github.com/simonausten/jquery-textstroke/blob/master/jquery-textstroke.js
+$.fn.textStroke = function(r, colour) {
+var rules = [];
+var steps = 24;
+for (var t=0;t<=(2*Math.PI);t+=(2*Math.PI)/steps){
+var x = r*Math.cos(t);
+var y = r*Math.sin(t);
+x = (Math.abs(x) < 1e-6) ? '0' : x.toString();
+y = (Math.abs(y) < 1e-6) ? '0' : y.toString();
+rules.push( x + "px " + y + "px 0px " + colour );
+}
+this.css('textShadow',rules.join());
+};
+$(function(){
+    $('.heart').textStroke(1,'#000000');
+});
+// END textStroke
+// END red heart stroke
+
+
+
+
+
+
+
+
+
+/*
 	// BEGIN and change font colors & shadows accordingly
 	$( "#customize_bg" ).on( "keyup", function() {
 // if url has a "D"
@@ -425,7 +538,7 @@ rules.push( x + "px " + y + "px 0px " + colour );
 this.css('textShadow',rules.join());
 };
 $(function(){
-$('body').css("background", "black");
+$('body').css("background", "none");
     $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#d5ad6d");
     $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#d5ad6d");
     $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#d5ad6d");
@@ -454,7 +567,7 @@ rules.push( x + "px " + y + "px 0px " + colour );
 this.css('textShadow',rules.join());
 };
 $(function(){
-$('body').css("background", "black");
+$('body').css("background", "none");
     $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#d5ad6d");
     $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#d5ad6d");
     $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#d5ad6d");
@@ -483,7 +596,7 @@ rules.push( x + "px " + y + "px 0px " + colour );
 this.css('textShadow',rules.join());
 };
 $(function(){
-$('body').css("background", "tan");
+$('body').css("background", "none");
     $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#000000");
     $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#000000");
     $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#000000");
@@ -512,7 +625,7 @@ rules.push( x + "px " + y + "px 0px " + colour );
 this.css('textShadow',rules.join());
 };
 $(function(){
-$('body').css("background", "tan");
+$('body').css("background", "none");
     $('.CUSTOMER_NAME_table-cell').attr("style", "").css("color", "#000000");
     $('.MADE_WITH_LOVE_table-cell').attr("style", "").css("color", "#000000");
     $('.CUSTOMER_VERSE_table-cell').attr("style", "").css("color", "#000000");
@@ -527,27 +640,104 @@ $('body').css("background", "tan");
 }
 });
 	// END and change font colors & shadows accordingly
-
+*/
 // BEGIN button to remove guidelines
 $( "#removeGuidelines" ).on( "click", function() {
-	$( "#guidelines" ).attr('src', '');
+	$( ".CustomCat11ozMugTemplate" ).toggle('slow');
 });
-// BEGIN button to remove guidelines
+// END button to remove guidelines
 
-// BEGIN button to render the html2canvas
-$( "#printToPngFile" ).on( "click", function() {
-setTimeout(function(){
-$(".wrap_downloadable_image").show("slow");
-html2canvas(document.querySelector("#capture")).then(canvas => {
- //   document.body.appendChild(canvas)
-$(".wrap_downloadable_image").append(canvas);
+    $('#SaveHTMLpage').click(function(){
+var order_id = $('#order_id').val();
+      // fill the show_order_id div
+      $('#show_order_id').text(order_id);
+
+        // Save the page's HTML to a file that is automatically downloaded.
+
+        // We make a Blob that contains the data to download.
+        var file = new window.Blob([document.documentElement.innerHTML], { type: "text/html" });
+        var URL = window.webkitURL || window.URL;
+
+        // This is the URL that will download the data.
+        var downloadUrl = URL.createObjectURL(file);
+
+        var a = document.createElement("a");
+        // This sets the file name.
+        a.download = order_id + ".html";
+        a.href = downloadUrl;
+
+        // Actually perform the download.
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+
+
+// fill the input that will contain the content of the js file to create
+$('#order_id').on('keyup', function() {
+var idNeeded = $(this).val();
+$('#fname').val(idNeeded);
+$('#fcontent').val("const puppeteer = require('/home/demo/node_modules/puppeteer'); (async () => { const browser = await puppeteer.launch({      defaultViewport: {width: 2717, height: 1146}  }); const page = await browser.newPage(); await page.goto('file:///media/demo/ALL-DATA/Github/shop/CUSTOM_CAT_RENDER_HERE/" + idNeeded + ".html'); await page.waitForTimeout(100); await page.screenshot({ path: '//media/demo/ALL-DATA/Github/shop/CUSTOM_CAT_RENDER_HERE/" + idNeeded + ".png' }); await browser.close(); })();");
 });
-}, 5000);
+
+
+// BEGIN save js file to later run puppeteer
+(function() {
+    var textFile = null,
+        makeTextFile = function(js) {
+            var data = new Blob([js], {
+                type: 'text/javascript'
+            });
+
+            if (textFile !== null) {
+                window.URL.revokeObjectURL(textFile);
+            }
+
+            textFile = window.URL.createObjectURL(data);
+
+            return textFile;
+        };
+
+
+    var create = document.getElementById('create');
+    var fileContent = document.getElementById("fcontent");
+
+    create.addEventListener('click', function() {
+        const fileName = document.getElementById("fname").value;
+        document.getElementById("downloadlink").setAttribute("download", fileName);
+        var link = document.getElementById('downloadlink');
+        link.href = makeTextFile(fileContent.value);
+        link.style.display = 'block';
+    }, false);
+})();
+
+
+
+///////////////////////////////////
+/*
+const puppeteer = require('/home/demo/node_modules/puppeteer');
+(async () => {
+const browser = await puppeteer.launch({      defaultViewport: {width: 2717, height: 1146}  });
+const page = await browser.newPage();
+// BEGIN paste here:
+await page.goto('file:///media/demo/ALL-DATA/Github/shop/CUSTOM_CAT_DESIGN_HERE/CustomCat_Complete_11oz_Mug_ArtTemplate_Working.html'); await page.waitForTimeout(100); await page.screenshot({ path: '//media/demo/ALL-DATA/Github/shop/CUSTOM_CAT_RENDER_HERE/Lorenzo.png' });
+// END paste here:
+await browser.close();
+})();
+*/
+////////////////////////////////////
+
+
+////////////////////////////////////
+// BEGIN move flower up/down ///////
+////////////////////////////////////
+$('#moveFlowerUpDown').on('change', function() {
+var moveThisMuch = $(this).val();
+$('.CUSTOMER_FLOWER_table').css('top', moveThisMuch);
 });
-// END button to render the html2canvas
-
-
-
+////////////////////////////////////
+// BEGIN move flower up/down ///////
+////////////////////////////////////
 
 
 
